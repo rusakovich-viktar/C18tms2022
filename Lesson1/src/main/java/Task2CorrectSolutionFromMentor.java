@@ -1,5 +1,3 @@
-package main.java;
-
 public class Task2CorrectSolutionFromMentor {
     public static void main(String[] args) {
         int count = 0;
