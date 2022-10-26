@@ -1,3 +1,7 @@
+/**
+ * 1. Метод должен вернуть сумму двух чисел a и b
+ * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
+ **/
 public class Task1 {
     public static int sum(int a, int b) {
         if ((long) a + (long) b > Integer.MAX_VALUE || (long) a + (long) b < Integer.MIN_VALUE) {
