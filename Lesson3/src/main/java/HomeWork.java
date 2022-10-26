@@ -1,13 +1,13 @@
-////public class HomeWork {
-////    public static void main(String[] args) {
-////        //Некоторые тесты для проверки задач.
-////        System.out.println(sum(100, 200));
-////        System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
-////        System.out.println(max(56, 349));
-////        System.out.println(average(new int[]{0, -2, 3, -1, 5}));
-////        System.out.println(max(new int[]{1, 2, 3, 4, 5, 100, 99}));
-////        System.out.println(calculateHypotenuse(3,4));
-////    }
+//public class HomeWork {
+//    public static void main(String[] args) {
+//        //Некоторые тесты для проверки задач.
+//        System.out.println(sum(100, 200));
+//        System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
+//        System.out.println(max(56, 349));
+//        System.out.println(average(new int[]{0, -2, 3, -1, 5}));
+//        System.out.println(max(new int[]{1, 2, 3, 4, 5, 100, 99}));
+//        System.out.println(calculateHypotenuse(3,4));
+//    }
 //
 //    /**
 //     * 1. Метод должен вернуть сумму двух чисел a и b
