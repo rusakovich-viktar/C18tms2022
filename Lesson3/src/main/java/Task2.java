@@ -13,15 +13,14 @@
  * <p>
  * Метод должен вернуть 10
  */
-
 public class Task2 {
-    public static int max(int a, int b) {
-        return Math.max(a, b);
-    }
-
     public static void main(String[] args) {
         System.out.println(max(56, 349));
         System.out.println(max(Integer.MAX_VALUE, 349));
         System.out.println(max(Integer.MIN_VALUE, -5));
+    }
+
+    public static int max(int a, int b) {
+        return Math.max(a, b);
     }
 }
