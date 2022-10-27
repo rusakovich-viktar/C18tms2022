@@ -9,18 +9,19 @@
  */
 public class Task3 {
     public static double average(int[] array) {
-        int sumArray = 0;
-        for (int i = 0; i < array.length; i++) {
-            sumArray += array[i];
-        }
-        if (sumArray == 0) {
-            return 0;
+        if (array != null) {
+            double sumArray = 0;
+            for (int i = 0; i < array.length; i++) {
+                sumArray += array[i];
+            }
+            return sumArray / array.length;
         } else {
-            return (double) sumArray / array.length;
+            return 0;
         }
     }
 
     public static void main(String[] args) {
+        System.out.println(average(null));
         System.out.println(average(new int[]{}));
         System.out.println(average(new int[]{0}));
         System.out.println(average(new int[]{0, 3}));
