@@ -13,12 +13,12 @@
  */
 
 public class Task5SecondSolution {
-    public static double calculateHypotenuse(int a, int b) {
-        return Math.hypot(a, b);
-    }
-
     public static void main(String[] args) {
         System.out.println(calculateHypotenuse(3, 4));
         System.out.println(calculateHypotenuse(12, 16));
+    }
+
+    public static double calculateHypotenuse(int a, int b) {
+        return Math.hypot(a, b);
     }
 }
