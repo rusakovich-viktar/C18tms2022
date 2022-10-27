@@ -4,7 +4,7 @@
  **/
 public class Task1 {
     public static int sum(int a, int b) {
-        long sum = a + b;
+        long sum = (long) a + (long) b;
         if (sum > Integer.MAX_VALUE || sum < Integer.MIN_VALUE) {
             return -1;
         } else {
