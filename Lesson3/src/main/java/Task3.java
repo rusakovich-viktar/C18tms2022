@@ -15,14 +15,11 @@ public class Task3 {
                 sumArray += array[i];
             }
             return sumArray / array.length;
-        } else {
-            return 0;
-        }
+        } else return 0;
     }
 
     public static void main(String[] args) {
         System.out.println(average(null));
-        System.out.println(average(new int[]{}));
         System.out.println(average(new int[]{0}));
         System.out.println(average(new int[]{0, 3}));
         System.out.println(average(new int[]{0, 0, 3}));
