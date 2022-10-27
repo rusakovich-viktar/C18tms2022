@@ -15,6 +15,7 @@ public class Task1 {
     public static void main(String[] args) {
         System.out.println(sum(100, 200));
         System.out.println(sum(-100, -200));
+        System.out.println(sum(Integer.MAX_VALUE, 23));
         System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
         System.out.println(sum(Integer.MIN_VALUE, Integer.MIN_VALUE));
     }
