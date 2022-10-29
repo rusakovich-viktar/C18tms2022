@@ -9,6 +9,7 @@
  */
 public class Task3 {
     public static void main(String[] args) {
+        System.out.println(average(new int[]{}));
         System.out.println(average(null));
         System.out.println(average(new int[]{0}));
         System.out.println(average(new int[]{0, 3}));
@@ -18,7 +19,7 @@ public class Task3 {
     }
 
     public static double average(int[] array) {
-        if (array != null) {
+        if (array != null && array.length != 0) {
             double sumArray = 0;
             for (int i = 0; i < array.length; i++) {
                 sumArray += array[i];
