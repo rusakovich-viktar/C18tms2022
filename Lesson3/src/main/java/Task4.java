@@ -3,6 +3,7 @@
  **/
 public class Task4 {
     public static void main(String[] args) {
+        System.out.println(max(new int[]{}));
         System.out.println(max(new int[]{1, 2, 10, 3}));
         System.out.println(max(null));
         System.out.println(max(new int[]{1, 2, 3, 4, 5, 100, 99}));
@@ -10,7 +11,7 @@ public class Task4 {
     }
 
     public static int max(int[] array) {
-        if (array != null) {
+        if (array != null && array.length != 0) {
             int max = array[0];
             for (int i = 1; i < array.length; i++) {
                 if (array[i] > max) {
