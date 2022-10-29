@@ -13,7 +13,7 @@ public class Task4SecondSolution {
     }
 
     public static int max(int[] array) {
-        if (array != null && array.length != 0) {
+        if (array != null && array.length > 0) {
             Arrays.sort(array);
             return array[array.length - 1];
         } else {
