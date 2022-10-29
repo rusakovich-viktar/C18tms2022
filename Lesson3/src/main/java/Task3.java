@@ -19,7 +19,7 @@ public class Task3 {
     }
 
     public static double average(int[] array) {
-        if (array != null && array.length != 0) {
+        if (array != null && array.length > 0) {
             double sumArray = 0;
             for (int i = 0; i < array.length; i++) {
                 sumArray += array[i];
