@@ -1,8 +1,8 @@
+//1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
 public class Task1SecondSolution {
     public static void main(String[] args) {
-        char ch = (int)'a';
-        System.out.println(ch);
-
-
+        for (char i = 97; i <= 122; i++) {
+            System.out.println(i);
+        }
     }
 }
