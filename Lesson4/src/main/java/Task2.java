@@ -8,10 +8,9 @@ public class Task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите целое число для проверки чётности: ");
-        int inputNumber;
         while (true)
             if (scanner.hasNextInt()) {
-                inputNumber = scanner.nextInt();
+                int inputNumber = scanner.nextInt();
                 if (inputNumber % 2 == 0) {
                     System.out.println("Число " + inputNumber + " является чётным");
                 } else {
