@@ -6,9 +6,13 @@ import java.util.Scanner;
 // Если пользователь введёт не целое число, то сообщать ему об ошибке.
 public class Task2 {
     public static void main(String[] args) {
+        checkEvenOrOddNumber();
+    }
+
+    private static void checkEvenOrOddNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите целое число для проверки чётности: ");
-        while (true)
+        while (true) {
             if (scanner.hasNextInt()) {
                 int inputNumber = scanner.nextInt();
                 if (inputNumber % 2 == 0) {
@@ -20,5 +24,6 @@ public class Task2 {
                 System.out.println("Ошибка, вы ввели не целое число");
                 break;
             }
+        }
     }
 }
