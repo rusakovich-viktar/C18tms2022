@@ -12,6 +12,10 @@ import java.util.Scanner;
  */
 
 public class HomeWork2Task1 {
+    public static void main(String[] args) {
+        printArray();
+    }
+
     private static void printArray() {
         Scanner scanner = new Scanner(System.in);
         int value;
@@ -30,9 +34,5 @@ public class HomeWork2Task1 {
             array[i] = random.nextInt();
         }
         System.out.println(Arrays.toString(array));
-    }
-
-    public static void main(String[] args) {
-        printArray();
     }
 }
