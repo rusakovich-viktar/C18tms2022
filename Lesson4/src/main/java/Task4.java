@@ -12,16 +12,16 @@ import java.util.Random;
 // выводиться фраза о количестве полных часов, содержащихся в n секундах.
 public class Task4 {
     public static void main(String[] args) {
-        Random rnd = new Random();
-        int NumberOfSecondsUntilTheEnd = rnd.nextInt(28801);
-        int NumberOfFullHoursUntilTheEnd = NumberOfSecondsUntilTheEnd / 3600;
-        System.out.println("Секунд осталось " + NumberOfSecondsUntilTheEnd);
-        switch (NumberOfFullHoursUntilTheEnd) {
+        Random random = new Random();
+        int numberOfSecondsUntilTheEnd = random.nextInt(28801);
+        int numberOfFullHoursUntilTheEnd = numberOfSecondsUntilTheEnd / 3600;
+        System.out.println("Секунд осталось " + numberOfSecondsUntilTheEnd);
+        switch (numberOfFullHoursUntilTheEnd) {
             case 0 -> System.out.println("До конца рабочего дня осталось меньше часа");
-            case 1 -> System.out.println("До конца рабочего дня остался " + NumberOfFullHoursUntilTheEnd + " час");
+            case 1 -> System.out.println("До конца рабочего дня остался " + numberOfFullHoursUntilTheEnd + " час");
             case 2, 3, 4 ->
-                    System.out.println("До конца рабочего дня осталось " + NumberOfFullHoursUntilTheEnd + " часа");
-            default -> System.out.println("До конца рабочего дня осталось " + NumberOfFullHoursUntilTheEnd + " часов");
+                    System.out.println("До конца рабочего дня осталось " + numberOfFullHoursUntilTheEnd + " часа");
+            default -> System.out.println("До конца рабочего дня осталось " + numberOfFullHoursUntilTheEnd + " часов");
         }
     }
 }
