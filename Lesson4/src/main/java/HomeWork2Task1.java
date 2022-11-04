@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -15,15 +14,14 @@ import java.util.Scanner;
 public class HomeWork2Task1 {
     private static void printArray() {
         Scanner scanner = new Scanner(System.in);
-        int value = 0;
-        System.out.println("Введите положительное число");
+        int value;
         do {
-            if (scanner.hasNextInt()) {
-                value = scanner.nextInt();
-            } else {
-                System.out.println("Ошибка, введите число заново");
+            System.out.println("Введите положительное число");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Это не число, давайте сначала");
+                scanner.next();
             }
-            scanner.next();
+            value = scanner.nextInt();
         } while (value <= 0);
 
         int[] array = new int[value];
