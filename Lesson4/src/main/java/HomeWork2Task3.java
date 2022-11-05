@@ -17,9 +17,7 @@ public class HomeWork2Task3 {
                     count++;
                 }
             }
-            return count;
-        } else {
-            return 0;
         }
+        return count;
     }
 }
