@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,10 +7,12 @@ public class HomeWork {
         getDayOfTheWeek(); //1
 
         determinePositiveNegativeAndPrintNumberOfDigits();  //3
-        calculateSumOfDiagonalElements();
-        printMatrix();
+//        calculateSumOfDiagonalElements();
+//        printMatrix();
+        arrayFindMaxAndReplace(); //10
 
-//        10) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+
+
 
     }
 
@@ -89,8 +92,23 @@ public class HomeWork {
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
 //        Снова выведете массив на экран на отдельной строке.
 
-//        10) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
-
+    //        10) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+    private static void arrayFindMaxAndReplace() {
+        int[] array = {4, 5, 0, 23, 77, 0, 8, 9, 101, 2};
+        System.out.println(Arrays.toString(array));
+        int max = array[0];
+        int maxIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                maxIndex = i;
+            }
+        }
+        int temp = array[maxIndex];
+        array[maxIndex] = array[0];
+        array[0] = temp;
+        System.out.println(Arrays.toString(array));
+    }
 
 //        11) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
