@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class HomeWork {
     public static void main(String[] args) {
 //        getDayOfTheWeek(); //1
-        countOfUnicellularAmoebas(); //2
+//        countOfUnicellularAmoebas(); //2
 //        determinePositiveNegativeAndPrintNumberOfDigits();  //3
 //////        calculateSumOfDiagonalElements();
 //////        printMatrix();
 //        reverseArrayOfOddElements(100); //7
 //        findMaxRandomValueInArray(); //8
+        replaseAllArrayOddIndexToZero();//9
 //        arrayFindMaxAndReplace(); //10
-
     }
 
 
@@ -129,9 +129,23 @@ public class HomeWork {
         System.out.printf("Максимальный элемент %d, индекс его последнего вхождения %d", max, maxIndex);
     }
 
-//        9) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
+    //        9) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
 //        Снова выведете массив на экран на отдельной строке.
+    private static void replaseAllArrayOddIndexToZero() {
+        int[] array = new int[20];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(0, 21);
+        }
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 != 0) {
+                array[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+    }
 
     //        10) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
     private static void arrayFindMaxAndReplace() {
