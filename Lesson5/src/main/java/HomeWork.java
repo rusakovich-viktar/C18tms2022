@@ -5,15 +5,12 @@ import java.util.Scanner;
 public class HomeWork {
     public static void main(String[] args) {
         getDayOfTheWeek(); //1
-
+//
         determinePositiveNegativeAndPrintNumberOfDigits();  //3
-//        calculateSumOfDiagonalElements();
-//        printMatrix();
+////        calculateSumOfDiagonalElements();
+////        printMatrix();
+        reverseArrayOfOddElements(100); //7
         arrayFindMaxAndReplace(); //10
-
-
-
-
     }
 
 
@@ -46,6 +43,7 @@ public class HomeWork {
 //        Например, Введите число: 5
 //        "5 - это положительное число, количество цифр = 1"
     private static void determinePositiveNegativeAndPrintNumberOfDigits() {
+        System.out.println("Узнаем сколько в введенном числе цифр и положительное оно или отрицательное");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число: ");
         int input = scanner.nextInt();
@@ -81,9 +79,25 @@ public class HomeWork {
 //              *        *
 
 
-//        7) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
+    //        7) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
-
+    private static void reverseArrayOfOddElements(int lastValue) {
+        int arrayLength = 0;
+        for (int i = 1; i <= lastValue; i++) {
+            if (i % 2 != 0) {
+                arrayLength++;
+            }
+        }
+        int[] array = new int[arrayLength];
+        for (int i = 0, j = 1; j <= lastValue; i++, j += 2) {
+            array[i] = j;
+        }
+        System.out.println(Arrays.toString(array));
+        for (int i = array.length - 1; i >= 0; i--) {
+            String reverse = array[i] + " ";
+            System.out.print(reverse);
+        }
+    }
 //        8) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
