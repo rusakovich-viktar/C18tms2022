@@ -4,13 +4,15 @@ import java.util.Scanner;
 
 public class HomeWork {
     public static void main(String[] args) {
-        getDayOfTheWeek(); //1
-//
-        determinePositiveNegativeAndPrintNumberOfDigits();  //3
-////        calculateSumOfDiagonalElements();
-////        printMatrix();
-        reverseArrayOfOddElements(100); //7
-        arrayFindMaxAndReplace(); //10
+//        getDayOfTheWeek(); //1
+//        countOfUnicellularAmoebas(); //2
+        findMaxRandomValueInArray(); //8
+//        determinePositiveNegativeAndPrintNumberOfDigits();  //3
+//////        calculateSumOfDiagonalElements();
+//////        printMatrix();
+//        reverseArrayOfOddElements(100); //7
+//        arrayFindMaxAndReplace(); //10
+
     }
 
 
@@ -35,8 +37,15 @@ public class HomeWork {
     }
 
 
-//2) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
+    //2) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
 //         сколько амеб будет через 3, 6, 9, 12,..., 24 часа
+    private static void countOfUnicellularAmoebas() {
+        int countAmoebas = 1;
+        for (int i = 0; i <= 24; i += 3) {
+            countAmoebas *= 2;
+            System.out.println("Количество часов с начала " + i + ", а количество амеб " + countAmoebas);
+        }
+    }
 
     //3) В переменную записываем число.
 //        Надо вывести на экран сколько в этом числе цифр и положительное оно или отрицательное.
@@ -98,9 +107,27 @@ public class HomeWork {
             System.out.print(reverse);
         }
     }
-//        8) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
+
+    //        8) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
+    private static void findMaxRandomValueInArray() {
+        int[] array = new int[12];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(0, 16);
+        }
+        System.out.println(Arrays.toString(array));
+        int max = array[0];
+        int maxIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                maxIndex = i;
+            }
+        }
+        System.out.printf("Максимальный элемент %d, индекс его последнего вхождения %d", max, maxIndex);
+    }
 
 //        9) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
