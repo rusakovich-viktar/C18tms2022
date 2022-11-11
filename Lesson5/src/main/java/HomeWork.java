@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class HomeWork {
     public static void main(String[] args) {
 //        getDayOfTheWeek(); //1
-//        countOfUnicellularAmoebas(); //2
-        findMaxRandomValueInArray(); //8
+        countOfUnicellularAmoebas(); //2
 //        determinePositiveNegativeAndPrintNumberOfDigits();  //3
 //////        calculateSumOfDiagonalElements();
 //////        printMatrix();
 //        reverseArrayOfOddElements(100); //7
+//        findMaxRandomValueInArray(); //8
 //        arrayFindMaxAndReplace(); //10
 
     }
@@ -41,7 +41,7 @@ public class HomeWork {
 //         сколько амеб будет через 3, 6, 9, 12,..., 24 часа
     private static void countOfUnicellularAmoebas() {
         int countAmoebas = 1;
-        for (int i = 0; i <= 24; i += 3) {
+        for (int i = 3; i <= 24; i += 3) {
             countAmoebas *= 2;
             System.out.println("Количество часов с начала " + i + ", а количество амеб " + countAmoebas);
         }
