@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class HomeWork {
     public static void main(String[] args) {
-//        getDayOfTheWeek(); //1
-//        countOfUnicellularAmoebas(); //2
-//        determinePositiveNegativeAndPrintNumberOfDigits();  //3
+        getDayOfTheWeek(); //1
+        countOfUnicellularAmoebas(); //2
+        determinePositiveNegativeAndPrintNumberOfDigits();  //3
 //////        calculateSumOfDiagonalElements();
 //////        printMatrix();
-//        reverseArrayOfOddElements(100); //7
-//        findMaxRandomValueInArray(); //8
+        reverseArrayOfOddElements(100); //7
+        findMaxRandomValueInArray(); //8
         replaseAllArrayOddIndexToZero();//9
-//        arrayFindMaxAndReplace(); //10
+        arrayFindMaxAndReplace(); //10
     }
 
 
