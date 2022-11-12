@@ -4,23 +4,25 @@ import java.util.Scanner;
 
 public class HomeWork {
     public static void main(String[] args) {
-        getDayOfTheWeek(); //1
-        countOfUnicellularAmoebas(); //2
-        determinePositiveNegativeAndPrintNumberOfDigits();  //3
+//        getDayOfTheWeek(); //1
+//        countOfUnicellularAmoebas(); //2
+//        determinePositiveNegativeAndPrintNumberOfDigits();  //3
+        getSignOfZodiac(29, 3); //4
 //////        calculateSumOfDiagonalElements();
 //////        printMatrix();
-        reverseArrayOfOddElements(100); //7
-        findMaxRandomValueInArray(); //8
-        replaseAllArrayOddIndexToZero();//9
-        arrayFindMaxAndReplace(); //10
+//        reverseArrayOfOddElements(100); //7
+//        findMaxRandomValueInArray(); //8
+//        replaceAllArrayOddIndexToZero();//9
+//        arrayFindMaxAndReplace(); //10
+
     }
 
 
     /*        Задачи:
     1) Задача на оператор switch!
-            Рандомно генерируется число От 1 до 7.
-            Если число равно 1, выводим на консоль “Понедельник”, 2 –”Вторник” и так далее.
-            Если 6 или 7 – “Выходной”.*/
+    Рандомно генерируется число От 1 до 7.
+    Если число равно 1, выводим на консоль “Понедельник”, 2 –”Вторник” и так далее.
+    Если 6 или 7 – “Выходной”.*/
     private static void getDayOfTheWeek() {
         Random random = new Random();
         int randomValue = random.nextInt(1, 8);
@@ -67,9 +69,41 @@ public class HomeWork {
         }
     }
 
-//4) Дано 2 числа, день и месяц рождения. Написать программу, которая определяет знак зодиака человека.
-
-
+    //4) Дано 2 числа, день и месяц рождения. Написать программу, которая определяет знак зодиака человека.
+//         01 месяц c 01 по 20 козерог  с 21 по 31 водолей
+//         02 месяц c 01 по 19 водолей  с 20 по 29 рыбы
+//         03 месяц c 01 по 20 рыбы     с 21 по 31 овен
+//         04 месяц c 01 по 20 овен     с 21 по 30 телец
+//         05 месяц c 01 по 21 телец    с 22 по 31 близнецы
+//         06 месяц c 01 по 21 близнецы с 22 по 30 рак
+//         07 месяц c 01 по 22 рак      с 23 по 31 лев
+//         08 месяц c 01 по 21 лев      с 22 по 31 дева
+//         09 месяц c 01 по 23 дева     с 24 по 30 весы
+//         10 месяц c 01 по 23 весы     с 24 по 31 скорпион
+//         11 месяц c 01 по 22 скорпион с 23 по 30 стрелец
+//         12 месяц c 01 по 22 стрелец  с 23 по 31 козерог
+    private static void getSignOfZodiac(int day, int month) {
+        String[] zodiacName = {"козерог", "водолей", "рыбы", "овен",
+                "телец", "близнецы", "рак", "лев", "дева",
+                "весы", "скорпион", "стрелец",};
+        int[] zodiacSignChangeDay = {21, 20, 21, 21, 22, 22, 23, 22, 24, 24, 23, 23};
+        int[] maxDayInMonth = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        String result = " ";
+        if (month > 12 || day > maxDayInMonth[month - 1]) {
+            System.out.println("проверьте корректность введенных значений");
+        } else {
+            if (day < zodiacSignChangeDay[month - 1]) {
+                result = zodiacName[month - 1];
+            } else if
+            (month == 12) {
+                month = 0;
+                result = zodiacName[month];
+            } else {
+                result = zodiacName[month];
+            }
+        }
+        System.out.println(result);
+    }
 //        5) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
 
@@ -132,7 +166,7 @@ public class HomeWork {
     //        9) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
 //        Снова выведете массив на экран на отдельной строке.
-    private static void replaseAllArrayOddIndexToZero() {
+    private static void replaceAllArrayOddIndexToZero() {
         int[] array = new int[20];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
