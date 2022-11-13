@@ -7,17 +7,17 @@ public class HomeWork {
 //        getDayOfTheWeek(); //1
 //        countOfUnicellularAmoebas(); //2
 //        determinePositiveNegativeAndPrintNumberOfDigits();  //3
-        getSignOfZodiac(29, 3); //4
-//////        calculateSumOfDiagonalElements();
-//////        printMatrix();
+//        printSignOfZodiac(0, 5); //4
+//        System.out.println(summ(1, -2)); //5
+//        printTriangle(); //6
 //        reverseArrayOfOddElements(100); //7
 //        findMaxRandomValueInArray(); //8
 //        replaceAllArrayOddIndexToZero();//9
 //        arrayFindMaxAndReplace(); //10
-
+        System.out.println(getRepeatingElementsInArray(new int[]{0, 3, 46, 3, 2, 1, 2})); //11
+//////        calculateSumOfDiagonalElements();
+//////        printMatrix();
     }
-
-
     /*        Задачи:
     1) Задача на оператор switch!
     Рандомно генерируется число От 1 до 7.
@@ -51,7 +51,7 @@ public class HomeWork {
 
     //3) В переменную записываем число.
 //        Надо вывести на экран сколько в этом числе цифр и положительное оно или отрицательное.
-//        Например, Введите число: 5
+//        Например, введите число: 5
 //        "5 - это положительное число, количество цифр = 1"
     private static void determinePositiveNegativeAndPrintNumberOfDigits() {
         System.out.println("Узнаем сколько в введенном числе цифр и положительное оно или отрицательное");
@@ -82,20 +82,19 @@ public class HomeWork {
 //         10 месяц c 01 по 23 весы     с 24 по 31 скорпион
 //         11 месяц c 01 по 22 скорпион с 23 по 30 стрелец
 //         12 месяц c 01 по 22 стрелец  с 23 по 31 козерог
-    private static void getSignOfZodiac(int day, int month) {
+    private static void printSignOfZodiac(int day, int month) {
         String[] zodiacName = {"козерог", "водолей", "рыбы", "овен",
                 "телец", "близнецы", "рак", "лев", "дева",
                 "весы", "скорпион", "стрелец",};
         int[] zodiacSignChangeDay = {21, 20, 21, 21, 22, 22, 23, 22, 24, 24, 23, 23};
         int[] maxDayInMonth = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         String result = " ";
-        if (month > 12 || day > maxDayInMonth[month - 1]) {
+        if (month > 12 || month < 1 || day > maxDayInMonth[month - 1] || day < 1) {
             System.out.println("проверьте корректность введенных значений");
         } else {
             if (day < zodiacSignChangeDay[month - 1]) {
                 result = zodiacName[month - 1];
-            } else if
-            (month == 12) {
+            } else if (month == 12) {
                 month = 0;
                 result = zodiacName[month];
             } else {
@@ -104,12 +103,35 @@ public class HomeWork {
         }
         System.out.println(result);
     }
-//        5) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
+
+    //            5) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
+    private static int summ(int a, int b) {
+        int sum = 0;
+        int absA = Math.abs(a);
+        if (a < 0 && b < 0) {
+            for (int i = 0; i < absA; i++) {
+                sum += absA;
+            }
+        } else if (a < b) {
+            sum = simpleMultiplicationPositiveNumbers(a, b);
+        } else {
+            sum = simpleMultiplicationPositiveNumbers(b, a);
+        }
+        return sum;
+    }
+
+    private static int simpleMultiplicationPositiveNumbers(int a, int b) {
+        int resultLoop = 0;
+        for (int i = 0; i < b; i++) {
+            resultLoop += a;
+        }
+        return resultLoop;
+    }
 
 //        6) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
 
-//        a)                  b)
+    //        a)                  b)
 //              *        *
 //            * *        * *
 //          * * *        * * * и
@@ -120,7 +142,48 @@ public class HomeWork {
 //          * * *        * * *
 //            * *        * *
 //              *        *
+    private static void printTriangle() {
+        String[][] triangle = new String[4][4];
+        //a
+        for (int i = 0; i < triangle.length; i++) {
+            for (int j = 2 * (triangle.length - i); j >= 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
 
+        //b
+        for (int i = 0; i <= triangle.length; i++) { //b
+            for (int j = 0; j < i; j++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        //c
+        for (int i = triangle.length; i >= 0; i--) {
+            for (int j = 2 * (triangle.length - i); j >= 0; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // d
+        for (int i = triangle.length; i >= 0; i--) { //d
+            for (int j = 0; j < i; j++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 
     //        7) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
@@ -204,6 +267,22 @@ public class HomeWork {
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
 //        Массив не имеет повторяющихся элементов
+    private static String getRepeatingElementsInArray(int[] array) {
+        Arrays.sort(array);
+        String temp = "";
+        int count = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i + 1] == array[i]) {
+                temp = temp + " " + array[i];
+                count++;
+            }
+        }
+        if (count == 0) {
+            return "В массиве нет повторяющихся элементов";
+        } else {
+            return "Массив имеет повторяющиеся элементы" + temp;
+        }
+    }
 
 //        12) Создаём квадратную матрицу, размер вводим с клавиатуры.
 //        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).
