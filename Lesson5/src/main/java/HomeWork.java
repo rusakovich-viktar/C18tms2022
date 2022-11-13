@@ -8,48 +8,16 @@ public class HomeWork {
 //        countOfUnicellularAmoebas(); //2
 //        determinePositiveNegativeAndPrintNumberOfDigits();  //3
 //        printSignOfZodiac(0, 5); //4
-        System.out.println(summ(1, -2)); //5
-//////        calculateSumOfDiagonalElements();
-//////        printMatrix();
+//        System.out.println(summ(1, -2)); //5
+        printTriangle(); //6
 //        reverseArrayOfOddElements(100); //7
 //        findMaxRandomValueInArray(); //8
 //        replaceAllArrayOddIndexToZero();//9
 //        arrayFindMaxAndReplace(); //10
-
-//        6) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
-
-//        a)                  b)
-//              *        *
-//            * *        * *
-//          * * *        * * * и
-//        * * * *        * * * *
-//
-//        c)                  d)
-//        * * * *        * * * *
-//          * * *        * * *
-//            * *        * *
-//              *        *
-//
-//            int b = 4;
-//            for (int i = 0; i <= b; i++) {
-//                for (int j = 0; j < i; j++) {
-//                    System.out.printf(" %s", '*');
-//                }
-//                System.out.println();
-//            }
-//
-//        System.out.println();
-//
-//        int d = 0;
-//        for (int i = 4; i >= d; i--) {
-//            for (int j = 0; j < i; j++) {
-//                System.out.printf(" %s", '*');
-//            }
-//            System.out.println();
-//        }
+//////        calculateSumOfDiagonalElements();
+//////        printMatrix();
 
     }
-
     /*        Задачи:
     1) Задача на оператор switch!
     Рандомно генерируется число От 1 до 7.
@@ -174,7 +142,48 @@ public class HomeWork {
 //          * * *        * * *
 //            * *        * *
 //              *        *
+private static void printTriangle() {
+    String[][] triangle = new String[4][4];
+    //a
+    for (int i = 0; i < triangle.length; i++) {
+        for (int j = 2 * (triangle.length - i); j >= 0; j--) {
+            System.out.print(" ");
+        }
+        for (int j = 0; j <= i; j++) {
+            System.out.print("* ");
+        }
+        System.out.println();
+    }
 
+    //b
+    for (int i = 0; i <= triangle.length; i++) { //b
+        for (int j = 0; j < i; j++) {
+            System.out.print(" *");
+        }
+        System.out.println();
+    }
+    System.out.println();
+
+    //c
+    for (int i = triangle.length; i >= 0; i--) {
+        for (int j = 2 * (triangle.length - i); j >= 0; j--) {
+            System.out.print(" ");
+        }
+        for (int j = 0; j < i; j++) {
+            System.out.print("* ");
+        }
+        System.out.println();
+    }
+
+    // d
+    for (int i = triangle.length; i >= 0; i--) { //d
+        for (int j = 0; j < i; j++) {
+            System.out.print(" *");
+        }
+        System.out.println();
+    }
+    System.out.println();
+}
 
     //        7) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
