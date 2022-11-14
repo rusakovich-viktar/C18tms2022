@@ -14,10 +14,12 @@ public class HomeWork {
 //        findMaxRandomValueInArray(); //8
 //        replaceAllArrayOddIndexToZero();//9
 //        arrayFindMaxAndReplace(); //10
-        System.out.println(getRepeatingElementsInArray(new int[]{0, 3, 46, 3, 2, 1, 2})); //11
+        System.out.println(getRepeatingElementsInArray(new int[]{0, 6, 46, 3, 4, 1, 2})); //11
+        System.out.println(getRepeatingElementsInArray(new int[]{3, 3, 46, 3, 46, 46, 2})); //11
 //////        calculateSumOfDiagonalElements();
 //////        printMatrix();
     }
+
     /*        Задачи:
     1) Задача на оператор switch!
     Рандомно генерируется число От 1 до 7.
@@ -262,7 +264,7 @@ public class HomeWork {
         System.out.println(Arrays.toString(array));
     }
 
-//        11) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
+    //        11) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
@@ -280,7 +282,7 @@ public class HomeWork {
         if (count == 0) {
             return "В массиве нет повторяющихся элементов";
         } else {
-            return "Массив имеет повторяющиеся элементы" + temp;
+            return "Массив имеет повторяющиеся элементы" + temp.replaceAll("\\b(\\w+)(?:\\s+\\1\\b)+", "$1");
         }
     }
 
@@ -327,6 +329,7 @@ public class HomeWork {
     public static void printMatrix() {
         // тут пишем логику
     }
+}
 
 //    Доп задача!
 //    Создать матрицу размера 10 на 10 и заполнить ее случайными целочислеными значениями (тип int) из диапазона от 0 до 10000.
@@ -337,4 +340,3 @@ public class HomeWork {
 //    Вывод в консоль:
 //            11535 (0,5)
 //            *Пояснение. Первое число - сумма тройки  [2789, 4, 8742]. Числа в скобках это 0 строка и 5 столбец - индекс первого элемента тройки, то есть индекс числа 2789.
-}
