@@ -14,10 +14,16 @@ public class HomeWork {
 //        findMaxRandomValueInArray(); //8
 //        replaceAllArrayOddIndexToZero();//9
 //        arrayFindMaxAndReplace(); //10
-        System.out.println(getRepeatingElementsInArray(new int[]{0, 3, 46, 3, 2, 1, 2})); //11
-//////        calculateSumOfDiagonalElements();
+        System.out.println(getRepeatingElementsInArray(new int[]{0, 6, 46, 3, 4, 1, 2})); //11
+        System.out.println(getRepeatingElementsInArray(new int[]{3, 3, 46, 3, 46, 46, 2})); //11
+        printTransponseMatrix();//12
+// calculateSumOfDiagonalElements();
 //////        printMatrix();
+
+
     }
+
+
     /*        Задачи:
     1) Задача на оператор switch!
     Рандомно генерируется число От 1 до 7.
@@ -262,7 +268,7 @@ public class HomeWork {
         System.out.println(Arrays.toString(array));
     }
 
-//        11) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
+    //        11) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
@@ -280,7 +286,7 @@ public class HomeWork {
         if (count == 0) {
             return "В массиве нет повторяющихся элементов";
         } else {
-            return "Массив имеет повторяющиеся элементы" + temp;
+            return "Массив имеет повторяющиеся элементы" + temp.replaceAll("\\b(\\w+)(?:\\s+\\1\\b)+", "$1");
         }
     }
 
@@ -292,6 +298,50 @@ public class HomeWork {
 //          6 7 8 9      2 7 3 5
 //          3 3 4 5      3 8 4 6
 //          1 5 6 7      4 9 5 7
+
+    private static void printTransponseMatrix() {
+        // часть 1 - создаем матрицу n на n
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите целое число - оно станет размером матрицы");
+        int n = scanner.nextInt();
+        int[][] array = new int[n][n];
+        Random random = new Random();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = random.nextInt(0, 51);
+            }
+        }
+
+        // часть 2 - выводит на экран начальную матрицу
+        System.out.println("Начальная матрица");
+        System.out.println("------");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%3d", array[i][j]);
+            }
+            System.out.println();
+        }
+
+        // часть 3 - транспонирование матрицы
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int temp = array[i][j];
+                array[i][j] = array[j][i];
+                array[j][i] = temp;
+            }
+        }
+
+        // часть 4 - выводит на экран транспонированную матрицу
+        System.out.println();
+        System.out.println("Новая матрица");
+        System.out.println("------");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%3d", array[i][j]);
+            }
+            System.out.println();
+        }
+    }
 
 
     /**
@@ -327,6 +377,7 @@ public class HomeWork {
     public static void printMatrix() {
         // тут пишем логику
     }
+}
 
 //    Доп задача!
 //    Создать матрицу размера 10 на 10 и заполнить ее случайными целочислеными значениями (тип int) из диапазона от 0 до 10000.
@@ -337,4 +388,3 @@ public class HomeWork {
 //    Вывод в консоль:
 //            11535 (0,5)
 //            *Пояснение. Первое число - сумма тройки  [2789, 4, 8742]. Числа в скобках это 0 строка и 5 столбец - индекс первого элемента тройки, то есть индекс числа 2789.
-}
