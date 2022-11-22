@@ -58,7 +58,8 @@ public class User {
     public void setSurName(String surName) {
         this.surName = surName;
     }
-@Deprecated
+
+    @Deprecated
     public int getAge() {
         return age;
     }
