@@ -32,6 +32,10 @@
         <module>Lesson5</module>
         <module>Lesson6</module>
         <module>Lesson8</module>
+        <module>Lesson6</module>
+        <module>Lesson8add</module>
+        <module>Lesson9</module>
+        <module>tictactoe</module>
     </modules>
 
 </project>
