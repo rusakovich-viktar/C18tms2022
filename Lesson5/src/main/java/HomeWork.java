@@ -9,14 +9,22 @@ public class HomeWork {
 //        determinePositiveNegativeAndPrintNumberOfDigits();  //3
 //        printSignOfZodiac(0, 5); //4
 //        System.out.println(summ(1, -2)); //5
-//        printTriangle(); //6
+
+//        char[][] drawingBoard = new char[4][4];
+//        for (int i = 0; i < drawingBoard.length; i++) {
+//            Arrays.fill(drawingBoard[i], '*');
+//            System.out.println(Arrays.toString(drawingBoard[i]));
+//        }
+//        printTriangle(drawingBoard, 'a'); /6
+
+
 //        reverseArrayOfOddElements(100); //7
 //        findMaxRandomValueInArray(); //8
 //        replaceAllArrayOddIndexToZero();//9
 //        arrayFindMaxAndReplace(); //10
-        System.out.println(getRepeatingElementsInArray(new int[]{0, 6, 46, 3, 4, 1, 2})); //11
-        System.out.println(getRepeatingElementsInArray(new int[]{3, 3, 46, 3, 46, 46, 2})); //11
-        printTransponseMatrix();//12
+//        System.out.println(getRepeatingElementsInArray(new int[]{0, 6, 46, 3, 4, 1, 2})); //11
+//        System.out.println(getRepeatingElementsInArray(new int[]{3, 3, 46, 3, 46, 46, 2})); //11
+//        printTransponseMatrix();//12
 // calculateSumOfDiagonalElements();
 //////        printMatrix();
 
@@ -148,45 +156,62 @@ public class HomeWork {
 //          * * *        * * *
 //            * *        * *
 //              *        *
-    private static void printTriangle() {
-        String[][] triangle = new String[4][4];
-        //a
-        for (int i = 0; i < triangle.length; i++) {
-            for (int j = 2 * (triangle.length - i); j >= 0; j--) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j <= i; j++) {
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
 
-        //b
-        for (int i = 0; i <= triangle.length; i++) { //b
-            for (int j = 0; j < i; j++) {
-                System.out.print(" *");
-            }
-            System.out.println();
-        }
-        System.out.println();
+//    метод triangle(char[][] board, char type) рисует треугольники на квадратной матрице board типа char[][] с любым размером и любым наполнением (не только '*').
+//    второе вводимое значение (type) отвечает за форму треугольника, вводится в виде одного из char 'a', 'b', 'c' или 'd'.
 
-        //c
-        for (int i = triangle.length; i >= 0; i--) {
-            for (int j = 2 * (triangle.length - i); j >= 0; j--) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j < i; j++) {
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
-
-        // d
-        for (int i = triangle.length; i >= 0; i--) { //d
-            for (int j = 0; j < i; j++) {
-                System.out.print(" *");
-            }
-            System.out.println();
+    public static void printTriangle(char[][] board, char type) {
+        switch (type) {
+            case 'a':
+                for (int i = 0; i < board.length; i++) {
+                    for (int j = 0; j < board.length; j++) {
+                        if (j >= board.length - 1 - i) {
+                            System.out.print(board[i][j]);
+                        } else {
+                            System.out.print(' ');
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
+            case 'b':
+                for (int i = 0; i < board.length; i++) {
+                    for (int j = 0; j < board.length; j++) {
+                        if (j <= i) {
+                            System.out.print(board[i][j]);
+                        } else {
+                            System.out.print(' ');
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
+            case 'c':
+                for (int i = 0; i < board.length; i++) {
+                    for (int j = 0; j < board.length; j++) {
+                        if (j >= i) {
+                            System.out.print(board[i][j]);
+                        } else {
+                            System.out.print(' ');
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
+            case 'd':
+                for (int i = 0; i < board.length; i++) {
+                    for (int j = 0; j < board.length; j++) {
+                        if (j <= board.length - 1 - i) {
+                            System.out.print(board[i][j]);
+                        } else {
+                            System.out.print(' ');
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
+            default:
+                System.out.println("Что-то не так.");
         }
         System.out.println();
     }
