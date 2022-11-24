@@ -9,12 +9,20 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -31,8 +39,8 @@
         <module>Lesson4</module>
         <module>Lesson5</module>
         <module>Lesson6</module>
+        <module>Lesson7</module>
         <module>Lesson8</module>
-        <module>Lesson6</module>
         <module>Lesson8add</module>
         <module>Lesson9</module>
         <module>tictactoe</module>
