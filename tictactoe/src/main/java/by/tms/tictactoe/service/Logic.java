@@ -20,7 +20,9 @@ public class Logic {
         }
         if (table[0][0].hasMarkX() && table[1][1].hasMarkX() && table[2][2].hasMarkX()) {
             return true;
-        } else return table[2][2].hasMarkX() && table[1][1].hasMarkX() && table[2][0].hasMarkX();
+        } else {
+            return table[2][2].hasMarkX() && table[1][1].hasMarkX() && table[2][0].hasMarkX();
+        }
     }
 
     public boolean isWinnerO() {
@@ -33,7 +35,9 @@ public class Logic {
         }
         if (table[0][0].hasMarkO() && table[1][1].hasMarkO() && table[2][2].hasMarkO()) {
             return true;
-        } else return table[2][2].hasMarkO() && table[1][1].hasMarkO() && table[2][0].hasMarkO();
+        } else {
+            return table[2][2].hasMarkO() && table[1][1].hasMarkO() && table[2][0].hasMarkO();
+        }
     }
 
     /**
