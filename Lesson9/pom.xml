@@ -6,13 +6,15 @@
         <artifactId>ViRusC18tms2022</artifactId>
         <groupId>groupId</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>Lesson3</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Lesson9</artifactId>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>
-

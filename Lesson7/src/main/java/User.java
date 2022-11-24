@@ -21,7 +21,6 @@ public class User {
     public User() {
 
     }
-
     //    Создать методы для:
 //            *  - Возврата имени и фамилии полностью
 
@@ -58,7 +57,8 @@ public class User {
     public void setSurName(String surName) {
         this.surName = surName;
     }
-@Deprecated
+
+    @Deprecated
     public int getAge() {
         return age;
     }
