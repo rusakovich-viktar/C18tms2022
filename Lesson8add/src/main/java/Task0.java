@@ -14,7 +14,6 @@ public class Task0 {
     private static void enterNumberAndCheckIncludeNumbersInArray(int countElementsInArray, int maxValueInArray) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число для поиска");
-
         int searchingNumber = scanner.nextInt();
         Random random = new Random();
         int[] ints = new int[countElementsInArray];
