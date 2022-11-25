@@ -9,12 +9,15 @@ import java.util.Random;
 
 public class Task3 {
     public static void main(String[] args) {
-        double sumArrayOneValue = 0;
-        double sumArrayTwoValue = 0;
+        compareAverageValueInArray(12);
+    }
+
+    private static void compareAverageValueInArray(int arraySize) {
         Random random = new Random();
-        int arraySize = random.nextInt(2, 10);
         int[] ints1 = new int[arraySize];
         int[] ints2 = new int[arraySize];
+        double sumArrayOneValue = 0;
+        double sumArrayTwoValue = 0;
         for (int i = 0; i < ints1.length; i++) {
             ints1[i] = random.nextInt(arraySize);
             sumArrayOneValue += ints1[i];
@@ -32,5 +35,8 @@ public class Task3 {
         } else {
             System.out.printf("Среднее арифметическое значений массивов равны, значения равны %.01f", averageOne);
         }
+
     }
+
 }
+
