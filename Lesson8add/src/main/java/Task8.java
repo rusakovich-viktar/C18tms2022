@@ -17,7 +17,7 @@ public class Task8 {
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints[i].length; j++) {
                 for (int k = 0; k < ints[i][j].length; k++) {
-                    ints[i][j][k] = ints[i][j][k] + increasingNumber;
+                    ints[i][j][k] += increasingNumber;
                 }
             }
         }
