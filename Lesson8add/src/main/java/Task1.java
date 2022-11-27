@@ -9,13 +9,14 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(removeElement(new int[]{0, 1, 2, 2, 3, 0, 4, 2})));
-    }
-
-    public static int[] removeElement(int[] ints) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число для поиска");
         int searchingNumber = scanner.nextInt();
+        int mass[] = removeElement((new int[]{0, 1, 2, 2, 3, 0, 4, 2}), searchingNumber);
+        System.out.println(Arrays.toString(mass));
+    }
+
+    public static int[] removeElement(int[] ints, int searchingNumber) {
         int offsetCount = 0;
         if (ints != null && ints.length > 0) {
             for (int i = 0; i < ints.length; i++) {

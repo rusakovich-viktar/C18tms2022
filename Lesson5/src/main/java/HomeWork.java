@@ -25,7 +25,7 @@ public class HomeWork {
 //        System.out.println(getRepeatingElementsInArray(new int[]{0, 6, 46, 3, 4, 1, 2})); //11
 //        System.out.println(getRepeatingElementsInArray(new int[]{3, 3, 46, 3, 46, 46, 2})); //11
 //        printTransponseMatrix();//12
-// calculateSumOfDiagonalElements();
+        calculateSumOfDiagonalElements(); //13
 //////        printMatrix();
 
 
@@ -369,13 +369,35 @@ public class HomeWork {
     }
 
 
-    /**
-     * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
-     */
+    //  13.  заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
+//        00 01 02      00 01 02 03
+//        10 11 12      10 11 12 13
+//        20 21 22      20 21 22 23
+//                      30 31 32 33
     public static void calculateSumOfDiagonalElements() {
-        //пишем логику и выводим результат используя System.out.println
-    }
+        int[][] mass = new int[4][4];
+        Random random = new Random();
+        for (int i = 0; i < mass.length; i++) {
+            for (int j = 0; j < mass.length; j++) {
+                mass[i][j] = random.nextInt(10);
+                System.out.print(mass[i][j] + " ");
+            }
+            System.out.println();
 
+        }
+        int resultSumMainDiagonale = 0, resultSumOffDiagonale = 0;
+
+        for (int i = 0; i < mass.length; i++) {
+            resultSumMainDiagonale += mass[i][i];
+        }
+        for (int i = mass.length - 1; i >= 0; i--) {
+            resultSumOffDiagonale += mass[i][mass.length - 1 - i];
+        }
+
+        System.out.println("\nСумма элементов главной диагонали равна " + resultSumMainDiagonale);
+        System.out.println("Сумма элементов побочной диагонали равна " + resultSumOffDiagonale);
+        System.out.println("Сумма элементов главной и побочной диагоналей равна " + (resultSumMainDiagonale + resultSumOffDiagonale));
+    }
 
     /**
      * Шаги по реализации:
