@@ -370,10 +370,7 @@ public class HomeWork {
 
 
     //  13.  заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
-//        00 01 02      00 01 02 03
-//        10 11 12      10 11 12 13
-//        20 21 22      20 21 22 23
-//                      30 31 32 33
+
     public static void calculateSumOfDiagonalElements() {
         int[][] mass = new int[4][4];
         Random random = new Random();
@@ -389,8 +386,6 @@ public class HomeWork {
 
         for (int i = 0; i < mass.length; i++) {
             resultSumMainDiagonale += mass[i][i];
-        }
-        for (int i = mass.length - 1; i >= 0; i--) {
             resultSumOffDiagonale += mass[i][mass.length - 1 - i];
         }
 
