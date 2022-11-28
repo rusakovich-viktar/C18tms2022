@@ -2,24 +2,15 @@
 
 package model;
 
-import lombok.AllArgsConstructor;
-
-import static utils.Constants.MALE;
-@AllArgsConstructor
 public class PersonRegistry {
 
+    private Person[] people;
 
-    public static Person[] people = new Person[6];
+    public PersonRegistry(Person[] people) {
+        this.people = people;
+    }
 
-    //пока хз как вбить в ячейку массива
-    people[0]
-
-
-    Person person = new Person("Виктор", 31, MALE, new Address("Belarus", "Minsk"));
-    Person person2 = new Person("Виктор", 31, MALE, new Address("Belarus", "Minsk"));
-    Person person3 = new Person("Виктор", 31, MALE, new Address("Belarus", "Minsk"));
-    Person person4 = new Person("Виктор", 31, MALE, new Address("Belarus", "Minsk"));
-
-
+    public Person[] getPeople() {
+        return people;
+    }
 }
-
