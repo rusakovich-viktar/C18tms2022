@@ -1,4 +1,4 @@
-package model;//адрес(страна, город)
+package Task1.model;//адрес(страна, город)
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

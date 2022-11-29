@@ -1,10 +1,12 @@
-import model.Address;
-import model.MilitaryOffice;
-import model.Person;
-import model.PersonRegistry;
+package Task1;
 
-import static utils.Constants.FEMALE;
-import static utils.Constants.MALE;
+import Task1.model.Address;
+import Task1.model.MilitaryOffice;
+import Task1.model.Person;
+import Task1.model.PersonRegistry;
+
+import static Task1.utils.Constants.FEMALE;
+import static Task1.utils.Constants.MALE;
 
 public class Main {
 

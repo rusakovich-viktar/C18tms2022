@@ -1,6 +1,6 @@
 //model.PersonRegistry содержит список людей (model.Person), которые могут быть призваны в армию
 
-package model;
+package Task1.model;
 
 public class PersonRegistry {
 

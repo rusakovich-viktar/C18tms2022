@@ -1,4 +1,4 @@
-package utils;
+package Task1.utils;
 
 
 public class Constants {

@@ -1,10 +1,10 @@
-package model;
+package Task1.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import static utils.Constants.*;
+import static Task1.utils.Constants.*;
 
 @Setter
 @Getter
