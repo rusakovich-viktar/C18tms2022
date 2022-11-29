@@ -1,12 +1,12 @@
-package Task1;
+package task1.by.tms;
 
-import Task1.model.Address;
-import Task1.model.MilitaryOffice;
-import Task1.model.Person;
-import Task1.model.PersonRegistry;
+import task1.by.tms.model.Address;
+import task1.by.tms.model.MilitaryOffice;
+import task1.by.tms.model.Person;
+import task1.by.tms.model.PersonRegistry;
 
-import static Task1.utils.Constants.FEMALE;
-import static Task1.utils.Constants.MALE;
+import static task1.by.tms.utils.Constants.FEMALE;
+import static task1.by.tms.utils.Constants.MALE;
 
 public class Main {
 
