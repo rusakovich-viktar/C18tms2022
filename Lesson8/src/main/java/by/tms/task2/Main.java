@@ -1,4 +1,11 @@
 package by.tms.task2;
 
+import by.tms.task2.model.Car;
+import by.tms.task2.model.Engine;
+import by.tms.task2.model.GasTank;
+
 public class Main {
+    public static void main(String[] args) {
+        Car car = new Car(new Engine("ДВС"), new GasTank(50, 50));
+    }
 }
