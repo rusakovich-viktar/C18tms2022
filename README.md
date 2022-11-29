@@ -1,11 +1,12 @@
 # C18tms2022
+
 Материалы по обучению TeachMeSkills, группа C18-onl-2022.
 
 TaskList:
 #Lesson1:
-Task1: Hello
+task1: Hello
 Написать простую программу Hello руками с использованием (javac и java) без IntelliJ IDEA
-Task2: PositiveNumbers
+task2: PositiveNumbers
 Найти количество положительных чисел. Даны несколько целых чисел через пробел (вводит пользователь через консоль).
 Ответ должен быть в виде: количество положительных чисел = xxx.
 
