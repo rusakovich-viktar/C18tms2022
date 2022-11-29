@@ -4,13 +4,13 @@ package model;
 
 public class PersonRegistry {
 
-    private Person[] people;
+    private Person[] persons;
 
-    public PersonRegistry(Person[] people) {
-        this.people = people;
+    public PersonRegistry(Person[] persons) {
+        this.persons = persons;
     }
 
-    public Person[] getPeople() {
-        return people;
+    public Person[] getPersons() {
+        return persons;
     }
 }

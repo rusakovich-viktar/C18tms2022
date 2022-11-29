@@ -1,5 +1,7 @@
 import model.Address;
+import model.MilitaryOffice;
 import model.Person;
+import model.PersonRegistry;
 
 import static utils.Constants.FEMALE;
 import static utils.Constants.MALE;
@@ -20,13 +22,15 @@ public class Main {
         people[6] = new Person("Станислав", 20, MALE, new Address("Belarus", "Minsk"));
         people[7] = new Person("Артем", 25, MALE, new Address("Belarus", "Minsk"));
         people[8] = new Person("Александр", 26, MALE, new Address("Belarus", "Brest"));
-        people[9] = new Person("Аверьян", 24, MALE, new Address("Belarus", "Borisov"));
+        people[9] = new Person("Александр", 24, MALE, new Address("Belarus", "Borisov"));
 
-        for (int i = 0; i < people.length; i++) {
-            System.out.println(people[i]);
+        MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(people));
 
-        }
+        int recruits = militaryOffice.getRecruits("Александр");
+        System.out.println("призывников с именем Александр " + recruits);
+
+
     }
-
-
 }
+
+
