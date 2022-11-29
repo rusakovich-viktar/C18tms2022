@@ -21,13 +21,20 @@ public class Main {
         people[5] = new Person("Анастасия", 22, FEMALE, new Address("Belarus", "Dzerjinsk"));
         people[6] = new Person("Станислав", 20, MALE, new Address("Belarus", "Minsk"));
         people[7] = new Person("Артем", 25, MALE, new Address("Belarus", "Minsk"));
-        people[8] = new Person("Александр", 26, MALE, new Address("Belarus", "Brest"));
+        people[8] = new Person("Александр", 26, MALE, new Address("Belarus", "Minsk"));
         people[9] = new Person("Александр", 24, MALE, new Address("Belarus", "Borisov"));
 
         MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(people));
 
-        int recruits = militaryOffice.getRecruits("Александр");
-        System.out.println("призывников с именем Александр " + recruits);
+        int recruitsAlexander = militaryOffice.getRecruits("Александр");
+        System.out.println("призывников с именем Александр " + recruitsAlexander);
+
+        int recruits = militaryOffice.getRecruits();
+        System.out.println("Количество годных всего " + recruits);
+
+        System.out.println("Количество в возрастном диапазоне " + militaryOffice.getRecruitsByAge(25, 30));
+
+        System.out.println("Количество годных бойцов в городе " + militaryOffice.getRecruitsInCity("Minsk"));
 
 
     }

@@ -3,7 +3,8 @@ package model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import utils.Constants;
+
+import static utils.Constants.*;
 
 @Setter
 @Getter
@@ -17,7 +18,7 @@ public class MilitaryOffice {
     }
 
     private static boolean checkRecruits(Person person) {
-        return person.getAge() > 18 && person.getAge() <= 18 && person.getGender().equals(Constants.MALE);
+        return person.getAge() > MIN_AGE && person.getAge() <= MAX_AGE && person.getGender().equals(MALE);
     }
 
     public int getRecruits() {
@@ -34,6 +35,26 @@ public class MilitaryOffice {
         int count = 0;
         for (Person person : personRegistry.getPersons()) {
             if (checkRecruits(person) && person.getName().equalsIgnoreCase(name)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getRecruitsInCity(String city) {
+        int count = 0;
+        for (Person person : personRegistry.getPersons()) {
+            if (checkRecruits(person) && person.getAddress().getCity().equalsIgnoreCase(city)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getRecruitsByAge(int minAge, int maxAge) {
+        int count = 0;
+        for (Person person : personRegistry.getPersons()) {
+            if (person.getAge() >= minAge && person.getAge() <= maxAge) {
                 count++;
             }
         }

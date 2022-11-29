@@ -12,4 +12,8 @@ import lombok.ToString;
 public class Address {
     private String country;
     private String city;
+
+    public String getCity() {
+        return city;
+    }
 }
