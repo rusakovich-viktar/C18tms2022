@@ -1,24 +1,21 @@
 package by.tms.task2.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-public class Engine {
+@AllArgsConstructor
+public class Engine implements RequiredFieldsEngineClassAware {
 
     private final String ENGINE;
 
-    public Engine(String engine) {
-        ENGINE = engine;
+    @Override
+    public void stopEngine() {
+        RequiredFieldsEngineClassAware.super.stopEngine();
     }
 
-    protected void startEngine() {
-        System.out.println("Запуск двигателя...");
-        System.out.println("Двигатель запущен");
+    @Override
+    public void startEngine() {
+        RequiredFieldsEngineClassAware.super.startEngine();
     }
-
-    protected void stopEngine() {
-        System.out.println("Остановка двигателя...");
-        System.out.println("Двигатель остановлен");
-    }
-
 }
