@@ -1,4 +1,4 @@
-package Task1.utils;
+package by.tms.task1.utils;
 
 
 public class Constants {

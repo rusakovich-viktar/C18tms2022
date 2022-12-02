@@ -1,10 +1,10 @@
-package Task1.model;
+package by.tms.task1.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import static Task1.utils.Constants.*;
+import static by.tms.task1.utils.Constants.*;
 
 @Setter
 @Getter
@@ -12,12 +12,11 @@ import static Task1.utils.Constants.*;
 public class MilitaryOffice {
     private PersonRegistry personRegistry;
 
-
     public MilitaryOffice(PersonRegistry personRegistry) {
         this.personRegistry = personRegistry;
     }
 
-    private static boolean checkRecruits(Person person) {
+    private boolean checkRecruits(Person person) {
         return person.getAge() > MIN_AGE && person.getAge() <= MAX_AGE && person.getGender().equals(MALE);
     }
 
