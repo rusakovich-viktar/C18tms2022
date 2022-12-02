@@ -14,7 +14,7 @@ import static by.tms.task2.utils.Constants.FUEL_CONSUMPTION_LITRES_PER_100;
 
 public class Car implements RequiredFieldsCarClassesAware {
 
-    int fuelConsumptionFact;
+    private int fuelConsumptionFact;
     private Engine engine;
     private GasTank gasTank;
     private String model = "Dodge challenger";
@@ -44,9 +44,8 @@ public class Car implements RequiredFieldsCarClassesAware {
         }
     }
 
-    public void carRefuel() {
-        GasTank gasTank1 = new GasTank();
-        gasTank1.refuel();
+    public void carRefuel(GasTank.r) {
+
     }
 
     public void checkFuelVolume() {
@@ -62,6 +61,11 @@ public class Car implements RequiredFieldsCarClassesAware {
     private void tripReport(int distanceTraveled) {
         fuelConsumptionFact = FUEL_CONSUMPTION_LITRES_PER_100 * distanceTraveled / COUNT100KILOMETRES;
         System.out.printf("Машина проехала километров: %d, потрачено литров топлива за поездку: %d\n", distanceTraveled, fuelConsumptionFact);
+    }
+
+    @Override
+    public void go() {
+        System.out.println("Машина поехала");
     }
 
     @Override
