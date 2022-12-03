@@ -20,7 +20,5 @@ public class GasTank {
         System.out.printf("Топлива в баке", currentVolumeGas);
     }
 
-    protected void checkCurrentVolumeGas() {
-        System.out.printf("В автомобиле сейчас %d литров, всего до полного бака не хватает %d литров\n", currentVolumeGas, maxVolumeGas - currentVolumeGas);
-    }
+
 }

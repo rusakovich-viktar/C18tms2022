@@ -1,4 +1,4 @@
-package p0_1;
+package p0.p0_1;
 
 public class Person {
     private String name;
@@ -15,6 +15,7 @@ public class Person {
         return new PersonBuilder();
     }
 
+    @Override
     public String toString() {
         return "Person(name=" + this.name + ", age=" + this.age + ", sex=" + this.sex + ")";
     }
@@ -46,6 +47,7 @@ public class Person {
             return new Person(this.name, this.age, this.sex);
         }
 
+        @Override
         public String toString() {
             return "Person.PersonBuilder(name=" + this.name + ", age=" + this.age + ", sex=" + this.sex + ")";
         }

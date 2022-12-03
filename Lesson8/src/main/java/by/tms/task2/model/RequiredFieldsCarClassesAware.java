@@ -6,7 +6,7 @@ public interface RequiredFieldsCarClassesAware {
 
     void startCar();
 
-    void go(int distanceTraveled);
+    void go(double distanceTraveled);
 
     void stopCar();
 }

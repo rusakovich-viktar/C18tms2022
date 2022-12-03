@@ -3,6 +3,7 @@ package by.tms.task2.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import static by.tms.task2.utils.Constants.COUNT100KILOMETRES;
 import static by.tms.task2.utils.Constants.FUEL_CONSUMPTION_LITRES_PER_100;
@@ -10,62 +11,65 @@ import static by.tms.task2.utils.Constants.FUEL_CONSUMPTION_LITRES_PER_100;
 @AllArgsConstructor
 @Getter
 @Setter
-
+@ToString
 
 public class Car implements RequiredFieldsCarClassesAware {
 
-    private int fuelConsumptionFact;
-    private Engine engine;
-    private GasTank gasTank;
+    private double fuelConsumptionFact;
+    private Engine engine; //1
+    private GasTank gasTank; //2
     private String model = "Dodge challenger";
     private int year = 1984;
-    private int distanceTraveled;
+    private double distanceTraveled;
     private boolean checkPowerOnButton;
+    private double countDistanceAllTimes;
 
-
-    public Car(Engine engine, GasTank gasTank) {
+    public Car(Engine engine, GasTank gasTank) { //3
         this.engine = engine;
         this.gasTank = gasTank;
     }
 
-    public Car(int distanceTraveled) {
-        this.distanceTraveled = distanceTraveled;
+    public void checkPowerOnButton() {
+        checkPowerOnButton = true;
     }
 
     @Override
     public void startCar() {
-        if (gasTank.getCurrentVolumeGas() > 0) {
-            checkPowerOnButton = true;
+        if (checkFuelVolume()) {
+            checkPowerOnButton();
             System.out.println("Проверка запуска двигателя...");
             engine.startEngine();
             System.out.println("Автомобиль заведен");
         } else {
-            System.out.println("Нет топлива, машина не заводится");
+            System.out.println("Машина не завелась");
         }
     }
 
-    public void carRefuel(GasTank.r) {
-
-    }
-
-    public void checkFuelVolume() {
-
+    public boolean checkFuelVolume() {
+        if (gasTank.getCurrentVolumeGas() > 0) {
+            return true;
+        } else {
+            System.out.println("Нет топлива");
+            return false;
+        }
     }
 
     @Override
-    public void go(int distanceTraveled) {
-        System.out.println("Машина поехала");
-        tripReport(distanceTraveled);
-    }
-
-    private void tripReport(int distanceTraveled) {
+    public void go(double distanceTraveled) {
+        if (checkFuelVolume() && checkPowerOnButton)
+            System.out.println("Машина поехала");
+        countDistanceAllTimes += distanceTraveled;
         fuelConsumptionFact = FUEL_CONSUMPTION_LITRES_PER_100 * distanceTraveled / COUNT100KILOMETRES;
-        System.out.printf("Машина проехала километров: %d, потрачено литров топлива за поездку: %d\n", distanceTraveled, fuelConsumptionFact);
+        System.out.printf("Машина проехала километров: %.2f, потрачено литров топлива за поездку: %.2f\n", distanceTraveled, fuelConsumptionFact);
     }
 
     @Override
     public void go() {
         System.out.println("Машина поехала");
+    }
+
+    public void getAllDistance() {
+        System.out.printf("Общее пройденное расстояние %.2f\n", countDistanceAllTimes);
     }
 
     @Override
