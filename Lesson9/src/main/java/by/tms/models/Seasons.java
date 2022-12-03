@@ -1,25 +1,7 @@
-package by.tms;
-
-import static by.tms.SeasonsEnum.SUMMER;
+package by.tms.models;
 
 public class Seasons {
-
-    SeasonsEnum seasonEnum = SUMMER;
-
-    @Override
-    public String toString() {
-        return "Seasons{" +
-                "seasonEnum=" + seasonEnum +
-                '}';
-    }
-
-
-    private String getDescription() {
-
-        return null;
-    }
-
-    private void getSeason() {
+    public void getLikedSeason(SeasonsEnum seasonEnum) {
         switch (seasonEnum) {
             case SUMMER -> System.out.println("Я люблю лето");
             case AUTUMN -> System.out.println("Я люблю осень");
@@ -29,7 +11,11 @@ public class Seasons {
         }
     }
 
-    public SeasonsEnum getSeasonEnum() {
-        return seasonEnum;
+    public void getDescription() {
+        System.out.println("Холодное время года");
+    }
+
+    public void getDescription(SeasonsEnum SUMMER) {
+        System.out.println("Теплое время года");
     }
 }

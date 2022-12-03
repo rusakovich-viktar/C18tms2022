@@ -1,4 +1,4 @@
-package p0_1;
+package p0.p0_1;
 
 
 public class Main {
