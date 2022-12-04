@@ -44,6 +44,8 @@
         <module>Lesson8add</module>
         <module>Lesson9</module>
         <module>tictactoe</module>
+        <module>Lesson10</module>
+        <module>Lesson10hw</module>
     </modules>
 
 </project>

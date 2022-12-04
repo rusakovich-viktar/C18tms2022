@@ -13,8 +13,14 @@ public class Main {
         System.out.println("====");
         car.go();
         System.out.println("====");
-        car.go(20);
+        car.go(20.0);
         System.out.println("====");
-        car.carRefuel();
+        car.go(10.0);
+        System.out.println("====");
+        car.getAllDistance();
+        System.out.println("====");
+
+
+//        car.carRefuel();
     }
 }

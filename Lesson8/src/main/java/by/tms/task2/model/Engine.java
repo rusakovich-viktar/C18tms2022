@@ -7,15 +7,15 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Engine implements RequiredFieldsEngineClassAware {
 
-    private final String ENGINE;
+    private final String engine;
 
-    @Override
-    public void stopEngine() {
-        RequiredFieldsEngineClassAware.super.stopEngine();
+    void stopEngine() {
+        System.out.println("Остановка двигателя...");
+        System.out.println("Двигатель остановлен");
     }
 
-    @Override
-    public void startEngine() {
-        RequiredFieldsEngineClassAware.super.startEngine();
+    void startEngine() {
+        System.out.println("Запуск двигателя...");
+        System.out.println("Двигатель запущен");
     }
 }
