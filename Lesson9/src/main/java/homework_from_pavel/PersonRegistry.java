@@ -1,4 +1,4 @@
-package homework;
+package homework_from_pavel;
 
 public class PersonRegistry {
     private Person[] persons;

@@ -1,9 +1,9 @@
-package homework;
+package homework_from_pavel;
 
 import java.util.Arrays;
 
-import static homework.Sex.FEMALE;
-import static homework.Sex.MALE;
+import static homework_from_pavel.Sex.FEMALE;
+import static homework_from_pavel.Sex.MALE;
 
 public class Main {
     public static void main(String[] args) {

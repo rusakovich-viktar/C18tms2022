@@ -1,4 +1,4 @@
-package by.tms.models;
+package by.tms.seasons;
 
 public class Seasons {
     public void getLikedSeason(SeasonsEnum seasonEnum) {

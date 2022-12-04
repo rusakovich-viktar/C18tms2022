@@ -1,6 +1,6 @@
-package homework;
+package homework_from_pavel;
 
-import static homework.Sex.MALE;
+import static homework_from_pavel.Sex.MALE;
 
 public class MilitaryOffice {
     private PersonRegistry personRegistry;//регистратура
