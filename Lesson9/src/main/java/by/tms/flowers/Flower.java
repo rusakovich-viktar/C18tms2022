@@ -1,21 +1,22 @@
 package by.tms.flowers;
 
-import lombok.*;
-import lombok.experimental.UtilityClass;
-
-import java.math.BigDecimal;
-
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @ToString
 @Setter
 @Getter
-@AllArgsConstructor
-@UtilityClass
-@NoArgsConstructor
+
 public class Flower {
 
-    private FlowerType flowerName; // по итогу у меня дублирвание идет и тут и в энам
-    private BigDecimal price;  // то же самое,
-    // не понимаю как передать энем в флауэр, флауэр в букет, букет в магазин, Как их связать вообще?
+    public static int totalSold = 0;
+    private String name;
+    private int price;
 
+    public Flower(String name, int price) {
+        this.name = name;
+        this.price = price;
+        totalSold++;
+    }
 }
