@@ -10,7 +10,7 @@ import lombok.ToString;
 
 public class Flower {
 
-    public static int totalSold = 0;
+    private static int totalSold = 0;
     private String name;
     private int price;
 
@@ -18,5 +18,9 @@ public class Flower {
         this.name = name;
         this.price = price;
         totalSold++;
+    }
+
+    public static int getTotalSold() {
+        return totalSold;
     }
 }

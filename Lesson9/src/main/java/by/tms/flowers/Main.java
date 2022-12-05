@@ -21,7 +21,7 @@ public class Main {
         Bouquet bouquetFive = flowerMarket.getBouquet(ROSE, ASTER, TULIP, LILY);
         System.out.println(bouquetFive);
         System.out.printf("Стоимость букета равна %d \n", bouquetFive.getPrice());
-        System.out.printf("Всего продано цветов %d", Flower.totalSold);
+        System.out.printf("Всего продано цветов %d", Flower.getTotalSold());
 
     }
 }
