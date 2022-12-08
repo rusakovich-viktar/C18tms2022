@@ -7,7 +7,6 @@ TaskList:
 <details>
 <summary>Lesson1</summary>
 
-
         /*Task1: Написать простую программу Hello руками с использованием (javac и java) без IntelliJ IDEA; Task2: PositiveNumbers; 
         Найти количество положительных чисел. Даны несколько целых чисел через пробел (вводит пользователь через консоль). 
         Ответ должен быть в виде: количество положительных чисел = xxx.;
@@ -18,7 +17,6 @@ TaskList:
 <details>
 <summary>Lesson2</summary>
 
-    
         /*
         1) Создать от ветки main ветку develop и запушить (Внимание! если вы создали ветку ее можно запушить сразу же без коммита).
         (Остаемся на ветке develop)
@@ -52,7 +50,7 @@ TaskList:
 
 <details>
 <summary>Lesson3</summary>
- 
+
         //Некоторые тесты для проверки задач.
         System.out.println(sum(100, 200));
         System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
@@ -173,13 +171,11 @@ TaskList:
     т  - если преобразование тождественно.
     Внимание! используйте System.out.printLn
 
-
 </details>
 
 
 <details>
 <summary>Lesson 4.2</summary>
-
 
         //Некоторые тесты для проверки задач. Можно также написать свои тесты.
         printArray();
@@ -263,10 +259,10 @@ TaskList:
 
 <details>
 	<summary>Lesson 5</summary>
- 
+
  	import java.util.Random;
 
-	public class HomeWork {
+	public class ComputerL7.hw.HomeWork {
     public static void main(String[] args) {
         calculateSumOfDiagonalElements();
         printMatrix();
@@ -391,21 +387,20 @@ TaskList:
 	//            *Пояснение. Первое число - сумма тройки  [2789, 4, 8742]. Числа в скобках это 0 строка и 5 столбец - индекс первого элемента тройки, то есть индекс числа 2789.
 	}
 
-
 </details>
 
 <details>
 <summary>Lesson 6</summary>
-	
+
 	Алгоритмы, сортировки, О
-	
+
 </details>
 
 
 <details>
 <summary>Lesson 7</summary>
- 
-public class HomeWork {
+
+public class ComputerL7.hw.HomeWork {
 
     /**
      *
@@ -450,14 +445,13 @@ public class HomeWork {
      * и выводу информации про него.
      */
 
-
 </details>
 
 
 <details>
 <summary>Lesson 8add - Доп урок массивы и тд</summary>
- 
-	public class HomeWork {
+
+	public class ComputerL7.hw.HomeWork {
 		/*
 		Домашнее задание по массивам
 	Основное задание
@@ -530,8 +524,7 @@ public class HomeWork {
 
 <details>
 <summary>Lesson 8</summary>
- 
- 
+
 	 //1) задача!
 		/*
 		Необходимо написать военкомат.
@@ -577,6 +570,6 @@ public class HomeWork {
 
 <details>
 <summary>Список будет пополняться</summary>
- 
+
 
 </details>
