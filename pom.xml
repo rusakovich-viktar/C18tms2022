@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -43,9 +43,10 @@
         <module>Lesson8</module>
         <module>Lesson8add</module>
         <module>Lesson9</module>
-        <module>tictactoe</module>
         <module>Lesson10</module>
         <module>Lesson10hw</module>
+        <module>Lesson11</module>
+        <module>tictactoe</module>
     </modules>
 
 </project>
