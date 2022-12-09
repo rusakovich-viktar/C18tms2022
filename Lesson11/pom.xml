@@ -6,10 +6,8 @@
         <artifactId>ViRusC18tms2022</artifactId>
         <groupId>groupId</groupId>
         <version>1.0-SNAPSHOT</version>
-<<<<<<< HEAD
-=======
         <relativePath>../pom.xml</relativePath>
->>>>>>> d08a55f1216decf4e555414b197b2ca786a01a9f
+
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
