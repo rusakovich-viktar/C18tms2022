@@ -7,10 +7,10 @@ public class MainCar {
         Car mazda = new Car("Мазда", 220, 14000);
         Car bmw = new Car("БМВ", 330, 39000);
         Car renault = new Car("Рено", 200, 12000);
-        Car.start(toyota);
-        Car.start(lada);
-        Car.start(mazda);
-        Car.start(bmw);
-        Car.start(renault);
+        toyota.start();
+        lada.start();
+        mazda.start();
+        bmw.start();
+        renault.start();
     }
 }
