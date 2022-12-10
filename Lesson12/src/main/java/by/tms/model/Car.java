@@ -14,9 +14,9 @@ public class Car {
         this.price = price;
     }
 
-    public static void start(Car car) {
-        if (car.checkStart()) {
-            System.out.printf("Автомобиль %s завелся\n", car.model);
+    public void start() {
+        if (checkStart()) {
+            System.out.printf("Автомобиль %s завелся\n", model);
         }
     }
 
