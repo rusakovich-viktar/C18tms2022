@@ -1,7 +1,7 @@
 package heads;
 
 public interface IHead {
-    void speek();
+    void speak();
 
     int getPrice();
 }

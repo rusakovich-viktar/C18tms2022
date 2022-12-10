@@ -2,19 +2,20 @@ package heads;
 
 import by.tms.model.PartPrice;
 
-public class SonyHead extends PartPrice implements IHead {
+public class ToshibaHead extends PartPrice implements IHead {
 
-    public SonyHead(int price) {
+    public ToshibaHead(int price) {
         super(price);
     }
 
     @Override
     public void speak() {
-        System.out.println("Говорит голова Sony");
+        System.out.println("Говорит голова Toshiba");
     }
 
     @Override
     public int getPrice() {
         return price;
     }
+
 }
