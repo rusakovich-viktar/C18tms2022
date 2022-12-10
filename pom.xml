@@ -47,6 +47,7 @@
         <module>Lesson10hw</module>
         <module>Lesson11</module>
         <module>tictactoe</module>
+        <module>Lesson12</module>
     </modules>
 
 </project>

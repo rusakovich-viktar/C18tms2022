@@ -1,23 +1,23 @@
 package by.tms.flowers;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.math.BigDecimal;
+import lombok.ToString;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@ToString
 public class Bouquet {
     private Flower[] flowers;
 
-    public BigDecimal getPrice() {
-        BigDecimal result = BigDecimal.ZERO;
+
+    public int getPrice() {
+        int BouquetPrice = 0;
         for (Flower flower : flowers) {
-            result = result.add(Flower.getPrice());//хз что тут передавать в гет
-
+            BouquetPrice += flower.getPrice();
         }
-        return result;
+        return BouquetPrice;
     }
-
-
 }
