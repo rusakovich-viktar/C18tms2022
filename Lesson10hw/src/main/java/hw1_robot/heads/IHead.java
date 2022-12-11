@@ -1,7 +1,7 @@
-package heads;
+package hw1_robot.heads;
 
 public interface IHead {
-    void speek();
+    void speak();
 
     int getPrice();
 }

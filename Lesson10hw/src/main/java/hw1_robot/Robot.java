@@ -1,11 +1,14 @@
-import by.teachmeskills.robot.hands.IHand;
-import by.teachmeskills.robot.heads.IHead;
-import by.teachmeskills.robot.legs.ILeg;
+package hw1_robot;
+
+import hw1_robot.hands.IHand;
+import hw1_robot.heads.IHead;
+import hw1_robot.legs.ILeg;
 
 public class Robot implements IRobot {
     private IHead head;
     private IHand hand;
     private ILeg leg;
+
 
     public Robot(IHead head, IHand hand, ILeg leg) {
         this.head = head;
@@ -14,6 +17,7 @@ public class Robot implements IRobot {
     }
 
     public Robot() {
+
     }
 
     public IHead getHead() {
@@ -24,25 +28,9 @@ public class Robot implements IRobot {
         this.head = head;
     }
 
-    public IHand getHand() {
-        return hand;
-    }
-
-    public void setHand(IHand hand) {
-        this.hand = hand;
-    }
-
-    public ILeg getLeg() {
-        return leg;
-    }
-
-    public void setLeg(ILeg leg) {
-        this.leg = leg;
-    }
-
     @Override
     public void action() {
-        head.speek();
+        head.speak();
         hand.upHand();
         leg.step();
     }
@@ -57,6 +45,4 @@ public class Robot implements IRobot {
         int price = head.getPrice() + hand.getPrice() + leg.getPrice();
         return price;
     }
-
-
 }
