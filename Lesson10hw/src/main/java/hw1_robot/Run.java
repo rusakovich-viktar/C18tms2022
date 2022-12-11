@@ -1,12 +1,14 @@
-import hands.SamsungHand;
-import hands.SonyHand;
-import hands.ToshibaHand;
-import heads.SamsungHead;
-import heads.SonyHead;
-import heads.ToshibaHead;
-import legs.SamsungLeg;
-import legs.SonyLeg;
-import legs.ToshibaLeg;
+package hw1_robot;
+
+import hw1_robot.hands.SamsungHand;
+import hw1_robot.hands.SonyHand;
+import hw1_robot.hands.ToshibaHand;
+import hw1_robot.heads.SamsungHead;
+import hw1_robot.heads.SonyHead;
+import hw1_robot.heads.ToshibaHead;
+import hw1_robot.legs.SamsungLeg;
+import hw1_robot.legs.SonyLeg;
+import hw1_robot.legs.ToshibaLeg;
 
 public class Run {
     public static void main(String[] args) {

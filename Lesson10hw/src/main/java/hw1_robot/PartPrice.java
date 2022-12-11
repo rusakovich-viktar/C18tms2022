@@ -1,9 +1,9 @@
-package by.tms.model;
+package hw1_robot;
 
 public abstract class PartPrice {
     public final int price;
 
-    protected PartPrice(int price) {
+    public PartPrice(int price) {
         this.price = price;
     }
 

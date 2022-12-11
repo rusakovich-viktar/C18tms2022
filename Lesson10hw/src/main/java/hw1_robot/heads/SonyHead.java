@@ -1,6 +1,6 @@
-package heads;
+package hw1_robot.heads;
 
-import by.tms.model.PartPrice;
+import hw1_robot.PartPrice;
 
 public class SonyHead extends PartPrice implements IHead {
 

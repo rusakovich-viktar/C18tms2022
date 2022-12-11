@@ -1,3 +1,5 @@
+package hw1_robot;
+
 public interface IRobot {
 
     void action();

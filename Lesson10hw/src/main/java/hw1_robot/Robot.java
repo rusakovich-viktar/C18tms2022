@@ -1,6 +1,8 @@
-import hands.IHand;
-import heads.IHead;
-import legs.ILeg;
+package hw1_robot;
+
+import hw1_robot.hands.IHand;
+import hw1_robot.heads.IHead;
+import hw1_robot.legs.ILeg;
 
 public class Robot implements IRobot {
     private IHead head;

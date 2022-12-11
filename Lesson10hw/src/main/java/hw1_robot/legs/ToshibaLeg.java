@@ -1,6 +1,6 @@
-package legs;
+package hw1_robot.legs;
 
-import by.tms.model.PartPrice;
+import hw1_robot.PartPrice;
 
 public class ToshibaLeg extends PartPrice implements ILeg {
 

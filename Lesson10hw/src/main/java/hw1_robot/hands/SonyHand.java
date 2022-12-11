@@ -1,6 +1,6 @@
-package hands;
+package hw1_robot.hands;
 
-import by.tms.model.PartPrice;
+import hw1_robot.PartPrice;
 
 public class SonyHand extends PartPrice implements IHand {
 
