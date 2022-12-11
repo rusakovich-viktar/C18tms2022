@@ -1,4 +1,9 @@
-package task1_musical_instrument.model;
+package task1_musical_instrument.service;
+
+import task1_musical_instrument.model.Drum;
+import task1_musical_instrument.model.Guitar;
+import task1_musical_instrument.model.IInstrument;
+import task1_musical_instrument.model.Tube;
 
 public class Main {
     public static void main(String[] args) {
