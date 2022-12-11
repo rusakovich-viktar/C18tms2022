@@ -31,5 +31,4 @@ public class Main {
         person1.pullOffAll();
 
     }
-
 }

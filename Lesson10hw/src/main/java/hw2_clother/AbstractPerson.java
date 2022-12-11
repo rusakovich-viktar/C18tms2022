@@ -10,14 +10,12 @@ public abstract class AbstractPerson {
     public IShoes shoes;
     public ITrousers trousers;
 
-
     public AbstractPerson(String name, IJacket jacket, IShoes shoes, ITrousers trousers) {
         this.name = name;
         this.jacket = jacket;
         this.shoes = shoes;
         this.trousers = trousers;
     }
-
 
     public abstract void putOnAll();
 

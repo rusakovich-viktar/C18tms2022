@@ -4,5 +4,4 @@ public interface IPerson {
     void putOnAll();
 
     void pullOffAll();
-
 }
