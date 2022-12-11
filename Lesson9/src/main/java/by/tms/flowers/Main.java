@@ -6,23 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
         FlowerMarket flowerMarket = new FlowerMarket();
-        Bouquet bouquetOne = flowerMarket.getBouquet(ROSE);
-        System.out.println(bouquetOne);
-        System.out.printf("Стоимость букета равна %d \n", bouquetOne.getPrice());
-        Bouquet bouquetTwo = flowerMarket.getBouquet(ROSE, LILY);
-        System.out.println(bouquetTwo);
-        System.out.printf("Стоимость букета равна %d \n", bouquetTwo.getPrice());
-        Bouquet bouquetThree = flowerMarket.getBouquet(ROSE, TULIP, GERBERA);
-        System.out.println(bouquetThree);
-        System.out.printf("Стоимость букета равна %d \n", bouquetThree.getPrice());
-        Bouquet bouquetFour = flowerMarket.getBouquet(ROSE, CARNATION);
-        System.out.println(bouquetFour);
-        System.out.printf("Стоимость букета равна %d \n", bouquetFour.getPrice());
-        Bouquet bouquetFive = flowerMarket.getBouquet(ROSE, ASTER, TULIP, LILY);
-        System.out.println(bouquetFive);
-        System.out.printf("Стоимость букета равна %d \n", bouquetFive.getPrice());
+        Bouquet[] bouquets = new Bouquet[5];
+        {
+            bouquets[0] = flowerMarket.getBouquet(ROSE, LILY);
+        }
+        {
+            bouquets[1] = flowerMarket.getBouquet(ROSE, TULIP, GERBERA);
+        }
+        {
+            bouquets[2] = flowerMarket.getBouquet(ROSE, CARNATION);
+        }
+        {
+            bouquets[3] = flowerMarket.getBouquet(ROSE, LILY, ROSE);
+        }
+        {
+            bouquets[4] = flowerMarket.getBouquet(ROSE, ASTER, TULIP, LILY);
+        }
+        for (Bouquet bouquet : bouquets) {
+            System.out.println(bouquet);
+            System.out.printf("Стоимость букета равна %d \n", bouquet.getPrice());
+        }
         System.out.printf("Всего продано цветов %d", Flower.getTotalSold());
-
     }
 }
 

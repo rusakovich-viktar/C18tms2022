@@ -12,11 +12,10 @@ import lombok.ToString;
 public class Bouquet {
     private Flower[] flowers;
 
-
     public int getPrice() {
         int BouquetPrice = 0;
         for (Flower flower : flowers) {
-            BouquetPrice += flower.getPrice();
+            BouquetPrice += flower.getFlowerType().getPrice();
         }
         return BouquetPrice;
     }
