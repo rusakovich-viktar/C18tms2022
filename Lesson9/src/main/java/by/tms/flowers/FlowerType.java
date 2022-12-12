@@ -5,7 +5,6 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-
 public enum FlowerType {
     ROSE("роза", 15),
     LILY("лилия", 7),
@@ -13,6 +12,6 @@ public enum FlowerType {
     GERBERA("гербера", 5),
     TULIP("тюльпан", 8),
     CARNATION("гвоздика", 11);
-    private final String NAME;
-    private final int PRICE;
+    private final String name;
+    private final int price;
 }
