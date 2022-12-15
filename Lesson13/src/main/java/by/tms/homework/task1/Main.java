@@ -7,7 +7,7 @@ public class Main {
         String text = "Оператор instanceof нужен для того, чтобы проверить, был ли объект, на которую ссылается " +
                 "переменная X, создан на основе какого-либо класса Y.\n" +
                 "Оператор instanceof проверяет именно происхождение объекта, а не переменной.";
-        if (text.indexOf('z') != -1 && text.lastIndexOf('и') != -1) {
+        if (text.indexOf('а') != -1 && text.lastIndexOf('б') != -1) {
             System.out.println(text.substring(text.indexOf('а'), text.lastIndexOf('б') + 1));
         } else {
             System.out.println("Ошибка, нет такой буквы в исходном тексте");
