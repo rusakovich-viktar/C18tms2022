@@ -24,6 +24,12 @@
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -48,6 +54,7 @@
         <module>Lesson11</module>
         <module>tictactoe</module>
         <module>Lesson12</module>
+        <module>Lesson13</module>
     </modules>
 
 </project>
