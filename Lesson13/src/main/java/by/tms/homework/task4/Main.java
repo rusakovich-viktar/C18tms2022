@@ -10,4 +10,21 @@ package by.tms.homework.task4;
 //        * Разбиваем текст на предложения. Используя методы класса TextFormatter определяем подходит ли нам предложение.
 //        * Если подходит, то выводим на экран.
 public class Main {
+
+
+    public static void main(String[] args) {
+
+        String text = "сообщение. ткт слова. здесь 3 слова. тут будет 4 слова. тут уже есть 5 слов. " +
+                "Объекты взаимодействуют, посылая и получая сообщения. " +
+                "Тест номера цифры 11, 1, 222, 3345. будет 4 слова и плюс два." +
+                "Э44нЭ. " +
+                "казак. и. топот.";
+
+        TextFormatter textFormatter = new TextFormatter();
+        textFormatter.printSentences(text);
+
+    }
 }
+
+
+
