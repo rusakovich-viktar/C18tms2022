@@ -51,8 +51,7 @@ public class HomeWork {
         System.out.println(str.split("[A-Za-z]+[^0-9]+").length);
 
 //     *  5*)со звездочкой! В метод на вход приходит строка
-//     *
-//     *  public static boolean validate(String str) {
+//        public static boolean validate(String str) {
 //            return false;
 //        }
 //     * Необходимо выполнить проверку на валидацию входящей строки и вернуть false или true
@@ -62,6 +61,13 @@ public class HomeWork {
 //     * PS: нужно посмотреть презентацию страница 44 (Метасимволы для группировки символов)
 //     *
 //     *
+        System.out.println("Task5===========");
+        String stringValidate = "qwewqfsdfsdfsdfsdfsdf";
+        System.out.println(validate(stringValidate));
+    }
+
+    public static boolean validate(String str) {
+        return str.matches("[a-z15]{4,20}");
     }
 
     private static void printCentalWords(String[] wordsArray) {
