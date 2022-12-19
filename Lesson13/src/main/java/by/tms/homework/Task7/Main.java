@@ -10,7 +10,7 @@ public class Main {
         String[] simpleWords = text.split(" ");
         int count = 0;
         for (String simpleWord : simpleWords) {
-            if (simpleWord.matches("(^[a-zA-Z]++$)")) { //++ сверхжадный квантификатор
+            if (simpleWord.matches("[a-zA-Z]+")) {
                 count++;
             }
         }
