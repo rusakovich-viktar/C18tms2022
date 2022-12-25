@@ -17,7 +17,6 @@ public class Main {
 
     public static void main(String[] args) {
         String stringWithPalindrome = readPalindromeFromFile(INPUT_FILE);
-
         write(stringWithPalindrome, OUTPUT_FILE);
     }
 
