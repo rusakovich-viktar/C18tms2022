@@ -20,7 +20,7 @@ public class HomeWork {
 //     * ccab
 //     * cccab
         String string = "cab, ccab, cccab";
-        Pattern pattern = Pattern.compile("c+.b");
+        Pattern pattern = Pattern.compile("c.+?b");
         Matcher matcher = pattern.matcher(string);
         while (matcher.find()) {
             System.out.println(matcher.group());
@@ -28,10 +28,10 @@ public class HomeWork {
         System.out.println("Task3============");
 //     * 3) Дана строка "Versions: Java  5, Java 6, Java   7, Java 8, Java 12."  Найти все подстроки "Java X", где X - число и распечатать их.
         String stringJava = "Versions: Java  5, Java 6, Java   7, Java 8, Java 12.";
-        Pattern patternJava = Pattern.compile("Java\s+[0-9]+");
+        Pattern patternJava = Pattern.compile("Java\\s+[0-9]+");
         Matcher matcherJava = patternJava.matcher(stringJava);
         while (matcherJava.find()) {
-            System.out.println(matcherJava.group().replaceAll("\s+", "\s")); //если не надо было искать те что больше одного пробела и выравнивать их, то убрать все что реплейс и до конца)
+            System.out.println(matcherJava.group().replaceAll("\\s+", "\s")); //если не надо было искать те что больше одного пробела и выравнивать их, то убрать все что реплейс и до конца)
         }
 
         System.out.println("Task4===========");
@@ -48,7 +48,7 @@ public class HomeWork {
 //     *
 //     *  PS: Кто не сможет осилить регулярное выражение, то сделайте как сможете!
         String str = "One two three раз два три one1 two2 123 ";
-        System.out.println(str.split("[A-Za-z]+[^0-9]+").length);
+        System.out.println(str.split("([А-Яа-я]+)|\\s+|([A-Za-z]*[0-9]+)").length);
 
 //     *  5*)со звездочкой! В метод на вход приходит строка
 //        public static boolean validate(String str) {
