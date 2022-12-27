@@ -3,8 +3,9 @@ package hw1;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
+
+import static hw1.TextFormatter.getPalindromes;
 
 /**
  * 1)В исходном файле hw1/input.txt находятся слова, каждое слово на новой строке.
@@ -17,7 +18,7 @@ public class Main {
     public static final String OUTPUT_FILE = "Lesson15/src/main/java/hw1/output.txt";
 
     public static void main(String[] args) {
-        //Pav
+
 
         try {
             List<String> words = Files.readAllLines(Path.of(INPUT_FILE));
@@ -28,24 +29,5 @@ public class Main {
 
     }
 
-    public static List<String> getPalindromes(List<String> strings) { //Pav
-        List<String> result = new ArrayList<>();
-        for (String string : strings) {
-            if (isPalindrome(string)) {
-                result.add(string);
-            }
-        }
-        return result;
-//        return strings.stream()
-//                .filter(TextFormatter::isPalindrome)
-//                .collect(Collectors.toList());
-    }
 
-    private static boolean isPalindrome(String string) { //Pav
-        if (string.length() < 2) {
-            return false;
-        }
-        StringBuilder sb = new StringBuilder(string);
-        return string.equalsIgnoreCase(sb.reverse().toString());
-    }
 }
