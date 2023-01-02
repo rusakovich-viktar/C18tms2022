@@ -20,7 +20,7 @@ import java.util.List;
 public class Main {
 
     private static final String BLACKLIST = "Lesson15/src/main/java/hw3/blacklist.txt";
-    private static final String BLACKLIST_SEPARATOR = "[;\n]";
+    private static final String BLACKLIST_SEPARATOR = "[;\n*]";
     private static final String TEXT = "Lesson15/src/main/java/hw3/text.txt";
 
 
