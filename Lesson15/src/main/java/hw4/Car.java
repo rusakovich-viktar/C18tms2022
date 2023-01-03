@@ -1,12 +1,15 @@
 package hw4;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 // 4) Сериализовать объект Автомобиль(Марка, Двигатель(тип двигателя, количество цилиндров), бак(тип топлива, объем), скорость, цена). Количество цилиндров не должно сереализоватся в файл(это конфедициальная информация)
 //         * После сериализации произвести обратный процесс(из потока в объект) и вывести на консоль
-
+@Getter
+@Setter
 public class Car implements Serializable {
     private String model;
     private Engine engine;

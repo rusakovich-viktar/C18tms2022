@@ -8,6 +8,7 @@ public class Task4 {
     public static void main(String[] args) {
         Car car = new Car("BMW", new Car.Engine("Gasoline", 8), new Car.GasTank("propane", 40), 220, 50000);
         Car car1 = new Car("mazda", 280, 50000);
+        //Запись объектов в файл и чтение из него
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE))) {
             outputStream.writeObject(car); //на car1 что-то похожее получается, на car со сложными полями чет не выходит
         } catch (IOException e) {
