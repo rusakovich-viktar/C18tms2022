@@ -56,8 +56,8 @@ public class ServiceStore implements ServiceStoreAware {
                 .ifPresent(resultProduct -> modify(product, resultProduct));
     }
 
-    private void modify(Product expexted, Product actual) {
-        expexted.setName(actual.getName());
+    private void modify(Product expected, Product actual) {
+        expected.setName(actual.getName());
     }
 
     @Override
