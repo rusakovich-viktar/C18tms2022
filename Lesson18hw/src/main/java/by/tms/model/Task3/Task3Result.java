@@ -45,21 +45,20 @@ public class Task3Result {
     }
 
     private static void reverseText(String text) {
-        StringOperation reverseString = StringUtils::reverse;
-        System.out.println(reverseString.reverse(text));
+        OperationAware<String> reverseString = StringUtils::reverse;
+        System.out.println(reverseString.operation(text));
     }
 
     private static void factorialUsingStreams(int n) {
         System.out.println(LongStream.rangeClosed(1, n).reduce(1, (long x, long y) -> x * y));
     }
 
+    //    @FunctionalInterface
+//    interface StringOperation {
+//        String reverse(String string);
+//    }
     @FunctionalInterface
-    interface StringOperation {
-        String reverse(String string);
+    interface OperationAware<T> {
+        T operation(T t);
     }
-
 }
-//если я правильно понял идею задания, нужно было написать общий интерфейс, который примет или стринг или инт? НУ типа такого, только рабочий)
-//    @FunctionalInterface
-////    interface Operationable<T extends String & Number> {
-////        T operation(T t);
