@@ -43,7 +43,7 @@ public class Car implements Serializable {
     }
 
     @AllArgsConstructor
-    public static class Engine {
+    public static class Engine implements Serializable {
         private String type;
         private transient int cylindersQuantity;
 
@@ -57,7 +57,7 @@ public class Car implements Serializable {
     }
 
     @AllArgsConstructor
-    public static class GasTank {
+    public static class GasTank implements Serializable {
         private String fuelType;
         private int volume;
 

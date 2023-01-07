@@ -1,11 +1,11 @@
-package hw1;
+package hw1.by.tms.model;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import static hw1.TextFormatter.getPalindromes;
+import static hw1.by.tms.utils.TextFormatter.getPalindromes;
 
 /**
  * 1)В исходном файле hw1/input.txt находятся слова, каждое слово на новой строке.

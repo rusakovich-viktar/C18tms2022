@@ -1,4 +1,4 @@
-package hw1;
+package hw1.by.tms.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +23,8 @@ public class TextFormatter {
         if (string.length() < 2) {
             return false;
         }
-        StringBuilder sb = new StringBuilder(string);
-        return string.equalsIgnoreCase(sb.reverse().toString());
+        StringBuilder stringBuilder = new StringBuilder(string);
+        return string.equalsIgnoreCase(stringBuilder.reverse().toString());
     }
 
 
