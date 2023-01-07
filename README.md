@@ -416,7 +416,7 @@ public class ComputerL7.hw.HomeWork {
      */
 
     /**
-     * в папке src/main/java создать пакет by.tms.model
+     * в папке src/main/java создать пакет by.tms.task3
      * в пакете создать класс Computer
      * 1) класс Computer будет содержать следующие поля:
      * - процессор

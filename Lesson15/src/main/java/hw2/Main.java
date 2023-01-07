@@ -1,7 +1,10 @@
 package hw2;
 
-import java.io.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 
 /*2)Текстовый файл hw2/input.txt содержит текст.
  * После запуска программы в другой файл должны записаться только те предложения, в которых от 3-х до 5-ти слов.
@@ -19,21 +22,28 @@ public class Main {
     public static final String OUTPUT_FILE = "Lesson15/src/main/java/hw2/output.txt";
 
     public static void main(String[] args) {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(INPUT_FILE));
-             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(OUTPUT_FILE))) {
-            String line;
-            TextFormatter textFormatter = new TextFormatter();
-            StringBuilder stringBuilder = new StringBuilder();
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);//чет не срослось убрать лишний -
+
+        String text = null;
+        try {
+            text = Files.readString(Path.of(INPUT_FILE));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        List<String> sentences = TextFormatter.getSentencesFromText(text);
+        List<String> filteredSentences = new ArrayList<>();
+        for (String sentence : sentences) {
+            int numberOfWords = TextFormatter.getCountWordsInString(sentence);
+            if (numberOfWords >= 3 && numberOfWords <= 5 || TextFormatter.hasPalindromeInString(sentence)) {
+                filteredSentences.add(sentence);
             }
-            System.out.println(stringBuilder.toString());
-            ArrayList<String> sentence = textFormatter.stringArrayList(stringBuilder.toString());
-            for (String s : sentence) {
-                bufferedWriter.write(s + "\n");
-            }
+        }
+
+        try {
+            Files.write(Path.of(OUTPUT_FILE), filteredSentences);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 }
+
