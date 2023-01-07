@@ -30,7 +30,7 @@ public class Main {
             text = Files.readString(Path.of(INPUT_FILE));
 //            Оно уже не выдает NPE при удалении input, но мой эксепшен тоже не выводит, просто делает вид что так и надо, ничего не считал - ничего не записал
 //            if (text == null) {
-//                throw new FileNotFoundException("FileNotFoundException");
+//                throw new MyFileNotFoundException("FileNotFoundException");
 //            } else {
             List<String> sentences = getSentencesFromText(text);
             List<String> filteredSentences = new ArrayList<>();
