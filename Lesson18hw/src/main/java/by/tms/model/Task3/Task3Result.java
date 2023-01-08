@@ -10,7 +10,9 @@ public class Task3Result {
         Scanner scanner = new Scanner(System.in);
 
         int value = -1;
-        value = checkScanner(scanner, value);
+        value = getEnteredValueFromConsole(scanner, value);
+
+
         String inputString = null;
         int inputNumber = 0;
         if (value == 1) {
@@ -27,11 +29,10 @@ public class Task3Result {
         switch (value) {
             case 1 -> reverseText((inputString));
             case 2 -> factorialUsingStreams((inputNumber));
-            default -> System.out.println(("Метод, который не произойдет (пока что)"));
         }
     }
 
-    private static int checkScanner(Scanner scanner, int value) {
+    private static int getEnteredValueFromConsole(Scanner scanner, int value) {
         do {
             System.out.println("Внимание! Введите 1 для реверса строки или 2 для вычисления факториала");
             if (scanner.hasNextInt()) {
