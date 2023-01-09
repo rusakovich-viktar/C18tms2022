@@ -10,7 +10,7 @@ public class Task4 {
         Car car1 = new Car("mazda", 280, 50000);
         //Запись объектов в файл и чтение из него
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE))) {
-            outputStream.writeObject(car); //на car1 что-то похожее получается, на car со сложными полями чет не выходит
+            outputStream.writeObject(car);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

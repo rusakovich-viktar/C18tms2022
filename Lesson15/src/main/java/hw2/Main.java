@@ -6,6 +6,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+import static hw2.TextFormatter.*;
+
 /*2)Текстовый файл hw2/input.txt содержит текст.
  * После запуска программы в другой файл должны записаться только те предложения, в которых от 3-х до 5-ти слов.
  * Если в предложении присутствует слово-палиндром, то не имеет значения какое кол-во слов в предложении, оно попадает в output.txt файл.
@@ -26,24 +28,22 @@ public class Main {
         String text = null;
         try {
             text = Files.readString(Path.of(INPUT_FILE));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-
-        List<String> sentences = TextFormatter.getSentencesFromText(text);
-        List<String> filteredSentences = new ArrayList<>();
-        for (String sentence : sentences) {
-            int numberOfWords = TextFormatter.getCountWordsInString(sentence);
-            if (numberOfWords >= 3 && numberOfWords <= 5 || TextFormatter.hasPalindromeInString(sentence)) {
-                filteredSentences.add(sentence);
+//            Оно уже не выдает NPE при удалении input, но мой эксепшен тоже не выводит, просто делает вид что так и надо, ничего не считал - ничего не записал
+//            if (text == null) {
+//                throw new MyFileNotFoundException("FileNotFoundException");
+//            } else {
+            List<String> sentences = getSentencesFromText(text);
+            List<String> filteredSentences = new ArrayList<>();
+            for (String sentence : sentences) {
+                int numberOfWords = getCountWordsInString(sentence);
+                if (numberOfWords >= 3 && numberOfWords <= 5 || hasPalindromeInString(sentence)) {
+                    filteredSentences.add(sentence);
+                }
             }
-        }
-
-        try {
             Files.write(Path.of(OUTPUT_FILE), filteredSentences);
+//            }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 }
-

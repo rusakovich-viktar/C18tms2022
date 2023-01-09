@@ -3,14 +3,21 @@ package by.tms.model.Task3;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Scanner;
-import java.util.stream.LongStream;
 
 public class Task3Result {
+    static OperationAware<String> reverseString = StringUtils::reverse;
+    static OperationAware<Integer> factorial = (n) -> {
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+            result = i * result;
+        }
+        return result;
+    };
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int value = -1;
-        value = checkScanner(scanner, value);
+        int value = getNumberToChooseMethod(scanner);
         String inputString = null;
         int inputNumber = 0;
         if (value == 1) {
@@ -21,17 +28,16 @@ public class Task3Result {
         } else {
             System.out.println("Введите положительное число для корректного расчета факториала");
             inputNumber = scanner.nextInt();
-
         }
 
         switch (value) {
-            case 1 -> reverseText((inputString));
-            case 2 -> factorialUsingStreams((inputNumber));
-            default -> System.out.println(("Метод, который не произойдет (пока что)"));
+            case 1 -> System.out.println(reverseString.operation(inputString));
+            case 2 -> System.out.println(factorial.operation(inputNumber));
         }
     }
 
-    private static int checkScanner(Scanner scanner, int value) {
+    private static int getNumberToChooseMethod(Scanner scanner) {
+        int value = 0;
         do {
             System.out.println("Внимание! Введите 1 для реверса строки или 2 для вычисления факториала");
             if (scanner.hasNextInt()) {
@@ -44,19 +50,6 @@ public class Task3Result {
         return value;
     }
 
-    private static void reverseText(String text) {
-        OperationAware<String> reverseString = StringUtils::reverse;
-        System.out.println(reverseString.operation(text));
-    }
-
-    private static void factorialUsingStreams(int n) {
-        System.out.println(LongStream.rangeClosed(1, n).reduce(1, (long x, long y) -> x * y));
-    }
-
-    //    @FunctionalInterface
-//    interface StringOperation {
-//        String reverse(String string);
-//    }
     @FunctionalInterface
     interface OperationAware<T> {
         T operation(T t);
