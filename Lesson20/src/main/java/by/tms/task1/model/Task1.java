@@ -1,4 +1,4 @@
-package task1.by.tms.model;
+package by.tms.task1.model;
 
 import java.util.Arrays;
 import java.util.List;

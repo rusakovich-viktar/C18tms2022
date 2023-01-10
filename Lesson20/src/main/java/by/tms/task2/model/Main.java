@@ -1,10 +1,10 @@
-package task2.by.tms.model;
+package by.tms.task2.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static task2.by.tms.service.HeavyBoxCreator.creator;
+import static by.tms.task2.service.HeavyBoxCreator.creator;
 
 //2) Создать коллекцию, содержащую объекты HeavyBox.
 //        Написать метод, который перебирает элементы коллекции и проверяет вес коробок.

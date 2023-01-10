@@ -1,4 +1,4 @@
-package task2.by.tms.model;
+package by.tms.task2.model;
 
 import lombok.*;
 

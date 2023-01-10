@@ -1,7 +1,7 @@
-package task2.by.tms.service;
+package by.tms.task2.service;
 
+import by.tms.task2.model.HeavyBox;
 import lombok.experimental.UtilityClass;
-import task2.by.tms.model.HeavyBox;
 
 @UtilityClass
 public class HeavyBoxCreator {
