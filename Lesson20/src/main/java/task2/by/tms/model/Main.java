@@ -6,7 +6,6 @@ import java.util.List;
 
 import static task2.by.tms.service.HeavyBoxCreator.creator;
 
-
 //2) Создать коллекцию, содержащую объекты HeavyBox.
 //        Написать метод, который перебирает элементы коллекции и проверяет вес коробок.
 //        Если вес коробки больше 300 гр, коробка перемещается в другую коллекцию.
@@ -37,6 +36,4 @@ public class Main {
         otherBoxes.forEach(System.out::println);
 
     }
-
-
 }
