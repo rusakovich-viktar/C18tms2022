@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,7 +17,14 @@ public class Reader {
     private String fullName; //ФИО
     private String email;
     private boolean subscriber; //активный подписчик
-    private List<Book> listBooksInLibraryCard; //список взятых книг записанных в читательском билете
+    private List<Book> books; //список взятых книг записанных в читательском билете
+
+    public Reader(String fullName, String email, boolean subscriber) {
+        this.fullName = fullName;
+        this.email = email;
+        this.subscriber = subscriber;
+        this.books = new ArrayList<>();
+    }
 
     @Override
     public boolean equals(Object o) {
