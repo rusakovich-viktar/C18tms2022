@@ -12,7 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode
 @NoArgsConstructor
-@Builder
 public class Library {
 
     private List<Book> books;
