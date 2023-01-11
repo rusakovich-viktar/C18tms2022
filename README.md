@@ -24,11 +24,11 @@ TaskList:
         2) В Идее ставим курсор на названии проекта С18onl2022 и создаем новый модуль(правой клавишей мыши new->module),
         Название Lesson2, build system maven
         
-        3) В в папке Lesson2->java создать файл Test.java
+        3) В в папке Lesson2->java создать файл by.tms.model.task1.Task1.java
         
         4) Создать 2 дополнительные ветки features/TMS1, bugfix/TMS1 от ветки develop
         
-        5) В ветке features/TMS1 изменить файл Test.java(добавляем вывод на консоль "Hello git")
+        5) В ветке features/TMS1 изменить файл by.tms.model.task1.Task1.java(добавляем вывод на консоль "Hello git")
          и создать пулреквест ветки features/TMS1 к ветке develop
          
         6) Обновите ветку bugfix/TMS1 из features/TMS1(переключаемся на bugfix/TMS1,

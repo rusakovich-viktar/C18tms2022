@@ -16,23 +16,21 @@ public class Task3Result {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         int value = getNumberToChooseMethod(scanner);
-        String inputString = null;
-        int inputNumber = 0;
-        if (value == 1) {
-            System.out.println("Введите слово для реверса");
-            while (StringUtils.isEmpty(inputString)) {
-                inputString = scanner.nextLine();
-            }
-        } else {
-            System.out.println("Введите положительное число для корректного расчета факториала");
-            inputNumber = scanner.nextInt();
-        }
-
         switch (value) {
-            case 1 -> System.out.println(reverseString.operation(inputString));
-            case 2 -> System.out.println(factorial.operation(inputNumber));
+            case 1 -> {
+                System.out.println("Введите слово для реверса");
+                String inputString = null;
+                while (StringUtils.isEmpty(inputString)) {
+                    inputString = scanner.nextLine();
+                }
+                System.out.println(reverseString.operation(inputString));
+            }
+            case 2 -> {
+                System.out.println("Введите положительное число для корректного расчета факториала");
+                int inputNumber = scanner.nextInt();
+                System.out.println(factorial.operation(inputNumber));
+            }
         }
     }
 
