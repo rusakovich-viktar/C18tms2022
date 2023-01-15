@@ -1,7 +1,6 @@
 package by.tms.model.task6.model;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 //     * 6) Пишем библиотеку.
 //             * ==Для каждой книги библиотечного фонда известны автор, название и год издания.
@@ -40,7 +39,24 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
-        library.init();
+        library.getBooks().add(new Book("Лев Толстой", "Смерть Ивана Ильича", 1886))
+        library.getBooks().add(new Book("Фёдор Михайлович Достоевский", "Преступление и наказание", 1886));
+        library.getBooks().add(new Book("Чарлз Диккенс", "Повесть о двух городах", 1859));
+        library.getBooks().add(new Book("Чарлз Диккенс", "Оливер Твист", 1839));
+        library.getBooks().add(new Book("Антон Павлович Чехов", "Вишнёвый сад", 1901));
+        library.getBooks().add(new Book("Антон Павлович Чехов", "Попрыгунья", 1891));
+        library.getBooks().add(new Book("Виктор Гюго", "Человек, который смеётся", 1860));
+        library.getBooks().add(new Book("Виктор Гюго", "Собор Парижской Богоматери", 1831));
+        library.getBooks().add(new Book("Эрнест Хемингуэй", "По ком звонит колокол", 1940));
+        library.getBooks().add(new Book("Эрнест Хемингуэй", "Снега Килиманджаро", 1936));
+        library.getBooks().add(new Book("Александр Сергеевич Пушкин", "Медный всадник", 1833));
+        Reader reader1 = new Reader("Русакович Виктор Геннадьевич", "vitek.rus@mail.ru", true);
+        Reader reader2 = new Reader("Иванов Иван Иванович", "werr@gmail.com", false);
+        Reader reader3 = new Reader("Владимир Владимирович Уткин", "vi.rus@tut.by", true);
+        reader1.setBooks(Arrays.asList("Эрнест Хемингуэй", "По ком звонит колокол", 1940));
+        library.getReaders().add(reader1);
+        //один хер я сдохну и не пойму как создавать и наполнять списки
+
 //             *  a) Получить список всех книг библиотеки, отсортированных по году издания.
         List<Book> books = library.getBooks().stream()
                 .sorted(Comparator.comparing(Book::getYearOfPublishing)).toList();
@@ -48,13 +64,47 @@ public class Main {
 //             *      При этом флаг согласия на рассылку учитывать не будем: библиотека закрывается, так что хотим оповестить всех.
         List<EmailAddress> emailAddresses = library.getReaders().stream()
                 .map(Reader::getEmail)
+                .filter(Objects::nonNull)
                 .map(EmailAddress::new)
                 .toList();
 //             *  c) Снова нужно получить список рассылки. Но на этот раз включаем в него только адреса читателей, которые согласились на рассылку.
 //             *      Дополнительно нужно проверить, что читатель взял из библиотеки больше одной книги.
+
+            List<EmailAddress> addresses = new ArrayList<>();
+            for (Reader reader : library.getReaders()) {
+                if (reader.getBooks().size() > 1 && reader.isSubscriber())
+                    addresses.add(new EmailAddress(reader.getEmail()));
+            }
 //             *  d) Получить список всех книг, взятых читателями.
 //             *      Список не должен содержать дубликатов (книг одного автора, с одинаковым названием и годом издания).
+            Set<Book> result = new LinkedHashSet<>();
+            for (Reader reader : library.getReaders()) {
+                result.addAll(reader.getBooks());
+            }
+            List<Book> bookList = library.getReaders().stream()
+                    .flatMap(reader -> reader.getBooks().stream())
+                    .distinct()
+                    .toList();
 //             *  e) Проверить, взял ли кто-то из читателей библиотеки какие-нибудь книги Пушкина Александра Сергеевича.
+        checkAuthorBooks(library);
+        boolean match = library.getReaders().stream()
+                .flatMap(reader -> reader.getBooks().stream())
+                .anyMatch(book -> "Пушкин".equals(book.getAuthor()));
+
+
     }
+
+    private static boolean checkAuthorBooks(Library library) {
+        boolean result = false;
+        for (Reader reader : library.getReaders()) {
+            for (Book book : reader.getBooks()) {
+                if ("Пушкин".equals(book.getAuthor())) {
+                    return true;
+                }
+            }
+        }
+        return result;
+    }
+
 }
 
