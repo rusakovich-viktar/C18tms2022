@@ -59,7 +59,8 @@ public class Main {
 
 //             *  a) Получить список всех книг библиотеки, отсортированных по году издания.
         List<Book> books = library.getBooks().stream()
-                .sorted(Comparator.comparing(Book::getYearOfPublishing)).toList();
+                .sorted(Comparator.comparing(Book::getYearOfPublishing)).
+                toList();
 //             *  b) Требуется создать список рассылки (объекты типа EmailAddress) из адресов всех читателей библиотеки.
 //             *      При этом флаг согласия на рассылку учитывать не будем: библиотека закрывается, так что хотим оповестить всех.
         List<EmailAddress> emailAddresses = library.getReaders().stream()
