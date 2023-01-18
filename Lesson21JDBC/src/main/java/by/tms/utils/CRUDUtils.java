@@ -13,7 +13,7 @@ public class CRUDUtils {
     //CRUD      создание(англ. create),     чтение (read),           модификация (update),            удаление (delete).
     //В SQL     Insert (создание записей),  Select (чтение записей), Update (редактирование записей), Delete (удаление записей).
 
-    private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
+    private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students;";
     private static final String INSERT_STUDENT_QUERY = "INSERT INTO students(name, surname, course) VALUES(?, ?, ?);";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students WHERE id = ?";
