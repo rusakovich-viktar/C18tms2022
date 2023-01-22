@@ -11,6 +11,19 @@
 
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.31</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.1</version>
+        </dependency>
         <!--  https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -63,6 +76,8 @@
         <module>Lesson19</module>
         <module>Lesson18hw</module>
         <module>Lesson20</module>
+        <module>Lesson21JDBC</module>
+        <module>Lesson22SQL</module>
 
     </modules>
 
