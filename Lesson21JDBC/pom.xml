@@ -9,8 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Lesson20</artifactId>
+    <artifactId>Lesson21JDBC</artifactId>
     <packaging>pom</packaging>
+
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
