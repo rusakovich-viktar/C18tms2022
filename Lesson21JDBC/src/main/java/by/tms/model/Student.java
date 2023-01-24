@@ -10,14 +10,17 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Student {
-    private int id;
+    private Long id;
     private String name;
     private String surname;
     private int course;
+    private City city;
 
-    public Student(String name, String surname, int course) {
+    public Student(String name, String surname, int course, City city) {
+        
         this.name = name;
         this.surname = surname;
         this.course = course;
+        this.city = city;
     }
 }
