@@ -1,6 +1,8 @@
-/* Пока просто не трогаю
+//Тут ничего не поменялось относительно стандартного CRUD кроме City(не работающего (в ALL))
+
 package by.tms.utils;
 
+import by.tms.model.City;
 import by.tms.model.Student;
 
 import java.sql.Connection;
@@ -10,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CRUDUtils {
+public class CRUDUtilsCity {
     //CRUD      создание(англ. create),     чтение (read),           модификация (update),            удаление (delete).
     //В SQL     Insert (создание записей),  Select (чтение записей), Update (редактирование записей), Delete (удаление записей).
 
@@ -28,11 +30,12 @@ public class CRUDUtils {
 //            Statement statement = connection.createStatement(); //обьект для создания запросов
 //            ResultSet rs = statement.executeQuery(GET_ALL_STUDENTS_QUERY); //сам запрос и его результат
             while (rs.next()) {
-                int id = rs.getInt("id");
+                Long id = rs.getLong("id");
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
                 int course = rs.getInt("course");
-                students.add(new Student(id, name, surname, course));
+                String city = rs.getString("city");
+                students.add(new Student(id, name, surname, course, new City(name)));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -96,4 +99,3 @@ public class CRUDUtils {
 
 
 }
-*/
