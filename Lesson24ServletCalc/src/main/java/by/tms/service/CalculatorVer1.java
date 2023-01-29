@@ -1,4 +1,4 @@
-package logic_ver_1;
+package by.tms.service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,23 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static by.tms.util.CalcLogic.*;
+
 @WebServlet(name = "calculator", value = "/calculator")
 public class CalculatorVer1 extends HttpServlet {
-    public static <T extends Number, K extends Number> double sum(T t, K k) {
-        return t.doubleValue() + k.doubleValue();
-    }
 
-    public static <T extends Number, K extends Number> double multiply(T t, K k) {
-        return t.doubleValue() * k.doubleValue();
-    }
-
-    public static <T extends Number, K extends Number> double divide(T t, K k) {
-        return t.doubleValue() / k.doubleValue();
-    }
-
-    public static <T extends Number, K extends Number> double subtraction(T t, K k) {
-        return t.doubleValue() - k.doubleValue();
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
