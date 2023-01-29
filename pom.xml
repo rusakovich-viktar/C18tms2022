@@ -78,6 +78,9 @@
         <module>Lesson20</module>
         <module>Lesson21JDBC</module>
         <module>Lesson22SQL</module>
+        <module>Lesson24</module>
+        <module>Lesson24Test</module>
+        <module>Lesson24ServletCalc</module>
 
     </modules>
 
