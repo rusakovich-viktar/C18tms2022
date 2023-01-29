@@ -1,14 +1,15 @@
 package by.tms;
 
+import by.tms.model.City;
+import by.tms.model.Student;
 import by.tms.utils.CRUDUtilsCity;
-import by.tms.utils.CityServices;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-//        Student student = new Student("Java", "student", 1);
-//        System.out.println("Saved students:");
-//        System.out.println(CRUDUtils.saveStudent(student));
-//        System.out.println("---------------------------------------------------");
+        Student student = new Student(14L, "Valera", "Valerov", 1, new City("Минск"));
+        System.out.println("Inserted students:");
+        System.out.println(CRUDUtilsCity.insertStudent(student));
+        System.out.println("---------------------------------------------------");
 ////        while (true) {
 ////            System.out.println("11");
 ////            CRUDUtils.getAllStudents();
@@ -25,12 +26,9 @@ public class Main {
 //
 //        System.out.println("Deleted students: ");
 //        System.out.println(CRUDUtils.deleteStudent(8));
-        System.out.println("All cities:");
-        System.out.println(CityServices.getAllCities());
-        System.out.println("---------------------------------------------------");
-//        System.out.println("Updated cities:");
-//        System.out.println(CityServices.InsertCity(1, new City("Минск")));
-//        System.out.println("-------");
+//        System.out.println("All cities:");
+//        System.out.println(CityServices.getAllCities());
+//        System.out.println("---------------------------------------------------");
 
 
     }

@@ -1,48 +1,55 @@
--- drop schema if exists students_db;
--- create schema if not exists students_db;
--- drop table if exists students_db.students;
+-- Удаляем старые таблицы
+drop table if exists students cascade;
+drop table if exists city cascade;
+
+-- Создаем две новых таблицы
+CREATE TABLE city
+(
+    id        integer primary key generated always as identity unique,
+    city_name VARCHAR(45) not null
+);
 
 CREATE TABLE students
 (
     id      integer primary key generated always as identity unique,
     name    VARCHAR(45)  not null,
     surname varchar(100) not null,
-    course  integer      not null
+    course  integer      not null,
+    id_city integer      not null,
+    FOREIGN KEY (id_city) REFERENCES city (Id) on delete cascade
 );
 
-CREATE TABLE city
-(
-    id         integer primary key generated always as identity unique,
-    student_id integer,
-    city       VARCHAR(45) not null,
-    FOREIGN KEY (student_id) REFERENCES students (Id) on delete cascade
-);
-
-/*alter table city
-    add constraint city_students_null_fk
-        foreign key (student_id) references students (id);
-*/
-INSERT INTO students (name, surname, course)
-VALUES ('Виктор', 'Русакович', 2),
-       ('Александр', 'Максимчик', 1),
-       ('Александр', 'Иванов', 3),
-       ('Роман', 'Александров', 4),
-       ('Джеймс', 'Хэтфилд', 2),
-       ('Павел', 'Корзун', 5),
-       ('Обновление', 'базы', 33);
+select *
+from city;
 
 
-insert into city (student_id, city)
-values ('1', 'Калининград'),
-       ('2', 'Пинск'),
-       ('3', 'Минск'),
-       ('4', 'Старые дороги'),
-       ('5', 'Сан Франциско'),
-       ('6', 'Жодино'),
-       ('7', 'Задворки сервера');
+-- Наполняем таблицы значенями
+insert into city (city_name)
+values ('Астана'),
+       ('Борисов'),
+       ('Гродно'),
+       ('Витебск'),
+       ('Гомель'),
+       ('Сан Франциско'),
+       ('Минск');
+
+
+INSERT INTO students (name, surname, course, id_city)
+VALUES ('Виктор', 'Русакович', 2, 1),
+       ('Александр', 'Максимчик', 1, 2),
+       ('Александр', 'Иванов', 3, 3),
+       ('Роман', 'Александров', 4, 7),
+       ('Джеймс', 'Хэтфилд', 2, 7),
+       ('Павел', 'Корзун', 5, 5),
+       ('Иван', 'Иванов', 3, 3);
+
+select *
+from city;
 
 select *
 from students;
 
+-- Джоиним таблицы
 select *
-from city
+from students
+         left join city on city.id = students.id_city

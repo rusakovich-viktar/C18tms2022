@@ -233,7 +233,6 @@ select (date + interval '1 day')
 from workers;
 
 
-
 --     При выборке из таблицы workers отнимите от даты 1 день.
 select (date - interval '1 day')
 from workers;
@@ -283,7 +282,8 @@ from workers;
 
 --     Выберите из таблицы workers все записи, в которых сумма дня и месяца меньше 10-ти.
 select *
-from workers where (extract(day from date) + extract(month from date))<10;
+from workers
+where (extract(day from date) + extract(month from date)) < 10;
 --     На LEFT, RIGHT, SUBSTRING
 --     Для решения задач данного блока вам понадобятся следующие SQL команды и функции: LEFT, RIGHT, SUBSTRING.
 --     При выборке из таблицы workers получите первые 5 символов поля description.
@@ -297,7 +297,7 @@ select substring(description, 2, 10)
 from workers;
 --     На UNION (НЕ УСПЕЛ ЕЩЕ ИЗУЧИТЬ - в процессе)
 --     Для решения задач данного блока вам понадобятся следующие SQL команды и функции: UNION.
---     Даны две таблицы: таблица category и таблица sub_category с полями id и name. Достаньте одним запросом названия категорий и подкатегорий.
+--     Даны две таблицы: таблица category и таблица sub_category с полями id и cityName. Достаньте одним запросом названия категорий и подкатегорий.
 --
 --     На CONCAT, CONCAT_WS
 --     Для решения задач данного блока вам понадобятся следующие SQL команды и функции: CONCAT, CONCAT_WS.
@@ -376,9 +376,9 @@ where age = 25;
 
 --     На JOIN (пока не дошел в Stepik, но как дойду все решу)
 --     Для решения задач данного блока вам понадобятся следующие SQL команды и функции: JOIN.
---     Даны две таблицы: таблица category с полями id и name и таблица page с полями id, name и category_id. Достаньте одним запросом все страницы вместе с их категориями.
+--     Даны две таблицы: таблица category с полями id и cityName и таблица page с полями id, cityName и category_id. Достаньте одним запросом все страницы вместе с их категориями.
 --
---     Даны 3 таблицы: таблица category с полями id и name, таблица sub_category с полями id и name и таблица page с полями id, name и sub_category_id. Достаньте одним запросом все страницы вместе с их подкатегориями и категориями.
+--     Даны 3 таблицы: таблица category с полями id и cityName, таблица sub_category с полями id и cityName и таблица page с полями id, cityName и sub_category_id. Достаньте одним запросом все страницы вместе с их подкатегориями и категориями.
 --
 --     На работу с полями
 --     Задачи данного блока следует решать SQL запросами, а не через PhpMyAdmin.
@@ -418,13 +418,13 @@ alter table table1
     add status text;
 --     Удалите из таблицы table1 поле age.
 alter table table1
-drop column age;
+    drop column age;
 --     Переименуйте поле login на user_login.
 alter table table3
     rename column login to user_login;
 --     Смените типа поля salary с int на varchar(255).
 alter table table3
-alter column salary type varchar(255) using salary::varchar(255);
+    alter column salary type varchar(255) using salary::varchar(255);
 --     Очистите таблицу table1.
 delete
 from table1;

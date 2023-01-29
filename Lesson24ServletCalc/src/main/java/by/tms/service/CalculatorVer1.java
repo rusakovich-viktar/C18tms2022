@@ -13,7 +13,6 @@ import static by.tms.util.CalcLogic.*;
 @WebServlet(name = "calculator", value = "/calculator")
 public class CalculatorVer1 extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -40,4 +39,3 @@ public class CalculatorVer1 extends HttpServlet {
         }
     }
 }
-

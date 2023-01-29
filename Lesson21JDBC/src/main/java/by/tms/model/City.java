@@ -1,21 +1,23 @@
 package by.tms.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@AllArgsConstructor
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class City {
-    private Long id;
-    private String name;
+    private Long cityId;
+    private String cityName;
 
-    public City(String name) {
-        this.name = name;
+    public City(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public City(Long cityId) {
+        this.cityId = cityId;
     }
 }
 
