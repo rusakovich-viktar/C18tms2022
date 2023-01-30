@@ -17,10 +17,11 @@ public class Student {
     private City city;
 
     public Student(String name, String surname, int course, City city) {
-        
+
         this.name = name;
         this.surname = surname;
         this.course = course;
         this.city = city;
     }
+
 }
