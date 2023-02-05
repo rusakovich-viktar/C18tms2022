@@ -19,7 +19,7 @@ public class ServletStudentTest extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        studentServiceTest = (StudentServiceTest) config.getServletContext().getAttribute("userService");
+        studentServiceTest = (StudentServiceTest) config.getServletContext().getAttribute("studentService");
         System.out.println("init");
     }
 
