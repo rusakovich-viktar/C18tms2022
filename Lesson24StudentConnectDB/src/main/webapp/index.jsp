@@ -8,8 +8,10 @@
 <body>
 <br>
 <a href="/servlet-db">
-    <%="Фамилия-имя-курс всех студентов".toUpperCase()%>
+    <%="Дай всех студентов без контекста".toUpperCase()%>
 </a> <br>
-
+<a href="/users">
+    <%="Get all students with context".toUpperCase()%>
+</a> <br>
 </body>
 </html>

@@ -8,8 +8,6 @@ import java.sql.SQLException;
 
 @UtilityClass
 public class DbUtils {
-    //без @UtilityClass обязательно приватный конструктор
-    //в названии бд маленькие буквы и _
 
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String DB_USERNAME = "postgres";
