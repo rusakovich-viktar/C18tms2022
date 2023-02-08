@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>Lesson24StudentConnectDB</artifactId>
     <packaging>war</packaging>
-    <name>Lesson24 Maven Webapp</name>
+    <name>Lesson24StudentConnectDB</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

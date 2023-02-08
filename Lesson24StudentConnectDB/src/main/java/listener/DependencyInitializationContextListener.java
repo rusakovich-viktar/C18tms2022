@@ -1,8 +1,8 @@
 package listener;
 
-import repository.JdbcStudentRepositoryTest;
-import repository.StudentRepositoryTest;
-import service.StudentServiceTest;
+import repository.JdbcStudentRepository;
+import repository.StudentRepository;
+import service.StudentService;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -21,21 +21,19 @@ public class DependencyInitializationContextListener implements ServletContextLi
         String password = servletContextEvent.getServletContext().getInitParameter("db_password");
         String dbUrl = servletContextEvent.getServletContext().getInitParameter("db_url");
 
+
         try {
-            try {
-                Class.forName(dbDriver);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
+            Class.forName(dbDriver);
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
-            StudentRepositoryTest repository = new JdbcStudentRepositoryTest(connection);
-            StudentServiceTest studentServiceTest = new StudentServiceTest(repository);
-            servletContextEvent.getServletContext().setAttribute("studentService", studentServiceTest);
+            StudentRepository repository = new JdbcStudentRepository(connection);
+            StudentService studentService = new StudentService(repository);
+            servletContextEvent.getServletContext().setAttribute("studentService", studentService);
             servletContextEvent.getServletContext().setAttribute("connection", connection);
-        } catch (RuntimeException | SQLException e) {
-            throw new RuntimeException(e);
+        } catch (RuntimeException | SQLException | ClassNotFoundException e) {
+            System.out.println("Exception: " + e.getMessage());
         }
     }
+
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
