@@ -24,5 +24,4 @@ public class ServletDB extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/students.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

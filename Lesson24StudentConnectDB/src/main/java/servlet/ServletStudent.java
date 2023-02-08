@@ -32,5 +32,4 @@ public class ServletStudent extends HttpServlet {
         request.setAttribute("data", students);
         getServletContext().getRequestDispatcher("/students.jsp").forward(request, response);
     }
-
 }
