@@ -29,7 +29,7 @@ public class DependencyInitializationContextListener implements ServletContextLi
             StudentService studentService = new StudentService(repository);
             servletContextEvent.getServletContext().setAttribute("studentService", studentService);
             servletContextEvent.getServletContext().setAttribute("connection", connection);
-        } catch (RuntimeException | SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Exception: " + e.getMessage());
         }
     }

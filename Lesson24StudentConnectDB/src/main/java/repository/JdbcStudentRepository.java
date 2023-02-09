@@ -23,10 +23,10 @@ public class JdbcStudentRepository implements StudentRepository {
 
     @Override
     public List<Student> findStudents() {
+        List<Student> students = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(GET_ALL_STUDENTS_QUERY);
-            List<Student> students = new ArrayList<>();
             while (rs.next()) {
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
@@ -34,10 +34,9 @@ public class JdbcStudentRepository implements StudentRepository {
                 String city = rs.getString("city_name");
                 students.add(new Student(name, surname, course, city));
             }
-            return students;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return students;
     }
 }

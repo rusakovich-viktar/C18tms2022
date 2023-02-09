@@ -20,7 +20,6 @@ public class ServletStudent extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         studentService = (StudentService) config.getServletContext().getAttribute("studentService");
-        System.out.println("init");
     }
 
     @Override
