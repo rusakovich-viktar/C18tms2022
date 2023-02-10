@@ -17,6 +17,16 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    color: rgb(91, 95, 231);
+    margin: 50px auto 0;
+    width: 500px;
+    size: 30px;
+    text-align: left;
+    line-height: 0.5;
+
+}
+
 #wrapper {
     position: absolute;
     width: 320px;
@@ -120,8 +130,9 @@ h1 {
 }
 
 #logout {
-    padding: 0 20px;
+    padding: 0 30px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 12px;
+    background-color: #d1ef49;
     margin: 5px 0 0 0;
 }

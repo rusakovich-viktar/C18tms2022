@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <title>Страница авторизации</title>
 </head>
 <body>

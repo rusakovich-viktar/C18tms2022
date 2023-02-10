@@ -14,7 +14,7 @@ import java.io.IOException;
 public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
+
         HttpSession session = request.getSession(false);
         session.invalidate();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.html");

@@ -8,11 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
     <title>Home</title>
 </head>
 <body>
 <h1> Welcome to personal page!</h1>
+<div><p>
+    <h2>your login is: ${username}</h2>
+    <h2>your password is: ${password} </h2></div>
 <div id="wrapper">
     <form id="signin" method="post" action="logout" autocomplete="off">
         <p>do you want logout <a href="/login.jsp" id="logout">click here</a></p>
