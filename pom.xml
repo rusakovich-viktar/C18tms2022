@@ -78,9 +78,14 @@
         <module>Lesson20</module>
         <module>Lesson21JDBC</module>
         <module>Lesson22SQL</module>
-        <module>Lesson24</module>
         <module>Lesson24Test</module>
         <module>Lesson24ServletCalc</module>
+        <module>Lesson25StudentsEoS</module>
+        <module>Lesson25filterEoS</module>
+        <module>Lesson26calcEoS</module>
+        <module>Lesson25allEoS</module>
+        <module>Lesson24StudentConnectDB</module>
+        <module>Lesson25LoginForm</module>
 
     </modules>
 

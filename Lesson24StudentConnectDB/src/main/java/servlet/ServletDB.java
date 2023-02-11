@@ -1,7 +1,7 @@
 package servlet;
 
 import model.Student;
-import service.StudentService;
+import service.StudentServiceDbUtils;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,11 +18,10 @@ public class ServletDB extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        StudentService studentService = new StudentService();
-        List<Student> students = studentService.getAllStudents();
+        StudentServiceDbUtils studentServiceDbUtils = new StudentServiceDbUtils();
+        List<Student> students = studentServiceDbUtils.getAllStudents();
         request.setAttribute("data", students);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/students.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

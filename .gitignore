@@ -1,6 +1,9 @@
+### IntelliJ IDEA ###
 .idea
 target
 *.iml
+*.iws
+*.ipr
 
 # Compiled class file
 *.class
