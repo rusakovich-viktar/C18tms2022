@@ -16,28 +16,23 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("/").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        User user = new User();
         String name = request.getParameter("user");
         String pass = request.getParameter("pass");
 
-        HttpSession session = request.getSession();
-        session.setAttribute("user", name);
-        session.setAttribute("pass", pass);
-
+        User user = new User();
         if (user.getUsername().equals(name) && user.getPassword().equals(pass)) {
-
-            HttpSession httpSession = request.getSession();
-            httpSession.setAttribute("user", user);
+            HttpSession session = request.getSession();
+            session.setAttribute("user", name);
+            session.setAttribute("pass", pass);
             response.sendRedirect("/homepage");
         } else {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("/");
         }
-
     }
 }
