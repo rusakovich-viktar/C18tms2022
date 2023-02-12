@@ -1,7 +1,7 @@
-package service;
+package by.tms.service;
 
-import model.Student;
-import utils.DbUtils;
+import by.tms.model.Student;
+import by.tms.utils.DbUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

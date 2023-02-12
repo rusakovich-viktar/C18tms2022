@@ -1,8 +1,8 @@
-package listener;
+package by.tms.listener;
 
-import repository.JdbcStudentRepository;
-import repository.StudentRepository;
-import service.StudentService;
+import by.tms.repository.JdbcStudentRepository;
+import by.tms.repository.StudentRepository;
+import by.tms.service.StudentService;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

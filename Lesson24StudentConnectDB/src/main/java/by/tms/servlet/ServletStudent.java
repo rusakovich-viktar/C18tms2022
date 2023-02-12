@@ -1,7 +1,7 @@
-package servlet;
+package by.tms.servlet;
 
-import model.Student;
-import service.StudentService;
+import by.tms.model.Student;
+import by.tms.service.StudentService;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

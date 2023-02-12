@@ -1,7 +1,7 @@
-package servlet;
+package by.tms.servlet;
 
-import model.Student;
-import service.StudentServiceDbUtils;
+import by.tms.model.Student;
+import by.tms.service.StudentServiceDbUtils;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

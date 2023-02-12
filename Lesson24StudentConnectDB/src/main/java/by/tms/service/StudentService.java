@@ -1,7 +1,7 @@
-package service;
+package by.tms.service;
 
-import model.Student;
-import repository.StudentRepository;
+import by.tms.model.Student;
+import by.tms.repository.StudentRepository;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package repository;
+package by.tms.repository;
 
 
-import model.Student;
+import by.tms.model.Student;
 
 import java.util.List;
 

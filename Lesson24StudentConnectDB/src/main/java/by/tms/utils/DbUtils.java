@@ -1,4 +1,4 @@
-package utils;
+package by.tms.utils;
 
 import lombok.experimental.UtilityClass;
 
