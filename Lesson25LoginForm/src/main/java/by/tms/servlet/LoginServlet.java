@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", name);
             session.setAttribute("pass", pass);
-            request.getRequestDispatcher("/homepage").forward(request, response);
+            response.sendRedirect("/homepage");
         } else {
             response.sendRedirect("/");
         }
