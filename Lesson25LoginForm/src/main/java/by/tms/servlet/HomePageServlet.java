@@ -1,6 +1,5 @@
 package by.tms.servlet;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,6 @@ import java.io.IOException;
 public class HomePageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/accepted/home.jsp");
-        requestDispatcher.forward(request, response);
+        request.getRequestDispatcher("/accepted/home.jsp").forward(request, response);
     }
 }
