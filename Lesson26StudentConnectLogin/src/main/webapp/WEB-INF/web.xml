@@ -21,5 +21,11 @@
         <param-name>db_driver</param-name>
         <param-value>org.postgresql.Driver</param-value>
     </context-param>
-
+    <error-page>
+        <error-code>404</error-code>
+        <location>/jsp/404.jsp</location>
+    </error-page>
+    <welcome-file-list>
+        <welcome-file>/jsp/index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "GetAllUsers", value = "/users")
-public class ServletStudent extends HttpServlet {
+@WebServlet(value = "/get-students")
+public class GetAllStudents extends HttpServlet {
     private StudentService studentService;
 
     @Override
@@ -28,7 +28,7 @@ public class ServletStudent extends HttpServlet {
              HttpServletResponse response)
             throws ServletException, IOException {
         List<Student> students = studentService.findStudents();
-        request.setAttribute("data", students);
-        getServletContext().getRequestDispatcher("/students.jsp").forward(request, response);
+        request.setAttribute("studentList", students);
+        getServletContext().getRequestDispatcher("/jsp/read.jsp").forward(request, response);
     }
 }

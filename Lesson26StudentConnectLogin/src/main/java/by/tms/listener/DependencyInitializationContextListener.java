@@ -25,10 +25,13 @@ public class DependencyInitializationContextListener implements ServletContextLi
         try {
             Class.forName(dbDriver);
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            System.out.println("getConnection");
             StudentRepository repository = new JdbcStudentRepository(connection);
             StudentService studentService = new StudentService(repository);
             servletContextEvent.getServletContext().setAttribute("studentService", studentService);
+            System.out.println("studentService");
             servletContextEvent.getServletContext().setAttribute("connection", connection);
+            System.out.println("connection");
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Exception: " + e.getMessage());
         }

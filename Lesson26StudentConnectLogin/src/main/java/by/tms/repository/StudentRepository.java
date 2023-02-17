@@ -11,5 +11,7 @@ public interface StudentRepository {
 
     void deleteStudent(Long id);
 
-    public void addNewStudent(Student student);
+    void addNewStudent(Student student);
+
+    void updateStudents(Student student);
 }

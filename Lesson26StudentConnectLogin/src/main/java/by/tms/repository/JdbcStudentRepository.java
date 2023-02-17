@@ -9,9 +9,10 @@ import java.util.List;
 
 public class JdbcStudentRepository implements StudentRepository {
 
-    private static final String GET_ALL_STUDENTS_QUERY = "select name,surname,course, city_name from students left join city on city.id = students.id_city";
+    private static final String GET_ALL_STUDENTS_QUERY = "select students.id,name,surname,course, city_name from students left join city on city.id = students.id_city";
     private static final String DELETE_STUDENT_QUERY = "delete from students where id = ?";
-    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students(name, surname, course, city_id) VALUES(?, ?, ?, ?);";
+    private static final String INSERT_STUDENT_QUERY = "insert into students (name, surname, course, id_city) values (?, ?, ?, ?)";
+    private static final String UPDATE_STUDENT_QUERY = "UPDATE students set name = ?, surname = ?, course = ?, id_city = ? where students.id = ?";
 
     private final Connection connection;
 
@@ -27,11 +28,12 @@ public class JdbcStudentRepository implements StudentRepository {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(GET_ALL_STUDENTS_QUERY);
             while (rs.next()) {
+                Long id = rs.getLong("id");
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
                 int course = rs.getInt("course");
                 String city = rs.getString("city_name");
-                students.add(new Student(name, surname, course, city));
+                students.add(new Student(id, name, surname, course, city));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -57,10 +59,27 @@ public class JdbcStudentRepository implements StudentRepository {
             statement.setString(1, student.getName());
             statement.setString(2, student.getSurname());
             statement.setInt(3, student.getCourse());
-            statement.setString(4, student.getCity());
+            statement.setInt(4, student.getCityId());
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Exception: " + e.getMessage());
         }
     }
+
+    @Override
+    public void updateStudents(Student student) {
+        try {
+            PreparedStatement statement = connection.prepareStatement(UPDATE_STUDENT_QUERY);
+            statement.setString(1, student.getName());
+            statement.setString(2, student.getSurname());
+            statement.setInt(3, student.getCourse());
+            statement.setInt(4, student.getCityId());
+            statement.setLong(5, student.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
+
+
