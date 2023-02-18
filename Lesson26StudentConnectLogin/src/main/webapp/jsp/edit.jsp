@@ -7,8 +7,9 @@
     <title>Edit Student</title>
 </head>
 <body>
-<h1 class="violet">СТРАНИЦА НЕ РАБОТАЕТ</h1>
-<form method="post">
+
+<h1> Изменение студента </h1>
+<form method="post" action="update-student">
     <input type="hidden" value="${student.id}" name="id"/>
     <label>Name</label><br>
     <input name="name" value="${student.name}"/><br><br>
@@ -20,5 +21,6 @@
     <input name="cityId" value="${student.cityId}" type="number"/><br><br>
     <input type="submit" value="Send"/>
 </form>
+<jsp:include page="/jsp/footer.jsp"/>
 </body>
 </html>

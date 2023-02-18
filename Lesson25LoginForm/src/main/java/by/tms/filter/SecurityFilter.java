@@ -20,7 +20,7 @@ public class SecurityFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
-        if ((session.getAttribute("user")) == null) {
+        if (session.getAttribute("user") == null) {
             request.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
         } else {
             chain.doFilter(request, response);

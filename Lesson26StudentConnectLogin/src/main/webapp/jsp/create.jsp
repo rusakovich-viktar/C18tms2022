@@ -24,91 +24,13 @@
         "logo": "https://i.ibb.co/cxrCxyQ/pngegg.png"
     }</script>
     <meta content="#478ac9" name="theme-color">
-    <meta content="Create" property="og:title">
+
     <meta content="" property="og:description">
     <meta content="website" property="og:type">
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 <body class="u-body u-xl-mode" data-lang="ru">
-<header class="u-clearfix u-header u-header" id="sec-52ce">
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a class="u-hover-feature u-image u-logo u-opacity u-opacity-75 u-image-1" data-image-height="3588"
-           data-image-width="5382" href="/" title="index">
-            <img class="u-logo-image u-logo-image-1"
-                 src="https://i.ibb.co/cxrCxyQ/pngegg.png">
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-            <div class="menu-collapse"
-                 style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 500;">
-                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                   data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#&quot;}"
-                   href="#">
-                    <svg class="u-svg-link" viewBox="0 0 24 24">
-                        <use xlink:href="#menu-hamburger"></use>
-                    </svg>
-                    <svg class="u-svg-content" id="menu-hamburger" version="1.1" viewBox="0 0 16 16" x="0px"
-                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                        <g>
-                            <rect height="2" width="16" y="1"></rect>
-                            <rect height="2" width="16" y="7"></rect>
-                            <rect height="2" width="16" y="13"></rect>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
-                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/add-student" style="padding: 10px 20px;">Create</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/get-students" style="padding: 10px 20px;">Read</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/update-student" style="padding: 10px 20px;">Update</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/delete-student" style="padding: 10px 20px;">Delete</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/logout"
-                            style="padding: 10px 20px;">Logout</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                    <div class="u-inner-container-layout u-sidenav-overflow">
-                        <div class="u-menu-close"></div>
-                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/add-student">Create</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/get-students">Read</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/update-student">Update</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/delete-student">Delete</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/logout">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-            </div>
-        </nav>
-    </div>
-</header>
+<jsp:include page="/jsp/header.jsp"/>
 </section>
 <section class="u-clearfix u-grey-90 u-section-3" id="sec-d687">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -148,7 +70,7 @@
                                                     <span class="close">close</span>
 
                                                     <div class="title">
-                                                        <h1>Добавить</h1>
+                                                        <h1>Добавление студента</h1>
                                                     </div>
 
                                                     <img src="https://cdn-icons-png.flaticon.com/512/2521/2521826.png"
@@ -156,22 +78,22 @@
 
                                                     <div class="subscribe">
                                                         <h1>Введите ID студента которого вы хотите
-                                                            <span> ДОБАВИТЬ </span> и нажмите "Удалить"</h1>
+                                                            <span> ДОБАВИТЬ </span> и нажмите "Добавить"</h1>
 
                                                         <form method="post" action="add-student">
                                                             <div><input type="text" class="colortext" name="name"
-                                                                        placeholder="Имя"
+                                                                        placeholder="Имя" required="required"
                                                                         autocomplete="off"></div>
                                                             <div><input type="text" class="colortext" name="surname"
-                                                                        placeholder="Фамилия"
+                                                                        placeholder="Фамилия" required="required"
                                                                         autocomplete="off"></div>
                                                             <div>
                                                                 <input type="text" class="colortext" name="course"
-                                                                       placeholder="Курс"
+                                                                       placeholder="Курс" required="required"
                                                                        autocomplete="off"></div>
                                                             <div>
                                                                 <input type="text" class="colortext" name="cityId"
-                                                                       placeholder="ID города"
+                                                                       placeholder="ID города" required="required"
                                                                        autocomplete="off"></div>
                                                             <input type="submit" value="Добавить">
                                                         </form>
@@ -284,14 +206,7 @@
     </div>
 </section>
 
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-545f">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1"
-           data-lang-en="">
-            C18TMS2022, Все права отсутствуют, Февраль 2023
-    </div>
-</footer>
-
+<jsp:include page="/jsp/footer.jsp"/>
 
 </body>
 </html>

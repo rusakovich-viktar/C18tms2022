@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebServlet("/delete-student")
 public class DeleteStudent extends HttpServlet {
     private StudentService studentService;
-
+    
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -22,7 +23,14 @@ public class DeleteStudent extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/jsp/delete.jsp").forward(request, response);
+        Optional<String> stringRequest = Optional.ofNullable(request.getParameter("id"));
+        if (stringRequest.isPresent()) {
+            Long id = Long.parseLong(request.getParameter("id"));
+            studentService.deleteStudent(id);
+            response.sendRedirect("/get-students");
+        } else {
+            getServletContext().getRequestDispatcher("/jsp/delete.jsp").forward(request, response);
+        }
     }
 
     @Override
