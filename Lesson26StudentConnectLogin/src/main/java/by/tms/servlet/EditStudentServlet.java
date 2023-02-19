@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebServlet("/update-student")
 public class EditStudentServlet extends HttpServlet {
@@ -24,9 +25,15 @@ public class EditStudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/jsp/edit.jsp").forward(request, response);
-
+        Optional<String> stringRequest = Optional.ofNullable(request.getParameter("id"));
+        if (stringRequest.isPresent()) {
+            request.getParameter("id");
+            getServletContext().getRequestDispatcher("/jsp/edit-by-id.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("/get-students");
+        }
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,7 +49,7 @@ public class EditStudentServlet extends HttpServlet {
             response.sendRedirect("/get-students");
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
-            getServletContext().getRequestDispatcher("/jsp/edit.jsp").forward(request, response);
+            response.sendRedirect("/get-students");
         }
     }
 }

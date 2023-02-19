@@ -13,7 +13,7 @@ public class JdbcStudentRepository implements StudentRepository {
     private static final String DELETE_STUDENT_QUERY = "delete from students where id = ?";
     private static final String INSERT_STUDENT_QUERY = "insert into students (name, surname, course, id_city) values (?, ?, ?, ?)";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students set name = ?, surname = ?, course = ?, id_city = ? where students.id = ?";
-
+    private static final String SELECT_ROW_WHERE_ID_IS = "SELECT * FROM students WHERE id=?";
     private final Connection connection;
 
     public JdbcStudentRepository(Connection connection) {
@@ -80,6 +80,27 @@ public class JdbcStudentRepository implements StudentRepository {
             System.out.println(e.getMessage());
         }
     }
+
+//    @Override
+//    public Student selectOneRow(Long id) {
+//
+//        Student student = null;
+//        try (PreparedStatement statement = connection.prepareStatement(SELECT_ROW_WHERE_ID_IS)) {
+//            statement.setLong(1, id);
+//            ResultSet rs = statement.executeQuery();
+//            if (rs.next()) {
+//                Long studId = rs.getLong("id");
+//                String name = rs.getString("name");
+//                String surname = rs.getString("surname");
+//                int course = rs.getInt("course");
+//                String city = rs.getString("city_name");
+//                student = new Student(id, name, surname, course, city);
+//            }
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return student;
+//    }
+
+
 }
-
-

@@ -14,4 +14,7 @@ public interface StudentRepository {
     void addNewStudent(Student student);
 
     void updateStudents(Student student);
+
+//    public Student selectOneRow(Long id);
+
 }

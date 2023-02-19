@@ -28,6 +28,10 @@ public class StudentService {
         JdbcStudentRepository.updateStudents(student);
     }
 
+//    public void selectOneRow(Long id) {
+//        JdbcStudentRepository.selectOneRow(id);
+//    }
+
 }
 
 
