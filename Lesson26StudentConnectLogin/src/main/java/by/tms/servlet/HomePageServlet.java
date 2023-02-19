@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "HomeServlet", value = "/homepage")
+@WebServlet(value = "/homepage")
 public class HomePageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/accepted/home.jsp").forward(request, response);
+        request.getRequestDispatcher("/").forward(request, response);
     }
 }
