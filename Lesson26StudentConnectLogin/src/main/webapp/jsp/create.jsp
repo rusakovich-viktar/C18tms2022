@@ -87,19 +87,17 @@
                                                             <div><input type="text" class="colortext" name="surname"
                                                                         placeholder="Фамилия" required="required"
                                                                         autocomplete="off"></div>
-                                                            <div>
-                                                                <input type="text" class="colortext" name="course"
-                                                                       placeholder="Курс" required="required"
-                                                                       autocomplete="off"></div>
-                                                            <div>
-                                                                <label for="phone">Выберите модель:</label>
-                                                                <select id="phone" name="phone">
-                                                                    <option value="iphone 6s">iPhone 6S</option>
-                                                                    <option value="lumia 950">Lumia 950</option>
-                                                                    <option value="nexus 5x">Nexus 5X</option>
-                                                                    <option value="galaxy s7">Galaxy S7</option>
-                                                                </select>
+                                                            <div class="boxqw"> Курс: <select
+                                                                    class=""
+                                                                    name="course">
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                            </select></div>
 
+                                                            <div>
                                                                 <input type="text" class="colortext" name="cityId"
                                                                        placeholder="ID города" required="required"
                                                                        autocomplete="off"></div>

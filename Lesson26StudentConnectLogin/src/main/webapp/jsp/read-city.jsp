@@ -76,43 +76,6 @@
     </div>
 </section>
 
-<section class="u-align-center u-clearfix u-image u-section-3" data-image-height="1134" data-image-width="1980"
-         id="carousel_c4be">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-table u-table-responsive u-table-1">
-            <table class="u-table-entity u-table-entity-1">
-                <colgroup>
-                    <col width="19.3%">
-                    <col width="18.3%">
-                    <col width="24.2%">
-                    <col width="9.9%">
-                    <col width="18.3%">
-                </colgroup>
-                <thead class="u-palette-4-base u-table-header u-table-header-1">
-                <tr style="height: 46px;">
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">ID city</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Город</th>
-                </tr>
-                </thead>
-                <%
-                    ArrayList<City> cities = (ArrayList<City>) request.getAttribute("studentCity");
-                    for (City city : cities) {
-                %>
-                <tbody class="u-table-body">
-                <tr style="height: 73px;">
-
-
-                    <td><%=city.getCityId()%>
-                    </td>
-                    <td><%=city.getCityName()%>
-                    </td>
-                </tr>
-                <%}%>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
 
 <jsp:include page="/jsp/section-above-footer.jsp"/>
 <jsp:include page="/jsp/footer.jsp"/>

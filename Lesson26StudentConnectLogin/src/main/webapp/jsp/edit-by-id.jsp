@@ -34,21 +34,24 @@
         <div class="u-form u-form-1">
             <form method="post" action="update-student">
                 <input type="hidden" value="<%=request.getParameter("id")%>" name="id"/>
-                <div><input type="text" class="colortext" name="name"
+                <div><input type="text" class="boxqw" name="name"
                             placeholder="Имя" required="required"
                             autocomplete="off"></div>
-                <div><input type="text" class="colortext" name="surname"
+                <div><input type="text" class="boxqw" name="surname"
                             placeholder="Фамилия" required="required"
                             autocomplete="off"></div>
+                <div> Курс: <select class="boxselect" name="course">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select></div>
                 <div>
-                    <input type="text" class="colortext" name="course"
-                           placeholder="Курс" required="required"
-                           autocomplete="off"></div>
-                <div>
-                    <input type="text" class="colortext" name="cityId"
+                    <input type="text" class="boxqw" name="cityId"
                            placeholder="ID города" required="required"
                            autocomplete="off"></div>
-                <input type="submit" value="Добавить">
+                <input class="u-btn u-button-style u-btn-2" type="submit" value="Изменить">
             </form>
         </div>
     </div>
