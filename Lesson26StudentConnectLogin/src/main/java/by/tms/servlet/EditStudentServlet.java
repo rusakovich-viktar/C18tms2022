@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet("/update-student")
@@ -29,6 +30,8 @@ public class EditStudentServlet extends HttpServlet {
         Optional<String> stringRequest = Optional.ofNullable(request.getParameter("id"));
         if (stringRequest.isPresent()) {
             request.getParameter("id");
+            List<City> cities = studentService.findCity();
+            request.setAttribute("studentCity", cities);
             getServletContext().getRequestDispatcher("/jsp/edit-by-id.jsp").forward(request, response);
         } else {
             response.sendRedirect("/get-students");

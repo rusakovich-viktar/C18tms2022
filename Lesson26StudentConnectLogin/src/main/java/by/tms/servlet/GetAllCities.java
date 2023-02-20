@@ -5,14 +5,13 @@ import by.tms.service.StudentService;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(value = "/get-city")
+//@WebServlet(value = "/get-city") (ВОЗМОЖНО ВЫВЕДУ ЧТО НИБУДЬ ЕЩЕ ПО ГОРОДАМ )
 public class GetAllCities extends HttpServlet {
     private StudentService studentService;
 
@@ -29,6 +28,6 @@ public class GetAllCities extends HttpServlet {
             throws ServletException, IOException {
         List<City> cities = studentService.findCity();
         request.setAttribute("studentCity", cities);
-        getServletContext().getRequestDispatcher("/jsp/read-city.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/jsp/add-city.jsp").forward(request, response);
     }
 }

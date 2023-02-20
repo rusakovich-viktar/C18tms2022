@@ -1,3 +1,5 @@
+<%@ page import="by.tms.model.City" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
@@ -40,24 +42,30 @@
                 <div><label>Surname</label><br>
                     <input type="text" class="colortext" name="surname" placeholder="Фамилия" required="required"
                            autocomplete="off"></div>
-                <div><label>Course</label><br>
-                    <div class="boxqw"><select
-                            class=""
-                            name="course" REQUIRED>
-                        <option value="">не выбран</option>
-                        <option value="1">Первый</option>
-                        <option value="2">Второй</option>
-                        <option value="3">Третий</option>
-                        <option value="4">Четвертый</option>
-                        <option value="5">Пятый</option>
-                    </select></div>
-
-
-                    <div><label>CityId</label><br>
-
-                        <input type="text" class="colortext" name="cityId" placeholder="ID города" required="required"
-                               autocomplete="off"><br></div>
-                    <input type="submit" value="Изменить"/>
+                <label>Course</label><br>
+                <div class="colortext"><select
+                        class=""
+                        name="course" REQUIRED>
+                    <option value="">не выбран</option>
+                    <option value="1">Первый</option>
+                    <option value="2">Второй</option>
+                    <option value="3">Третий</option>
+                    <option value="4">Четвертый</option>
+                    <option value="5">Пятый</option>
+                </select></div>
+                <label>Город</label><br>
+                <div class="colortext"><select id="city" name="cityId" REQUIRED>
+                    <%
+                        ArrayList<City> cities = (ArrayList<City>) request.getAttribute("studentCity");
+                        for (City city : cities) {
+                    %>
+                    <option value=<%=city.getCityId()%>><%=city.getCityName()%>
+                    </option>
+                    <%}%>
+                </select></div>
+                <p>
+                    <input class="colortext" type="submit" value="Изменить"/>
+                </p>
             </form>
         </div>
     </div>
