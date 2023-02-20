@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="by.tms.model.Student " %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="by.tms.model.City" %>
 
 <html lang="ru" style="font-size: 16px;">
 <head>
@@ -51,42 +52,21 @@
                 </colgroup>
                 <thead class="u-palette-4-base u-table-header u-table-header-1">
                 <tr style="height: 46px;">
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">ID</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Имя</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Фамилия</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Курс</th>
+                    <th class="u-border-1 u-border-palette-4-base u-table-cell">ID city</th>
                     <th class="u-border-1 u-border-palette-4-base u-table-cell">Город</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Редактировать</th>
-                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Удалить</th>
-
                 </tr>
                 </thead>
                 <%
-                    ArrayList<Student> students = (ArrayList<Student>) request.getAttribute("studentList");
-                    for (Student student : students) {
+                    ArrayList<City> cities = (ArrayList<City>) request.getAttribute("studentCity");
+                    for (City city : cities) {
                 %>
                 <tbody class="u-table-body">
                 <tr style="height: 73px;">
 
 
-                    <td><%=student.getId()%>
+                    <td><%=city.getCityId()%>
                     </td>
-                    <td><%=student.getName()%>
-                    </td>
-                    <td><%=student.getSurname()%>
-                    </td>
-                    <td><%=student.getCourse()%>
-                    </td>
-                    <td><%=student.getCity().getCityName()%>
-                    </td>
-                    <td>
-                        <a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                           href="/update-student?id=<%=student.getId()%>" style="padding: 10px 20px;"><i>Edit</i></a>
-                    </td>
-                    <td>
-                        <a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                           href="/delete-student?id=<%=student.getId()%>"
-                           style="padding: 10px 20px;"><em>Delete</em></a>
+                    <td><%=city.getCityName()%>
                     </td>
                 </tr>
                 <%}%>
@@ -95,6 +75,45 @@
         </div>
     </div>
 </section>
+
+<section class="u-align-center u-clearfix u-image u-section-3" data-image-height="1134" data-image-width="1980"
+         id="carousel_c4be">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-table u-table-responsive u-table-1">
+            <table class="u-table-entity u-table-entity-1">
+                <colgroup>
+                    <col width="19.3%">
+                    <col width="18.3%">
+                    <col width="24.2%">
+                    <col width="9.9%">
+                    <col width="18.3%">
+                </colgroup>
+                <thead class="u-palette-4-base u-table-header u-table-header-1">
+                <tr style="height: 46px;">
+                    <th class="u-border-1 u-border-palette-4-base u-table-cell">ID city</th>
+                    <th class="u-border-1 u-border-palette-4-base u-table-cell">Город</th>
+                </tr>
+                </thead>
+                <%
+                    ArrayList<City> cities = (ArrayList<City>) request.getAttribute("studentCity");
+                    for (City city : cities) {
+                %>
+                <tbody class="u-table-body">
+                <tr style="height: 73px;">
+
+
+                    <td><%=city.getCityId()%>
+                    </td>
+                    <td><%=city.getCityName()%>
+                    </td>
+                </tr>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
 <jsp:include page="/jsp/section-above-footer.jsp"/>
 <jsp:include page="/jsp/footer.jsp"/>
 </body>

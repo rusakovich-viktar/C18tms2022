@@ -1,6 +1,7 @@
 package by.tms.repository;
 
 
+import by.tms.model.City;
 import by.tms.model.Student;
 
 import java.util.List;
@@ -15,6 +16,6 @@ public interface StudentRepository {
 
     void updateStudents(Student student);
 
-//    public Student selectOneRow(Long id);
+    List<City> findCity();
 
 }

@@ -1,5 +1,6 @@
 package by.tms.service;
 
+import by.tms.model.City;
 import by.tms.model.Student;
 import by.tms.repository.StudentRepository;
 
@@ -28,9 +29,9 @@ public class StudentService {
         JdbcStudentRepository.updateStudents(student);
     }
 
-//    public void selectOneRow(Long id) {
-//        JdbcStudentRepository.selectOneRow(id);
-//    }
+    public List<City> findCity() {
+        return JdbcStudentRepository.findCity();
+    }
 
 }
 

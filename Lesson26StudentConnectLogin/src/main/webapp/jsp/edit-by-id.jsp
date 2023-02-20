@@ -34,19 +34,21 @@
         <div class="u-form u-form-1">
             <form method="post" action="update-student">
                 <input type="hidden" value="<%=request.getParameter("id")%>" name="id"/>
-                <div><label>Name</label><br>
-                    <input class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" name="name" type="text"
-                           placeholder="Введите имя" required="required"/><br><br></div>
-                <label>Surname</label><br>
-                <input class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" name="surname" type="text"
-                       placeholder="Введите фамилию" required="required"/><br><br>
-                <label>Course</label><br>
-                <input class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" name="course" type="text"
-                       placeholder="Введите курс" required="required"/><br><br>
-                <label>CityId</label><br>
-                <input class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" name="cityId" type="text"
-                       placeholder="Введите ID города" required="required"/><br><br>
-                <input class="u-btn u-btn-submit u-button-style" type="submit" value="Изменить"/>
+                <div><input type="text" class="colortext" name="name"
+                            placeholder="Имя" required="required"
+                            autocomplete="off"></div>
+                <div><input type="text" class="colortext" name="surname"
+                            placeholder="Фамилия" required="required"
+                            autocomplete="off"></div>
+                <div>
+                    <input type="text" class="colortext" name="course"
+                           placeholder="Курс" required="required"
+                           autocomplete="off"></div>
+                <div>
+                    <input type="text" class="colortext" name="cityId"
+                           placeholder="ID города" required="required"
+                           autocomplete="off"></div>
+                <input type="submit" value="Добавить">
             </form>
         </div>
     </div>

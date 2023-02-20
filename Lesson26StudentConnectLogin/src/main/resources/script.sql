@@ -6,8 +6,9 @@ drop table if exists city cascade;
 CREATE TABLE city
 (
     id        integer primary key generated always as identity unique,
-    city_name VARCHAR(45) not null
+    city_name VARCHAR(45) not null unique
 );
+
 
 CREATE TABLE students
 (

@@ -1,5 +1,6 @@
 package by.tms.servlet;
 
+import by.tms.model.City;
 import by.tms.model.Student;
 import by.tms.service.StudentService;
 
@@ -38,14 +39,15 @@ public class EditStudentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
         try {
             Long id = Long.parseLong(request.getParameter("id"));
             String name = request.getParameter("name");
             String surname = request.getParameter("surname");
             int course = Integer.parseInt(request.getParameter("course"));
-            int cityId = Integer.parseInt(request.getParameter("cityId"));
-            studentService.updateStudents(new Student(id, name, surname, course, cityId));
+            Long cityId = Long.parseLong(request.getParameter("cityId"));
+            City city = new City(cityId);
+            studentService.updateStudents(new Student(id, name, surname, course, city));
             response.sendRedirect("/get-students");
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
