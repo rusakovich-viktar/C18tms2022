@@ -83,7 +83,8 @@
                                                         <form
                                                                 method="post" action="delete-student">
 
-                                                            <input type="text" class="colortext" name="deleted-id"
+                                                            <input type="text" class="colortext"
+                                                                   name="deleted-id"
                                                                    placeholder="ID студента" required="required"
                                                                    autocomplete="off">
 

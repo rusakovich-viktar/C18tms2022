@@ -81,7 +81,8 @@
                                                             <span> ДОБАВИТЬ </span> и нажмите "Добавить"</h1>
 
                                                         <form method="post" action="add-student">
-                                                            <div><input type="text" class="colortext" name="name"
+                                                            <div><input type="text" class="colortext"
+                                                                        name="name"
                                                                         placeholder="Имя" required="required"
                                                                         autocomplete="off"></div>
                                                             <div><input type="text" class="colortext" name="surname"
@@ -89,12 +90,13 @@
                                                                         autocomplete="off"></div>
                                                             <div class="boxqw"> Курс: <select
                                                                     class=""
-                                                                    name="course">
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
+                                                                    name="course" REQUIRED>
+                                                                <option value="">не выбран</option>
+                                                                <option value="1">Первый</option>
+                                                                <option value="2">Второй</option>
+                                                                <option value="3">Третий</option>
+                                                                <option value="4">Четвертый</option>
+                                                                <option value="5">Пятый</option>
                                                             </select></div>
 
                                                             <div>

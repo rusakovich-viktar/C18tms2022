@@ -56,20 +56,28 @@
                     <th class="u-border-1 u-border-palette-4-base u-table-cell">Город</th>
                 </tr>
                 </thead>
-                <%
-                    ArrayList<City> cities = (ArrayList<City>) request.getAttribute("studentCity");
-                    for (City city : cities) {
-                %>
+
                 <tbody class="u-table-body">
                 <tr style="height: 73px;">
 
+                    <form method="get">
+                        <label for="phone">Выберите модель:</label>
+                        <select id="phone" name="phone">
+                            <%
+                                ArrayList<City> cities = (ArrayList<City>) request.getAttribute("studentCity");
+                                for (City city : cities) {
+                            %>
+                            <option value=<%=city.getCityId()%>><%=city.getCityName()%>
+                            </option>
+                            <%}%>
+                        </select>
+                        </p>
+                        <p>
+                            <input type="submit" value="Отправить"/>
+                        </p>
+                    </form>
 
-                    <td><%=city.getCityId()%>
-                    </td>
-                    <td><%=city.getCityName()%>
-                    </td>
-                </tr>
-                <%}%>
+
                 </tbody>
             </table>
         </div>

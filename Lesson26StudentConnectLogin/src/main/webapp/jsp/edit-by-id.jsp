@@ -34,28 +34,35 @@
         <div class="u-form u-form-1">
             <form method="post" action="update-student">
                 <input type="hidden" value="<%=request.getParameter("id")%>" name="id"/>
-                <div><input type="text" class="boxqw" name="name"
-                            placeholder="Имя" required="required"
-                            autocomplete="off"></div>
-                <div><input type="text" class="boxqw" name="surname"
-                            placeholder="Фамилия" required="required"
-                            autocomplete="off"></div>
-                <div> Курс: <select class="boxselect" name="course">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select></div>
-                <div>
-                    <input type="text" class="boxqw" name="cityId"
-                           placeholder="ID города" required="required"
+                <div><label>Name</label><br>
+                    <input type="text" class="colortext" name="name" placeholder="Имя" required="required"
                            autocomplete="off"></div>
-                <input class="u-btn u-button-style u-btn-2" type="submit" value="Изменить">
+                <div><label>Surname</label><br>
+                    <input type="text" class="colortext" name="surname" placeholder="Фамилия" required="required"
+                           autocomplete="off"></div>
+                <div><label>Course</label><br>
+                    <div class="boxqw"><select
+                            class=""
+                            name="course" REQUIRED>
+                        <option value="">не выбран</option>
+                        <option value="1">Первый</option>
+                        <option value="2">Второй</option>
+                        <option value="3">Третий</option>
+                        <option value="4">Четвертый</option>
+                        <option value="5">Пятый</option>
+                    </select></div>
+
+
+                    <div><label>CityId</label><br>
+
+                        <input type="text" class="colortext" name="cityId" placeholder="ID города" required="required"
+                               autocomplete="off"><br></div>
+                    <input type="submit" value="Изменить"/>
             </form>
         </div>
     </div>
 </section>
+
 
 <jsp:include page="/jsp/section-above-footer.jsp"/>
 <jsp:include page="/jsp/footer.jsp"/>
