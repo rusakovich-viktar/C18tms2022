@@ -26,9 +26,11 @@ public class DependencyInitializationContextListener implements ServletContextLi
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             StudentRepository repository = new JdbcStudentRepository(connection);
             StudentService studentService = new StudentService(repository);
-            servletContextEvent.getServletContext().setAttribute("studentService", studentService);
+//            SecurityRepositoryAware securityRepository = new SecurityRepository(connection);
+//            SecurityService securityService = new SecurityService(securityRepository);
             servletContextEvent.getServletContext().setAttribute("connection", connection);
-            System.out.println("connection");
+            servletContextEvent.getServletContext().setAttribute("studentService", studentService);
+//            servletContextEvent.getServletContext().setAttribute("securityService", securityService);
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Exception: " + e.getMessage());
         }
@@ -40,7 +42,7 @@ public class DependencyInitializationContextListener implements ServletContextLi
             final Connection connection = (Connection) servletContextEvent.getServletContext().getAttribute("connection");
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -45,7 +45,9 @@
                         <div class="u-container-layout u-valign-middle u-container-layout-1">
                             <h3 class="u-align-left u-text u-text-body-alt-color u-text-default u-text-1"
                                 data-animation-delay="500" data-animation-duration="1500"
-                                data-animation-name="customAnimationIn" data-lang-en="Coaching center">Добрый день</h3>
+                                data-animation-name="customAnimationIn" data-lang-en="Coaching center">Добрый
+                                день <b><%= session.getAttribute("requestUsername")%>
+                                </b></h3>
                             <h1 class="u-align-left u-custom-font u-font-ubuntu u-text u-text-body-alt-color u-text-2"
                                 data-animation-delay="0" data-animation-duration="1500"
                                 data-animation-name="customAnimationIn"> Вы

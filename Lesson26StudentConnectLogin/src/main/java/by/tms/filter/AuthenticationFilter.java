@@ -29,12 +29,12 @@ public class AuthenticationFilter implements Filter {
         this.context.log("Requested Resource::" + uri);
 
         HttpSession session = req.getSession(false);
-        Object user = req.getSession().getAttribute("user");
+        Object user = req.getSession().getAttribute("requestUsername");
         this.context.log("Фильтр аутентификации, пользователь::" + user);
 
         if (user == null && !(uri.endsWith("login.jsp"))) {
             this.context.log("Неавторизованный запрос");
-            res.sendRedirect("login.jsp");
+            res.sendRedirect("/login.jsp");
 
         } else {
             // pass the request along the filter chain

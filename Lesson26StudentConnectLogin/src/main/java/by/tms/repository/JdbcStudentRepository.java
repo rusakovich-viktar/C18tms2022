@@ -3,6 +3,7 @@ package by.tms.repository;
 
 import by.tms.model.City;
 import by.tms.model.Student;
+import by.tms.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class JdbcStudentRepository implements StudentRepository {
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students set name = ?, surname = ?, course = ?, id_city = ? where students.id = ?";
     private static final String GET_ALL_CITY = "select id, city_name from city order by city_name";
 
-
+    private static final String GET_USERS_INFO = "select login_key, pass_value from users";
     private final Connection connection;
 
     public JdbcStudentRepository(Connection connection) {
@@ -100,4 +101,24 @@ public class JdbcStudentRepository implements StudentRepository {
         }
         return cities;
     }
+
+    @Override
+    public List<User> findUserLoginPassword() {
+        List<User> users = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(GET_USERS_INFO);
+            while (rs.next()) {
+                String login = rs.getString(1);
+                String password = rs.getString(2);
+                users.add(new User(login, password));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return users;
+    }
+
+
 }
+

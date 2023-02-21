@@ -53,7 +53,9 @@
                     <li class="u-nav-item"><a
                             class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
                             href="/logout"
-                            style="padding: 10px 20px;">Logout</a>
+                            style="padding: 10px 20px;">Logout <i><%= session.getAttribute("requestUsername")%>
+                    </i>
+                    </a>
                     </li>
                 </ul>
             </div>
