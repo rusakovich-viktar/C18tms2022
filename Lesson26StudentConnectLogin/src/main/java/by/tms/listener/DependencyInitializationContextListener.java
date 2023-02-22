@@ -21,22 +21,20 @@ public class DependencyInitializationContextListener implements ServletContextLi
         String password = servletContextEvent.getServletContext().getInitParameter("db_password");
         String dbUrl = servletContextEvent.getServletContext().getInitParameter("db_url");
 
-
         try {
             Class.forName(dbDriver);
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
-            System.out.println("getConnection");
             StudentRepository repository = new JdbcStudentRepository(connection);
             StudentService studentService = new StudentService(repository);
-            servletContextEvent.getServletContext().setAttribute("studentService", studentService);
-            System.out.println("studentService");
+//            SecurityRepositoryAware securityRepository = new SecurityRepository(connection);
+//            SecurityService securityService = new SecurityService(securityRepository);
             servletContextEvent.getServletContext().setAttribute("connection", connection);
-            System.out.println("connection");
+            servletContextEvent.getServletContext().setAttribute("studentService", studentService);
+//            servletContextEvent.getServletContext().setAttribute("securityService", securityService);
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Exception: " + e.getMessage());
         }
     }
-
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
@@ -44,7 +42,7 @@ public class DependencyInitializationContextListener implements ServletContextLi
             final Connection connection = (Connection) servletContextEvent.getServletContext().getAttribute("connection");
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

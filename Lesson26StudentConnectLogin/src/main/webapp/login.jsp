@@ -16,8 +16,8 @@
 <h1>Sign In Form</h1>
 <div id="wrapper">
     <form id="signin" method="post" action="login" autocomplete="off">
-        <input type="text" id="user" name="user" placeholder="username"/>
-        <input type="password" id="pass" name="pass" placeholder="password"/>
+        <input type="text" id="user" name="requestUsername" placeholder="username"/>
+        <input type="password" id="pass" name="requestPassword" placeholder="password"/>
         <button type="submit">&#xf0da;</button>
         <p>forgot your password? <a href="#okno">click here</a></p>
         <div id="okno">

@@ -40,20 +40,22 @@
                     </li>
                     <li class="u-nav-item"><a
                             class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/get-students" style="padding: 10px 20px;">Read</a>
+                            href="/get-students" style="padding: 10px 20px;">Read Update Delete</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/update-student" style="padding: 10px 20px;">Update</a>
+                            href="/delete-student" style="padding: 10px 20px;">Delete по ID</a>
                     </li>
-                    <li class="u-nav-item"><a
-                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-                            href="/delete-student" style="padding: 10px 20px;">Delete</a>
+                    <%--                    <li class="u-nav-item"><a--%>
+                    <%--                            class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"--%>
+                    <%--                            href="/delete-student" style="padding: 10px 20px;">Delete</a>--%>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
                             href="/logout"
-                            style="padding: 10px 20px;">Logout</a>
+                            style="padding: 10px 20px;">Logout <i><%= session.getAttribute("requestUsername")%>
+                    </i>
+                    </a>
                     </li>
                 </ul>
             </div>
@@ -68,9 +70,9 @@
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                       href="/get-students">Read</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/update-student">Update</a>
-                            </li>
+                            <%--                            <li class="u-nav-item"><a class="u-button-style u-nav-link"--%>
+                            <%--                                                      href="/update-student">Update</a>--%>
+                            <%--                            </li>--%>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                       href="/delete-student">Delete</a>
                             </li>

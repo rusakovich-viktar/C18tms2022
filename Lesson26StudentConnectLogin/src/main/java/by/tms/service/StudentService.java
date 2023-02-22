@@ -1,6 +1,8 @@
 package by.tms.service;
 
+import by.tms.model.City;
 import by.tms.model.Student;
+import by.tms.model.User;
 import by.tms.repository.StudentRepository;
 
 import java.util.List;
@@ -27,6 +29,15 @@ public class StudentService {
     public void updateStudents(Student student) {
         JdbcStudentRepository.updateStudents(student);
     }
+
+    public List<City> findCity() {
+        return JdbcStudentRepository.findCity();
+    }
+
+    public List<User> findUserLoginPassword() {
+        return JdbcStudentRepository.findUserLoginPassword();
+    }
+
 
 }
 

@@ -6,8 +6,9 @@ drop table if exists city cascade;
 CREATE TABLE city
 (
     id        integer primary key generated always as identity unique,
-    city_name VARCHAR(45) not null
+    city_name VARCHAR(45) not null unique
 );
+
 
 CREATE TABLE students
 (
@@ -52,4 +53,22 @@ from students;
 -- Джоиним таблицы
 select *
 from students
-         left join city on city.id = students.id_city
+         left join city on city.id = students.id_city;
+
+
+--Таблица пользователей
+CREATE TABLE users
+(
+    id         integer primary key generated always as identity unique,
+    login_key  text not null unique,
+    pass_value text not null
+);
+
+INSERT INTO users (login_key, pass_value)
+VALUES ('admin', 'admin'),
+       ('test', 'test');
+
+select login_key, pass_value
+from users;
+
+

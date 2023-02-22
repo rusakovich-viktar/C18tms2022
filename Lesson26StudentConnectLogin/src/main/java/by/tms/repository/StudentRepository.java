@@ -1,7 +1,9 @@
 package by.tms.repository;
 
 
+import by.tms.model.City;
 import by.tms.model.Student;
+import by.tms.model.User;
 
 import java.util.List;
 
@@ -14,4 +16,8 @@ public interface StudentRepository {
     void addNewStudent(Student student);
 
     void updateStudents(Student student);
+
+    List<City> findCity();
+
+    List<User> findUserLoginPassword();
 }
