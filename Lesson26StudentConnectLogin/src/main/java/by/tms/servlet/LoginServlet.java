@@ -49,9 +49,7 @@ public class LoginServlet extends HttpServlet {
         for (User user : users) {
             if (user.getUsername().equals(requestUsername) && user.getPassword().equals(requestPassword)) {
                 HttpSession session = request.getSession();
-                User userAccess = new User();
                 session.setAttribute("requestUsername", requestUsername);
-                session.setAttribute("requestPassword", requestPassword);
                 System.out.println("залогинен пользователь " + requestUsername);
                 response.sendRedirect("/");
             }

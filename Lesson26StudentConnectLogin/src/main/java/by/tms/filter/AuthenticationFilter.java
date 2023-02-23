@@ -26,19 +26,18 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String uri = req.getRequestURI();
-        this.context.log("Requested Resource::" + uri);
+        System.out.println(("Requested Resource::" + uri));
 
         HttpSession session = req.getSession(false);
-        Object user = req.getSession().getAttribute("requestUsername");
-        this.context.log("Фильтр аутентификации, пользователь::" + user);
 
-        if (user == null && !(uri.endsWith("login.jsp"))) {
-            this.context.log("Неавторизованный запрос");
-            res.sendRedirect("/login.jsp");
+        if (req.getSession().getAttribute("requestUsername") == null && !(uri.endsWith("login.jsp"))) {
+            System.out.println(("Неавторизованный запрос"));
+            RequestDispatcher requestDispatcher = req.getServletContext().getRequestDispatcher("/login.jsp");
+            requestDispatcher.forward(request, response);
 
         } else {
             // pass the request along the filter chain
-            this.context.log("Авторизованный запрос, сессия:: " + session);
+            System.out.println(("Авторизованный запрос, сессия:: " + session));
             chain.doFilter(request, response);
         }
     }
