@@ -8,34 +8,34 @@ import by.tms.repository.StudentRepository;
 import java.util.List;
 
 public class StudentService {
-    private final StudentRepository JdbcStudentRepository;
+    private final StudentRepository jdbcStudentRepository;
 
     public StudentService(StudentRepository studentRepository) {
-        this.JdbcStudentRepository = studentRepository;
+        this.jdbcStudentRepository = studentRepository;
     }
 
     public List<Student> findStudents() {
-        return JdbcStudentRepository.findStudents();
+        return jdbcStudentRepository.findStudents();
     }
 
     public void deleteStudent(Long id) {
-        JdbcStudentRepository.deleteStudent(id);
+        jdbcStudentRepository.deleteStudent(id);
     }
 
     public void addNewStudent(Student student) {
-        JdbcStudentRepository.addNewStudent(student);
+        jdbcStudentRepository.addNewStudent(student);
     }
 
     public void updateStudents(Student student) {
-        JdbcStudentRepository.updateStudents(student);
+        jdbcStudentRepository.updateStudents(student);
     }
 
     public List<City> findCity() {
-        return JdbcStudentRepository.findCity();
+        return jdbcStudentRepository.findCity();
     }
 
     public List<User> findUserLoginPassword() {
-        return JdbcStudentRepository.findUserLoginPassword();
+        return jdbcStudentRepository.findUserLoginPassword();
     }
 
 

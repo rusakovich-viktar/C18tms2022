@@ -6,15 +6,14 @@ import by.tms.repository.SecurityRepositoryAware;
 import java.util.List;
 
 public class SecurityService {
-    private final SecurityRepositoryAware SecurityRepository;
-
+    private final SecurityRepositoryAware securityRepository;
 
     public SecurityService(SecurityRepositoryAware securityRepository) {
-        SecurityRepository = securityRepository;
+        this.securityRepository = securityRepository;
     }
 
     public List<User> findUserLoginPassword() {
-        return SecurityRepository.findUserLoginPassword();
+        return securityRepository.findUserLoginPassword();
     }
 
 }
