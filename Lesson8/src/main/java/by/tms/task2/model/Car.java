@@ -1,12 +1,12 @@
 package by.tms.task2.model;
 
+import static by.tms.task2.utils.Constants.COUNT_100_KILOMETRES;
+import static by.tms.task2.utils.Constants.FUEL_CONSUMPTION_LITRES_PER_100;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import static by.tms.task2.utils.Constants.COUNT100KILOMETRES;
-import static by.tms.task2.utils.Constants.FUEL_CONSUMPTION_LITRES_PER_100;
 
 @AllArgsConstructor
 @Getter
@@ -56,11 +56,13 @@ public class Car implements RequiredFieldsCarClassesAware {
 
     @Override
     public void go(double distanceTraveled) {
-        if (checkFuelVolume() && checkPowerOnButton)
+        if (checkFuelVolume() && checkPowerOnButton) {
+
             System.out.println("Машина поехала");
-        countDistanceAllTimes += distanceTraveled;
-        fuelConsumptionFact = FUEL_CONSUMPTION_LITRES_PER_100 * distanceTraveled / COUNT100KILOMETRES;
-        System.out.printf("Машина проехала километров: %.2f, потрачено литров топлива за поездку: %.2f\n", distanceTraveled, fuelConsumptionFact);
+            countDistanceAllTimes += distanceTraveled;
+            fuelConsumptionFact = FUEL_CONSUMPTION_LITRES_PER_100 * distanceTraveled / COUNT_100_KILOMETRES;
+            System.out.printf("Машина проехала километров: %.2f, потрачено литров топлива за поездку: %.2f\n", distanceTraveled, fuelConsumptionFact);
+        }
     }
 
     @Override
@@ -80,6 +82,4 @@ public class Car implements RequiredFieldsCarClassesAware {
         System.out.println("Автомобиль остановлен");
         gasTank.getCurrentVolumeGas();
     }
-
-
 }

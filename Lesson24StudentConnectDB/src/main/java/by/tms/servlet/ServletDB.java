@@ -1,6 +1,6 @@
 package by.tms.servlet;
 
-import by.tms.model.Student;
+import by.tms.Student;
 import by.tms.service.StudentServiceDbUtils;
 
 import javax.servlet.RequestDispatcher;

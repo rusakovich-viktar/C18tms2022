@@ -20,7 +20,8 @@
         "@type": "Organization",
         "name": "WebSite4066966",
         "logo": "https://i.ibb.co/cxrCxyQ/pngegg.png"
-    }</script>
+    }
+    </script>
     <meta content="#478ac9" name="theme-color">
 
     <meta content="" property="og:description">
@@ -107,7 +108,6 @@
 
 <jsp:include page="/jsp/section-above-footer.jsp"/>
 <jsp:include page="/jsp/footer.jsp"/>
-
 
 </body>
 </html>

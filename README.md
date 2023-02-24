@@ -24,11 +24,11 @@ TaskList:
         2) В Идее ставим курсор на названии проекта С18onl2022 и создаем новый модуль(правой клавишей мыши new->module),
         Название Lesson2, build system maven
         
-        3) В в папке Lesson2->java создать файл by.tms.model.task1.Task1.java
+        3) В в папке Lesson2->java создать файл by.tms.model.task_1.Task1.java
         
         4) Создать 2 дополнительные ветки features/TMS1, bugfix/TMS1 от ветки develop
         
-        5) В ветке features/TMS1 изменить файл by.tms.model.task1.Task1.java(добавляем вывод на консоль "Hello git")
+        5) В ветке features/TMS1 изменить файл by.tms.model.task_1.Task1.java(добавляем вывод на консоль "Hello git")
          и создать пулреквест ветки features/TMS1 к ветке develop
          
         6) Обновите ветку bugfix/TMS1 из features/TMS1(переключаемся на bugfix/TMS1,
@@ -262,7 +262,7 @@ TaskList:
 
  	import java.util.Random;
 
-	public class ComputerL7.hw.HomeWork {
+	public class ComputerL7.hw.by.tms.Task4.HomeWork {
     public static void main(String[] args) {
         calculateSumOfDiagonalElements();
         printMatrix();
@@ -400,7 +400,7 @@ TaskList:
 <details>
 <summary>Lesson 7</summary>
 
-public class ComputerL7.hw.HomeWork {
+public class ComputerL7.hw.by.tms.Task4.HomeWork {
 
     /**
      *
@@ -416,7 +416,7 @@ public class ComputerL7.hw.HomeWork {
      */
 
     /**
-     * в папке src/main/java создать пакет by.tms.task3
+     * в папке src/main/java создать пакет by.tms.task_3
      * в пакете создать класс Computer
      * 1) класс Computer будет содержать следующие поля:
      * - процессор
@@ -451,7 +451,7 @@ public class ComputerL7.hw.HomeWork {
 <details>
 <summary>Lesson 8add - Доп урок массивы и тд</summary>
 
-	public class ComputerL7.hw.HomeWork {
+	public class ComputerL7.hw.by.tms.Task4.HomeWork {
 		/*
 		Домашнее задание по массивам
 	Основное задание

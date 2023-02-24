@@ -1,15 +1,16 @@
 package by.tms.task1.model;
 
+import static by.tms.task1.utils.Constants.MIN_AGE;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import static by.tms.task1.utils.Constants.*;
 
 @Setter
 @Getter
 @NoArgsConstructor
 public class MilitaryOffice {
+
     private PersonRegistry personRegistry;
 
     public MilitaryOffice(PersonRegistry personRegistry) {
@@ -59,6 +60,4 @@ public class MilitaryOffice {
         }
         return count;
     }
-
 }
-

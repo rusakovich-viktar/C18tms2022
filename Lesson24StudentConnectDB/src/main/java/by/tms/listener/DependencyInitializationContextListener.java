@@ -3,13 +3,12 @@ package by.tms.listener;
 import by.tms.repository.JdbcStudentRepository;
 import by.tms.repository.StudentRepository;
 import by.tms.service.StudentService;
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 @WebListener
 public class DependencyInitializationContextListener implements ServletContextListener {
@@ -20,8 +19,7 @@ public class DependencyInitializationContextListener implements ServletContextLi
         String username = servletContextEvent.getServletContext().getInitParameter("db_user");
         String password = servletContextEvent.getServletContext().getInitParameter("db_password");
         String dbUrl = servletContextEvent.getServletContext().getInitParameter("db_url");
-
-
+        
         try {
             Class.forName(dbDriver);
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
@@ -33,7 +31,6 @@ public class DependencyInitializationContextListener implements ServletContextLi
             System.out.println("Exception: " + e.getMessage());
         }
     }
-
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {

@@ -1,6 +1,6 @@
 package by.tms.service;
 
-import by.tms.model.Product;
+import by.tms.Product;
 
 import java.util.List;
 

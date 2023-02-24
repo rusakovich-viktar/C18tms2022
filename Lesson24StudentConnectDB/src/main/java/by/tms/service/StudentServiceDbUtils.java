@@ -1,6 +1,6 @@
 package by.tms.service;
 
-import by.tms.model.Student;
+import by.tms.Student;
 import by.tms.utils.DbUtils;
 
 import java.sql.Connection;

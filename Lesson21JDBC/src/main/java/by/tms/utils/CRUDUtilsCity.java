@@ -2,9 +2,8 @@
 
 package by.tms.utils;
 
-import by.tms.model.City;
-import by.tms.model.Student;
-
+import by.tms.City;
+import by.tms.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -98,6 +97,4 @@ public class CRUDUtilsCity {
 
         return updatedStudents;
     }
-
-
 }

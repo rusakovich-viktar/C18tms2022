@@ -3,21 +3,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HomeWork {
+
     public static void main(String[] args) {
 //        getDayOfTheWeek(); //1
 //        countOfUnicellularAmoebas(); //2
 //        determinePositiveNegativeAndPrintNumberOfDigits();  //3
 //        printSignOfZodiac(0, 5); //4
 //        System.out.println(summ(1, -2)); //5
-
 //        char[][] drawingBoard = new char[4][4];
 //        for (int i = 0; i < drawingBoard.length; i++) {
 //            Arrays.fill(drawingBoard[i], '*');
 //            System.out.println(Arrays.toString(drawingBoard[i]));
 //        }
 //        printTriangle(drawingBoard, 'a'); /6
-
-
 //        reverseArrayOfOddElements(100); //7
 //        findMaxRandomValueInArray(); //8
 //        replaceAllArrayOddIndexToZero();//9
@@ -27,10 +25,7 @@ public class HomeWork {
 //        printTransponseMatrix();//12
         calculateSumOfDiagonalElements(); //13
 //////        printMatrix();
-
-
     }
-
 
     /*        Задачи:
     1) Задача на оператор switch!
@@ -51,7 +46,6 @@ public class HomeWork {
         };
         System.out.println(daysOfWeek);
     }
-
 
     //2) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
 //         сколько амеб будет через 3, 6, 9, 12,..., 24 часа
@@ -97,9 +91,7 @@ public class HomeWork {
 //         11 месяц c 01 по 22 скорпион с 23 по 30 стрелец
 //         12 месяц c 01 по 22 стрелец  с 23 по 31 козерог
     private static void printSignOfZodiac(int day, int month) {
-        String[] zodiacName = {"козерог", "водолей", "рыбы", "овен",
-                "телец", "близнецы", "рак", "лев", "дева",
-                "весы", "скорпион", "стрелец",};
+        String[] zodiacName = {"козерог", "водолей", "рыбы", "овен", "телец", "близнецы", "рак", "лев", "дева", "весы", "скорпион", "стрелец",};
         int[] zodiacSignChangeDay = {21, 20, 21, 21, 22, 22, 23, 22, 24, 24, 23, 23};
         int[] maxDayInMonth = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         String result = " ";
@@ -368,7 +360,6 @@ public class HomeWork {
         }
     }
 
-
     //  13.  заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
 
     public static void calculateSumOfDiagonalElements() {
@@ -382,7 +373,8 @@ public class HomeWork {
             System.out.println();
 
         }
-        int resultSumMainDiagonale = 0, resultSumOffDiagonale = 0;
+        int resultSumMainDiagonale = 0;
+        int resultSumOffDiagonale = 0;
 
         for (int i = 0; i < mass.length; i++) {
             resultSumMainDiagonale += mass[i][i];

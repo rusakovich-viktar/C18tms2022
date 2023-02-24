@@ -1,11 +1,10 @@
 package by.tms.task4.model;
 
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.util.Set;
 
 enum CategoryType {
     HOME_ELECTRONICS, COMPUTERS
@@ -19,9 +18,6 @@ enum CategoryType {
 @ToString
 public class Category {
 
-
     private CategoryType name;
     private Set<Product> products;
 }
-
-

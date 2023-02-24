@@ -1,6 +1,6 @@
 package by.tms.service;
 
-import by.tms.model.User;
+import by.tms.User;
 import by.tms.repository.SecurityRepositoryAware;
 
 import java.util.List;

@@ -1,7 +1,5 @@
 package by.tms;
 
-import by.tms.model.Product;
-import by.tms.model.Store;
 import by.tms.service.ServiceStore;
 import by.tms.service.ServiceStoreAware;
 

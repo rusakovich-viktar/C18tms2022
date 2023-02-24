@@ -1,7 +1,7 @@
 package by.tms.service;
 
-import by.tms.model.Product;
-import by.tms.model.Store;
+import by.tms.Product;
+import by.tms.Store;
 import lombok.AllArgsConstructor;
 
 import java.util.List;

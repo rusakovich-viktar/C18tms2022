@@ -1,13 +1,13 @@
 package by.tms.service;
 
-import by.tms.model.City;
-import by.tms.model.Student;
-import by.tms.model.User;
+import by.tms.City;
+import by.tms.Student;
+import by.tms.User;
 import by.tms.repository.StudentRepository;
-
 import java.util.List;
 
 public class StudentService {
+
     private final StudentRepository jdbcStudentRepository;
 
     public StudentService(StudentRepository studentRepository) {
@@ -37,8 +37,4 @@ public class StudentService {
     public List<User> findUserLoginPassword() {
         return jdbcStudentRepository.findUserLoginPassword();
     }
-
-
 }
-
-

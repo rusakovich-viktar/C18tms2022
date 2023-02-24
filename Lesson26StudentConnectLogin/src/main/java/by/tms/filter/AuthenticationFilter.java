@@ -1,13 +1,20 @@
 package by.tms.filter;
 
-import javax.servlet.*;
+import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
-@WebFilter(urlPatterns = "*.jsp")
+@WebFilter(urlPatterns = "/servlet/*")
 
 public class AuthenticationFilter implements Filter {
 
@@ -26,18 +33,18 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         String uri = req.getRequestURI();
-        System.out.println(("Requested Resource::" + uri));
+        System.out.println("Requested Resource::" + uri);
 
         HttpSession session = req.getSession(false);
 
         if (req.getSession().getAttribute("requestUsername") == null && !(uri.endsWith("login.jsp"))) {
-            System.out.println(("Неавторизованный запрос"));
+            System.out.println("Неавторизованный запрос");
             RequestDispatcher requestDispatcher = req.getServletContext().getRequestDispatcher("/login.jsp");
             requestDispatcher.forward(request, response);
 
         } else {
             // pass the request along the filter chain
-            System.out.println(("Авторизованный запрос, сессия:: " + session));
+            System.out.println("Авторизованный запрос, сессия:: " + session);
             chain.doFilter(request, response);
         }
     }

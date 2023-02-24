@@ -1,7 +1,5 @@
 package by.tms;
 
-import by.tms.model.City;
-import by.tms.model.Student;
 import by.tms.utils.CRUDUtilsCity;
 
 public class Main {

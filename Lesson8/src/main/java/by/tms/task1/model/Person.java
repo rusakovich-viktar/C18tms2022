@@ -1,4 +1,6 @@
-package by.tms.task1.model;//4) Создать класс model.Person, который будет содержать следующие поля имя,
+package by.tms.task1.model;
+
+//4) Создать класс model.Person, который будет содержать следующие поля имя,
 // возраст, пол, адрес(страна, город)
 
 import lombok.Getter;
@@ -11,6 +13,7 @@ import lombok.ToString;
 @Setter
 @Getter
 public class Person {
+
     private String name;
     private int age;
     private String gender;
@@ -22,6 +25,4 @@ public class Person {
         this.gender = gender;
         this.address = address;
     }
-
-
 }

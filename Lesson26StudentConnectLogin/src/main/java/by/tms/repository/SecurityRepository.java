@@ -1,6 +1,6 @@
 package by.tms.repository;
 
-import by.tms.model.User;
+import by.tms.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
