@@ -1,8 +1,9 @@
 package by.tms.servlet;
 
-import by.tms.model.User;
+import by.tms.User;
 import by.tms.service.StudentService;
-
+import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.List;
 
 @WebServlet(value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -24,7 +23,6 @@ public class LoginServlet extends HttpServlet {
 //        securityService = (SecurityService) config.getServletContext().getAttribute("securityService");
 //    }
 
-
     private StudentService studentService;
 
     @Override
@@ -33,7 +31,6 @@ public class LoginServlet extends HttpServlet {
         studentService = (StudentService) config.getServletContext().getAttribute("studentService");
     }
 
-
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
@@ -41,22 +38,17 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
         String requestUsername = request.getParameter("requestUsername");
         String requestPassword = request.getParameter("requestPassword");
 //        List<User> users = securityService.findUserLoginPassword();
         List<User> users = studentService.findUserLoginPassword();
         for (User user : users) {
             if (user.getUsername().equals(requestUsername) && user.getPassword().equals(requestPassword)) {
-                HttpSession session = request.getSession();
-                User userAccess = new User();
                 session.setAttribute("requestUsername", requestUsername);
-                session.setAttribute("requestPassword", requestPassword);
                 System.out.println("залогинен пользователь " + requestUsername);
                 response.sendRedirect("/");
             }
         }
-
     }
 }
-

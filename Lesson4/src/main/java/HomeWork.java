@@ -24,7 +24,7 @@
 // выводиться фраза о количестве полных часов, содержащихся в n секундах.
 
 //5) Необходимо написать программу, которая будет выводить на консоль таблицу приведения типов!
-//              byte	short	char	int 	long	float	double	boolean
+//    byte    short    char    int    long    float    double    boolean
 //    byte
 //    short
 //    char

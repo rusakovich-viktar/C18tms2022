@@ -1,8 +1,6 @@
 package by.tms.repository;
 
-
-import by.tms.model.Student;
-
+import by.tms.Student;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,8 +17,7 @@ public class JdbcStudentRepository implements StudentRepository {
     public JdbcStudentRepository(Connection connection) {
         this.connection = connection;
     }
-
-
+    
     @Override
     public List<Student> findStudents() {
         List<Student> students = new ArrayList<>();

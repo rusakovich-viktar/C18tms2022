@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="by.tms.model.Student " %>
+<%@ page import="by.tms.Student " %>
 <%@ page import="java.util.ArrayList" %>
 
 <html lang="ru" style="font-size: 16px;">
@@ -26,7 +26,8 @@
         "name": "WebSite4066966",
         "url": "/",
         "logo": "https://i.ibb.co/cxrCxyQ/pngegg.png"
-    }</script>
+    }
+    </script>
     <meta content="#478ac9" name="theme-color">
     <meta content="Read" property="og:title">
     <meta content="" property="og:description">
@@ -99,4 +100,3 @@
 <jsp:include page="/jsp/footer.jsp"/>
 </body>
 </html>
-

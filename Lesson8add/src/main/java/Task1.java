@@ -8,11 +8,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task1 {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число для поиска");
         int searchingNumber = scanner.nextInt();
-        int mass[] = removeElement((new int[]{0, 1, 2, 2, 3, 0, 4, 2}), searchingNumber);
+        int mass[] = removeElement(new int[]{0, 1, 2, 2, 3, 0, 4, 2}, searchingNumber);
         System.out.println(Arrays.toString(mass));
     }
 

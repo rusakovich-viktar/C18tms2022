@@ -11,7 +11,6 @@ package by.tms.homework.task4;
 //        * Если подходит, то выводим на экран.
 public class Main {
 
-
     public static void main(String[] args) {
 
         String text = "сообщение. ткт слова. здесь 3 слова. тут будет 4 слова. тут уже есть 5 слов. " +

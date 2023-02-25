@@ -1,10 +1,8 @@
 package by.tms.repository;
 
-
-import by.tms.model.City;
-import by.tms.model.Student;
-import by.tms.model.User;
-
+import by.tms.City;
+import by.tms.Student;
+import by.tms.User;
 import java.util.List;
 
 public interface StudentRepository {

@@ -6662,7 +6662,7 @@ ul.u-text li:last-child {
   .u-text-default-xxl {
     display: table;
     align-self: flex-start;
-    /*width: -webkit-fit-content;*/
+    width: -webkit-fit-content;
     width: fit-content;
     width: -moz-fit-content;
   }
@@ -6688,7 +6688,7 @@ ul.u-text li:last-child {
   .u-xxl-mode .u-text-default-xl {
     display: table;
     align-self: flex-start;
-    width: -webkit-fit-content;
+    /*width: -webkit-fit-content;*/
     width: fit-content;
     width: -moz-fit-content;
   }

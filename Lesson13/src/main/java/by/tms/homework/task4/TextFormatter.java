@@ -4,11 +4,12 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class TextFormatter {
+
     public void printSentences(String string) {
         if (StringUtils.isNotEmpty(string)) {
             String[] sentences = string.split("\\. ?");
             for (String sentence : sentences) {
-                if ((getOrdinalWordNumber(sentence) >= 3 && getOrdinalWordNumber(sentence) <= 5) || (isPalindrome(sentence))) {
+                if ((getOrdinalWordNumber(sentence) >= 3 && getOrdinalWordNumber(sentence) <= 5) || isPalindrome(sentence)) {
                     System.out.println(sentence.trim());
                 }
             }

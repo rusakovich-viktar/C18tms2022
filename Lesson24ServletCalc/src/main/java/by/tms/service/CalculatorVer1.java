@@ -1,14 +1,17 @@
 package by.tms.service;
 
+import static by.tms.util.CalcLogic.divide;
+import static by.tms.util.CalcLogic.multiply;
+import static by.tms.util.CalcLogic.subtraction;
+import static by.tms.util.CalcLogic.sum;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import static by.tms.util.CalcLogic.*;
 
 @WebServlet(name = "calculator", value = "/calculator")
 public class CalculatorVer1 extends HttpServlet {
@@ -23,7 +26,7 @@ public class CalculatorVer1 extends HttpServlet {
 
             if (numA == null || numB == null) {
                 writer.println("<h2>Введите в строку запроса цифры, где key это a и b, a value это десятичные значения \n" +
-                        "в формате /calculator?a=0&b=0 или /calculator?a=0.0&b=0.0 </h2>");
+                                       "в формате /calculator?a=0&b=0 или /calculator?a=0.0&b=0.0 </h2>");
             } else {
                 double t = Double.parseDouble(numA);
                 double k = Double.parseDouble(numB);

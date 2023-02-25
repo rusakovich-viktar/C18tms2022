@@ -1,11 +1,13 @@
 package by.tms.repository;
 
-
-import by.tms.model.City;
-import by.tms.model.Student;
-import by.tms.model.User;
-
-import java.sql.*;
+import by.tms.City;
+import by.tms.Student;
+import by.tms.User;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +25,6 @@ public class JdbcStudentRepository implements StudentRepository {
     public JdbcStudentRepository(Connection connection) {
         this.connection = connection;
     }
-
 
     @Override
     public List<Student> findStudents() {
@@ -118,7 +119,4 @@ public class JdbcStudentRepository implements StudentRepository {
         }
         return users;
     }
-
-
 }
-

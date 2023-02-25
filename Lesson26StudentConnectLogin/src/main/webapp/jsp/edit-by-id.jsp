@@ -1,4 +1,4 @@
-<%@ page import="by.tms.model.City" %>
+<%@ page import="by.tms.City" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -20,7 +20,8 @@
         "@type": "Organization",
         "name": "WebSite4066966",
         "logo": "https://i.ibb.co/cxrCxyQ/pngegg.png"
-    }</script>
+    }
+    </script>
     <meta content="#478ac9" name="theme-color">
 
     <meta content="" property="og:description">
@@ -71,10 +72,8 @@
     </div>
 </section>
 
-
 <jsp:include page="/jsp/section-above-footer.jsp"/>
 <jsp:include page="/jsp/footer.jsp"/>
-
 
 </body>
 </html>

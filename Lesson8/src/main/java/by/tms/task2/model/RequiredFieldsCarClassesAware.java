@@ -4,9 +4,9 @@ public interface RequiredFieldsCarClassesAware {
 
     void go();
 
-    void startCar();
-
     void go(double distanceTraveled);
+
+    void startCar();
 
     void stopCar();
 }

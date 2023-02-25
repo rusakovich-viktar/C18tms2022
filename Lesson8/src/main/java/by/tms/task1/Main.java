@@ -1,15 +1,14 @@
 package by.tms.task1;
 
+import static by.tms.task1.utils.Constants.FEMALE;
+import static by.tms.task1.utils.Constants.MALE;
+
 import by.tms.task1.model.Address;
 import by.tms.task1.model.MilitaryOffice;
 import by.tms.task1.model.Person;
 import by.tms.task1.model.PersonRegistry;
 
-import static by.tms.task1.utils.Constants.FEMALE;
-import static by.tms.task1.utils.Constants.MALE;
-
 public class Main {
-
 
     public static void main(String[] args) {
 
@@ -38,8 +37,5 @@ public class Main {
 
         System.out.println("Количество годных бойцов в городе " + militaryOffice.getRecruitsInCity("Minsk"));
 
-
     }
 }
-
-

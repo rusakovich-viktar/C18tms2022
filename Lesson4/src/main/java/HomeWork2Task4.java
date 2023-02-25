@@ -18,13 +18,12 @@ public class HomeWork2Task4 {
         int c100 = count % 100; //11 % 100 = 11  2 последние цифры
         if (c10 == 1 && c100 != 11) {
             System.out.println("программист");
-        } else if ((c10 >= 2 && c10 <= 4) && !(c100 >= 12 && c100 <= 14)) {//true && true
+        } else if (c10 >= 2 && c10 <= 4 && !(c100 >= 12 && c100 <= 14)) {
             System.out.println("программиста");
         } else {
             System.out.println("программистов");
         }
     }
-
 
     public static void main(String[] args) {
         countDevs(1);
@@ -39,4 +38,3 @@ public class HomeWork2Task4 {
         countDevs(11);
     }
 }
-
