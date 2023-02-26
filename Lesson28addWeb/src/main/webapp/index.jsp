@@ -17,20 +17,40 @@
 </head>
 <body>
 <div class="container text-center block">
-    <div class="row g-2">
+    <div class="row row-cols-4">
         <div class="col-6">
             <div class="p-3">
                 <a href="/now-time-servlet"><h1>Текущее время</h1></a>
             </div>
         </div>
         <div class="col-6">
-            <div class="p-3">Содержание столбца</div>
+            <h3>Вывод дня недели по введенной дате. Методом GET</h3></a>
+            <form action="/displaying-day-of-week-from-date" method="get">
+                <div class="form-group">
+                    <%--@declare id="inputdate"--%><label for="inputDate">Введите дату:</label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div>
+
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
         </div>
         <div class="col-6">
-            <div class="p-3">Содержание столбца</div>
+            <h3>Вывод номера дня в году по введенной дате. POST</h3></a>
+            <form action="/displaying-day-of-year-from-date" method="post">
+                <div class="form-group">
+                    <%--@declare id="inputdate"--%><label for="inputDate">Введите дату:</label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div>
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
         </div>
         <div class="col-6">
-            <div class="p-3">Содержание столбца</div>
+            <a href="/page-hit-counter"><br><br>
+                <h1>Тест количества посещений страницы</h1></a>
         </div>
     </div>
 </div>
