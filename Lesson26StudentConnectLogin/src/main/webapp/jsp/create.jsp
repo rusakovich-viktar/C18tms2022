@@ -6,8 +6,6 @@
 <head>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta charset="utf-8">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
     <title>Create</title>
     <link href="css/index.css" media="screen" rel="stylesheet">
     <link href="css/main.css" media="screen" rel="stylesheet">
