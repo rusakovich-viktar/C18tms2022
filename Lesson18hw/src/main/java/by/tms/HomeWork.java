@@ -1,4 +1,4 @@
-package by.tms.task4;
+package by.tms;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -106,7 +106,7 @@
                         <configuration>
                             <configLocation>codequality/checkstyle.xml</configLocation>
                             <consoleOutput>true</consoleOutput>
-                            <encoding>UTF-8</encoding>
+                            <!--                            <encoding>UTF-8</encoding>-->
                             <failsOnError>true</failsOnError>
                         </configuration>
                         <goals>
@@ -169,8 +169,6 @@
     </dependencies>
     <groupId>groupId</groupId>
     <modelVersion>4.0.0</modelVersion>
-
-
     <modules>
         <module>Lesson1</module>
         <module>Lesson2</module>
@@ -201,6 +199,7 @@
         <module>Lesson24StudentConnectDB</module>
         <module>Lesson25LoginForm</module>
         <module>Lesson26StudentConnectLogin</module>
+        <module>Lesson28addWeb</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -220,7 +219,7 @@
         <maven.compiler.target>19</maven.compiler.target>
         <mavenCompalePlugin.version>3.10.1</mavenCompalePlugin.version>
         <mybatis.version>3.5.11</mybatis.version>
-        <pmd.maven.plugin.version>3.14.0</pmd.maven.plugin.version>
+        <pmd.maven.plugin.version>3.20.0</pmd.maven.plugin.version>
         <pmd.version>6.53.0</pmd.version>
         <postgresql.version>42.5.1</postgresql.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
