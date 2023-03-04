@@ -1,0 +1,869 @@
+#cabinet {
+  margin-top: 0px;
+  margin-left: 1515px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#cart {
+  margin-top: -50px;
+  margin-left: 1670px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form[id=registrationForm] {
+  position: absolute;
+  width: 500px;
+  height: 900px;
+  margin-top: 2%;
+  margin-left: 35%;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#loginForm {
+  position: absolute;
+  width: 500px;
+  height: 600px;
+  margin-top: 10%;
+  margin-left: 35%;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#signupForm {
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  margin-top: 30%;
+  margin-left: 35%;
+  text-align: center;
+}
+
+form div[id=cabinetLbl] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 30px;
+  text-align: center;
+  font-size: 50px;
+}
+
+form div[id=registrationLbl] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 30px;
+  text-align: center;
+  font-size: 50px;
+}
+
+form div[id=brthDateLbl] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 30px;
+  text-align: center;
+  font-size: 25px;
+}
+
+form input[id=usrn] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  border: 2px solid #90EE90;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form input[id=usrpsw] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  border: 2px solid #90EE90;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form button[id=loginBtn] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form button[id=signupBtn] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+form button[id=regFormSignUpBtn] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  background-color: #233623;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form[id=registrationForm] input {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form select {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 60px;
+  height: 50px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form select[id=brthYears] {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 90px;
+  height: 50px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+input[type=search] {
+  margin-top: 26px;
+  margin-left: 50px;
+  width: 1600px;
+  height: 35px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+}
+
+#search {
+  margin-top: -34px;
+  margin-left: 1670px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+label[type=categoriesList] {
+  color: #000000;
+  display: inline-block;
+  margin-left: 45px;
+  padding-top: 20px;
+  font-size: 40px;
+}
+
+div[type=categoriesLinksList] {
+  color: #000000;
+  display: inline-block;
+  margin-left: 45px;
+  width: 1760px;
+  height: 700px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div[type=category] {
+  color: #000000;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 30px;
+  text-align: center;
+  vertical-align: top;
+  width: 300px;
+  height: 200px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: auto;
+}
+
+a {
+  color: #000000;
+  font-size: 40px;
+}
+
+#mainPageBtn {
+  margin-top: -50px;
+  margin-left: 45px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#userInfoBlock {
+  color: #000000;
+  display: inline-block;
+  margin-left: 45px;
+  width: 1765px;
+  height: 120px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#orderHistory {
+  color: #000000;
+  display: inline-block;
+  overflow-y: auto;
+  margin-left: 45px;
+  width: 1765px;
+  height: 680px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#ordersList {
+  color: #000000;
+  display: inline-block;
+  overflow-y: auto;
+  margin-left: 32px;
+  width: 1695px;
+  height: 300px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#empty {
+  width: 100px;
+  height: 40px;
+}
+
+#orderInfo {
+  color: #000000;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 32px;
+  width: 1695px;
+  height: 280px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form[id=userInfoBlock] input {
+  padding-left: 10px;
+  margin: 10px;
+  margin-left: 24px;
+  text-align: center;
+  width: 340px;
+  height: 40px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  font-size: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form[id=userInfoBlock] label {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 60px;
+  margin-left: 24px;
+  font-size: 20px;
+}
+
+#orderHistoryLbl {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 60px;
+  margin-left: 24px;
+  font-size: 20px;
+}
+
+#orderData {
+  padding-left: 20px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#container {
+  display: inline-block;
+}
+
+#product-info {
+  color: #000000;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 30px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#product_name {
+  width: 540px;
+  margin-left: 205px;
+  margin-top: -145px;
+  font-style: italic;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+#product_description {
+  width: 540px;
+  margin-left: 205px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#product_price {
+  width: 540px;
+  margin-left: 205px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+#pDescription {
+  color: #000000;
+  width: 1300px;
+  height: 30px;
+  margin-top: 10%;
+  margin-left: 550px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#pPrice {
+  color: #000000;
+  width: 500px;
+  height: 30px;
+  margin-top: 10%;
+  margin-left: 550px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#backgroundImg {
+  color: #000000;
+  width: 200px;
+  height: 200px;
+  margin-top: 35px;
+  margin-left: 30px;
+  display: inline-block;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*category page*/
+#productsListContainer {
+  color: #000000;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 30px;
+  width: 1760px;
+  height: 700px;
+  overflow-y: auto;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#prodImg {
+  width: 150px;
+  height: 150px;
+  margin-top: 30px;
+  margin-left: 30px;
+  display: inline-block;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#prodName {
+  margin-left: 210px;
+  margin-top: -150px;
+  width: 1500px;
+  height: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#prodDesc {
+  margin-left: 210px;
+  width: 1500px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#prodPrice {
+  margin-left: 210px;
+  width: 1000px;
+  height: 60px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#catgoryName {
+  margin-left: 30px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#categoryListPaginationContainer {
+  color: #000000;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 610px;
+  width: 510px;
+  height: 45px;
+}
+
+#pagesList {
+  display: flex;
+  list-style: none;
+  height: 10px;
+}
+
+ul[id="pagesList"] span {
+  font-size: 30px;
+}
+
+ul[id="pagesList"] li {
+  margin: -24px 0 0px 0;
+  padding: 12px;
+}
+
+#recordsCount {
+  margin-left: 700px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+div[id="recordsDisplayCount"] a {
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  color: green;
+}
+
+/*Product page*/
+
+#buyBtn {
+  margin-left: 550px;
+  margin-top: 10%;
+  width: 200px;
+  height: 55px;
+  border: 2px solid #000000;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#productContainer {
+  color: #000000;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 30px;
+  width: 500px;
+  height: 500px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#imgContainer {
+  display: inline-block;
+  margin-left: 0px;
+}
+
+#backgroundImg {
+  width: 150px;
+  height: 150px;
+  margin-top: 30px;
+  margin-left: 30px;
+  display: inline-block;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#pName {
+  color: #000000;
+  width: 1600px;
+  height: 60px;
+  margin-top: -90%;
+  margin-left: 550px;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+#deleteProductBtn {
+  margin-top: -100px;
+  margin-left: 900px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#createOrder {
+  margin-left: 900px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#emptyCartMsg {
+  padding: 300px;
+  margin-left: 300px;
+  font-size: 50px;
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+#filter {
+  width: 500px;
+  height: 300px;
+  margin-left: 50px;
+  margin-top: 10px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#foundedProductsList {
+  width: 950px;
+  height: 700px;
+  margin-left: 700px;
+  margin-top: -300px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  overflow-y: auto;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#filterLbl {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#searchCategoryList {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#priceFrom {
+  width: 150px;
+  height: 40px;
+  margin-top: 30px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#priceTo {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#applyFilterBtn {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  margin-top: 30px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#emptySearchResultsMsg {
+  padding: 267px;
+  font-size: 50px;
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+#searchRecordsCount {
+  margin-left: 50%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div[id="searchResultsCount"] a {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: green;
+}
+
+#searchPagesList {
+  margin-left: 50%;
+  display: flex;
+  list-style: none;
+  height: 10px;
+}
+
+ul[id="searchPagesList"] li {
+  margin: -24px 0 0px 0;
+  padding: 12px;
+}
+
+ul[id="searchPagesList"] a {
+  font-size: 30px;
+}
+
+.error {
+  color: red;
+}
+
+#cmsHeader {
+  color: #000000;
+  margin-left: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#cmsMenu {
+  color: #000000;
+  text-align: center;
+  margin-left: 50px;
+  width: 300px;
+  height: 800px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#cmsCategoriesList {
+  color: #000000;
+  margin-left: 540px;
+  margin-top: -804px;
+  width: 1300px;
+  height: 800px;
+  overflow-y: auto;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#cmsButton {
+  margin-left: 60px;
+  width: 145px;
+  height: 35px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#displayCategoriesList {
+  width: 145px;
+  height: 35px;
+  margin-top: 50px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#addNewCategory {
+  width: 145px;
+  height: 35px;
+  margin-top: 30px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#addNewProduct {
+  width: 145px;
+  height: 35px;
+  margin-top: 30px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#categoriesListLbl {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 105px;
+}
+
+#deleteCategory {
+  width: 145px;
+  height: 35px;
+  margin-left: 55px;
+  margin-top: 97px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#addCategoryBlock {
+  color: #000000;
+  margin-left: 540px;
+  margin-top: -804px;
+  width: 1300px;
+  height: 800px;
+  overflow-y: auto;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#addNewCategoryLbl {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 105px;
+}
+
+#newCategoryName {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  border: 2px solid #90EE90;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#addImgButton {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#createCategoryBtn {
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 24px;
+  text-align: center;
+  width: 290px;
+  height: 50px;
+  background-color: #90EE90;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

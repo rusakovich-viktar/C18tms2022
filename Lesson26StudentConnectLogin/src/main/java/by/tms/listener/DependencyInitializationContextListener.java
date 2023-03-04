@@ -1,15 +1,17 @@
 package by.tms.listener;
 
-import by.tms.repository.JdbcStudentRepository;
-import by.tms.repository.StudentRepository;
+import by.tms.repository.security.JdbcSecurityRepository;
+import by.tms.repository.security.SecurityRepositoryAware;
+import by.tms.repository.student.JdbcStudentRepository;
+import by.tms.repository.student.StudentRepository;
+import by.tms.service.SecurityService;
 import by.tms.service.StudentService;
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 @WebListener
 public class DependencyInitializationContextListener implements ServletContextListener {
@@ -26,11 +28,11 @@ public class DependencyInitializationContextListener implements ServletContextLi
             Connection connection = DriverManager.getConnection(dbUrl, username, password);
             StudentRepository repository = new JdbcStudentRepository(connection);
             StudentService studentService = new StudentService(repository);
-//            SecurityRepositoryAware securityRepository = new SecurityRepository(connection);
-//            SecurityService securityService = new SecurityService(securityRepository);
+            SecurityRepositoryAware securityRepository = new JdbcSecurityRepository(connection);
+            SecurityService securityService = new SecurityService(securityRepository);
             servletContextEvent.getServletContext().setAttribute("connection", connection);
             servletContextEvent.getServletContext().setAttribute("studentService", studentService);
-//            servletContextEvent.getServletContext().setAttribute("securityService", securityService);
+            servletContextEvent.getServletContext().setAttribute("securityService", securityService);
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Exception: " + e.getMessage());
         }

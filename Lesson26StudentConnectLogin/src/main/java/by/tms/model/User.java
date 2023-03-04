@@ -1,5 +1,6 @@
-package by.tms;
+package by.tms.model;
 
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,17 +10,21 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
+
     private String username;
     private String password;
 
-//    {
-//        username = "admin";
-//        password = "admin";
-//    }
+    private String name;
+    private String surname;
+    private String gender;
+    private String birthday;
+    private String email;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
 }

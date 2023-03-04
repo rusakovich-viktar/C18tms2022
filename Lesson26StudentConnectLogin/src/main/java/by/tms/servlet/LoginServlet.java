@@ -1,7 +1,7 @@
 package by.tms.servlet;
 
-import by.tms.User;
-import by.tms.service.StudentService;
+import by.tms.model.User;
+import by.tms.service.SecurityService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletConfig;
@@ -15,20 +15,12 @@ import javax.servlet.http.HttpSession;
 @WebServlet(value = "/login")
 public class LoginServlet extends HttpServlet {
 
-//    private SecurityService securityService;
-
-//    @Override
-//    public void init(ServletConfig config) throws ServletException {
-//        super.init(config);
-//        securityService = (SecurityService) config.getServletContext().getAttribute("securityService");
-//    }
-
-    private StudentService studentService;
+    private SecurityService securityService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        studentService = (StudentService) config.getServletContext().getAttribute("studentService");
+        securityService = (SecurityService) config.getServletContext().getAttribute("securityService");
     }
 
     @Override
@@ -41,11 +33,13 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String requestUsername = request.getParameter("requestUsername");
         String requestPassword = request.getParameter("requestPassword");
-//        List<User> users = securityService.findUserLoginPassword();
-        List<User> users = studentService.findUserLoginPassword();
+        List<User> users = securityService.findUserLoginPassword();
+//        List<User> users = studentService.findUserLoginPassword();
         for (User user : users) {
             if (user.getUsername().equals(requestUsername) && user.getPassword().equals(requestPassword)) {
+                User userAccess = new User();
                 session.setAttribute("requestUsername", requestUsername);
+                session.setAttribute("requestPassword", requestPassword);
                 System.out.println("залогинен пользователь " + requestUsername);
                 response.sendRedirect("/");
             }

@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Виктор
-  Date: 18/02/2023
-  Time: 14:45
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
 <header class="u-clearfix u-header u-header" id="sec-52ce">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a class="u-hover-feature u-image u-logo u-opacity u-opacity-75 u-image-1" data-image-height="3588"
