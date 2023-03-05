@@ -203,6 +203,7 @@
         <module>Lesson25LoginForm</module>
         <module>Lesson26StudentConnectLogin</module>
         <module>Lesson28addWeb</module>
+        <module>Lesson31Patterns</module>
     </modules>
 
     <packaging>pom</packaging>
