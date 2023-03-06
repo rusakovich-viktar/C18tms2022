@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="by.tms.Student " %>
+<%@ page import="by.tms.model.Student " %>
 <%@ page import="java.util.ArrayList" %>
 
 <html lang="ru" style="font-size: 16px;">

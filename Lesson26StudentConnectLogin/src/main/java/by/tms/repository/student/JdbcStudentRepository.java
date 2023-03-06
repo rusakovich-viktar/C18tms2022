@@ -1,8 +1,7 @@
-package by.tms.repository;
+package by.tms.repository.student;
 
-import by.tms.City;
-import by.tms.Student;
-import by.tms.User;
+import by.tms.model.City;
+import by.tms.model.Student;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +18,7 @@ public class JdbcStudentRepository implements StudentRepository {
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students set name = ?, surname = ?, course = ?, id_city = ? where students.id = ?";
     private static final String GET_ALL_CITY = "select id, city_name from city order by city_name";
 
-    private static final String GET_USERS_INFO = "select login_key, pass_value from users";
+    //    private static final String GET_USERS_INFO = "select login_key, pass_value from users";
     private final Connection connection;
 
     public JdbcStudentRepository(Connection connection) {
@@ -103,20 +102,20 @@ public class JdbcStudentRepository implements StudentRepository {
         return cities;
     }
 
-    @Override
-    public List<User> findUserLoginPassword() {
-        List<User> users = new ArrayList<>();
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(GET_USERS_INFO);
-            while (rs.next()) {
-                String login = rs.getString(1);
-                String password = rs.getString(2);
-                users.add(new User(login, password));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return users;
-    }
+//    @Override
+//    public List<User> findUserLoginPassword() {
+//        List<User> users = new ArrayList<>();
+//        try {
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(GET_USERS_INFO);
+//            while (rs.next()) {
+//                String login = rs.getString(1);
+//                String password = rs.getString(2);
+//                users.add(new User(login, password));
+//            }
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return users;
+//    }
 }

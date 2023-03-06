@@ -59,16 +59,26 @@ from students
 --Таблица пользователей
 CREATE TABLE users
 (
-    id         integer primary key generated always as identity unique,
-    login_key  text not null unique,
-    pass_value text not null
+    id              integer primary key generated always as identity unique,
+    login_key       text not null unique,
+    pass_value      text not null,
+    first_name      text not null,
+    second_name     text not null,
+    day_of_birthday date not null,
+    gender          text not null,
+    email           text not null
 );
 
-INSERT INTO users (login_key, pass_value)
-VALUES ('admin', 'admin'),
-       ('test', 'test');
+INSERT INTO users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email)
+VALUES ('admin', 'admin', 'username', 'adminovich', '20.03.1900', 'male', 'admin@tms.by'),
+       ('test', 'test', 'testname', 'testovich', '20.03.1800', 'female', 'miner@grind.com');
+
 
 select login_key, pass_value
 from users;
+
+-- insert into users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email)
+-- values ('test1', 'test', 'testname', 'testovich', '20.03.1800', 'female', 'miner@grind.com')
+-- -- values (?, ?, ?, ?, ?, ?, ?)
 
 

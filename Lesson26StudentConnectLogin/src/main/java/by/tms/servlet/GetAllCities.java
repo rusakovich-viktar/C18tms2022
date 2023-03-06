@@ -1,6 +1,6 @@
 package by.tms.servlet;
 
-import by.tms.City;
+import by.tms.model.City;
 import by.tms.service.StudentService;
 import java.io.IOException;
 import java.util.List;

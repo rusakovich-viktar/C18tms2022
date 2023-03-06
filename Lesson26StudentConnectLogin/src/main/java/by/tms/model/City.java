@@ -1,4 +1,4 @@
-package by.tms;
+package by.tms.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

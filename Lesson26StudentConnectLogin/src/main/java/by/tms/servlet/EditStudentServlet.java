@@ -1,7 +1,7 @@
 package by.tms.servlet;
 
-import by.tms.City;
-import by.tms.Student;
+import by.tms.model.City;
+import by.tms.model.Student;
 import by.tms.service.StudentService;
 import java.io.IOException;
 import java.util.List;

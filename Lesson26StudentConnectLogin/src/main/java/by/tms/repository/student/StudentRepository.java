@@ -1,8 +1,7 @@
-package by.tms.repository;
+package by.tms.repository.student;
 
-import by.tms.City;
-import by.tms.Student;
-import by.tms.User;
+import by.tms.model.City;
+import by.tms.model.Student;
 import java.util.List;
 
 public interface StudentRepository {
@@ -17,5 +16,5 @@ public interface StudentRepository {
 
     List<City> findCity();
 
-    List<User> findUserLoginPassword();
+//    List<User> findUserLoginPassword();
 }

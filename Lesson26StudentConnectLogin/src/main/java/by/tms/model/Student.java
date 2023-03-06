@@ -1,4 +1,4 @@
-package by.tms;
+package by.tms.model;
 
 import lombok.Getter;
 import lombok.Setter;

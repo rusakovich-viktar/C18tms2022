@@ -5,6 +5,7 @@
     <artifactId>ViRusC18tms2022</artifactId>
 
     <build>
+        <defaultGoal>clean package</defaultGoal>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -121,6 +122,7 @@
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
@@ -167,6 +169,7 @@
             <version>1.2</version>
         </dependency>
     </dependencies>
+
     <groupId>groupId</groupId>
     <modelVersion>4.0.0</modelVersion>
     <modules>
@@ -200,6 +203,7 @@
         <module>Lesson25LoginForm</module>
         <module>Lesson26StudentConnectLogin</module>
         <module>Lesson28addWeb</module>
+        <module>Lesson31Patterns</module>
     </modules>
 
     <packaging>pom</packaging>
