@@ -63,8 +63,22 @@ public class JdbcUserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public User findUserByLoginAndPassword(String login, String password) {
-
+    public User findAndGetUserByLoginAndPassword(String login, String password) {
+//
+//
+//
+//        stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+//        stmt.setString(1, username);
+//        stmt.setString(2, password);
+//
+//        rs = stmt.executeQuery();
+//
+//        if (rs.next()) {
+//            response.sendRedirect("home.jsp");
+//        } else {
+//            PrintWriter out = response.getWriter();
+//            out.println("<html><body><p>Invalid username or password.</p></body></html>");
+//        return new User();
         return new User();
     }
 

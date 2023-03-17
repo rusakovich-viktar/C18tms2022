@@ -9,5 +9,5 @@ public interface UserRepository extends Repository {
 
     void addNewUser(User user);
 
-    User findUserByLoginAndPassword(String login, String password);
+    User findAndGetUserByLoginAndPassword(String login, String password);
 }
