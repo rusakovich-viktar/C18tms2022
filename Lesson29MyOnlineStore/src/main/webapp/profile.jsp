@@ -21,7 +21,15 @@
     <jsp:include page="header.jsp"/>
 </ul>
 <br>
-<h3 class="text-center">Welcome, Dear buyer <b class="font-italic">${userDto.getUsername()}</b>!</h3>
+<h3 class="text-center">Welcome <b class="font-italic">${userDto.getUsername()}</b></h3>
+<div>
+    <p class="text-left">Name: <b class="font-italic">${user.getEmail()}</b>
+    <p class="text-left">Name: <b class="font-italic">${user.getName()}</b>
+    <p class="text-left">Name: <b class="font-italic">${userDto.getName()}</b>
+    <p class="text-left">Name: <b class="font-italic">${userDto.getUsername()}</b>
+
+
+</div>
 
 
 <button onclick="window.location.href = 'logout';" class="buttonQuit">

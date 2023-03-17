@@ -12,9 +12,8 @@ public class UserService {
         this.userRepositoryImpl = userRepositoryImpl;
     }
 
-
-    public List<User> findUserLoginPassword() {
-        return userRepositoryImpl.findUserLoginPassword();
+    public List<User> findUsersLoginPasswordAndPutAllInList() {
+        return userRepositoryImpl.findUsersLoginPasswordAndPutAllInList();
     }
 
     public void addNewUser(User user) {

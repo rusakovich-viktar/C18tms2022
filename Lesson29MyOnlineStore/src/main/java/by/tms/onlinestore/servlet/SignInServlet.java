@@ -20,9 +20,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet(value = "/signin")
 public class SignInServlet extends HttpServlet {
 
-
     private UserService userService;
-
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -43,7 +41,7 @@ public class SignInServlet extends HttpServlet {
         try {
             validateParamNotNull(login);
             validateParamNotNull(pass);
-            List<User> users = userService.findUserLoginPassword();
+            List<User> users = userService.findUsersLoginPasswordAndPutAllInList();
             for (User user : users) {
                 if (user.getUsername().equals(login) && user.getPassword().equals(pass)) {
                     UserDto userDto = new UserDto(user.getUsername());

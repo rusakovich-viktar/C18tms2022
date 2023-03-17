@@ -22,7 +22,6 @@ public class SignUpServlet extends HttpServlet {
         userService = (UserService) config.getServletContext().getAttribute("userService");
     }
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("signup.jsp").forward(request, response);
@@ -42,13 +41,17 @@ public class SignUpServlet extends HttpServlet {
 
             if (username == null || password == null || repeatPass == null || name == null || surname == null || birthday == null || gender == null || username.isEmpty() || password.isEmpty() || repeatPass.isEmpty() || name.isEmpty() || surname.isEmpty() || birthday.isEmpty() || gender.isEmpty()) {
                 response.getWriter().println("<h2 style='color:red'>Необходимо заполнить все поля формы.</h2>");
-            } else if (password.length() < 8) {
-                response.getWriter().println("<h2 style='color:red'>password must have minimum 8 Characters.</h2>");
-            } else if (!email.matches(pattern)) {
-                response.getWriter().println("<h2 style='color:red'>Некорректный формат email</h2>");
             } else {
-                userService.addNewUser(new User(username, password, name, surname, gender, birthday, email));
-                request.getRequestDispatcher("home").forward(request, response);
+                if (password.length() < 8) {
+                    response.getWriter().println("<h2 style='color:red'>password must have minimum 8 Characters.</h2>");
+                } else {
+                    if (!email.matches(pattern)) {
+                        response.getWriter().println("<h2 style='color:red'>Некорректный формат email</h2>");
+                    } else {
+                        userService.addNewUser(new User(username, password, name, surname, gender, birthday, email));
+                        request.getRequestDispatcher("home").forward(request, response);
+                    }
+                }
             }
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());

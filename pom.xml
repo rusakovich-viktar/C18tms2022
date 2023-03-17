@@ -6,132 +6,181 @@
 
     <build>
         <defaultGoal>clean package</defaultGoal>
-        <pluginManagement>
-            <plugins>
-                <!--                <plugin>-->
-                <!--                    <artifactId>maven-compiler-plugin</artifactId>-->
-                <!--                    <configuration>-->
-                <!--                        <annotationProcessorPaths>-->
-                <!--                            <path>-->
-                <!--                                <artifactId>lombok</artifactId>-->
-                <!--                                <groupId>org.projectlombok</groupId>-->
-                <!--                                <version>${lombok.version}</version>-->
-                <!--                            </path>-->
-                <!--                        </annotationProcessorPaths>-->
-                <!--                        <source>${maven.compiler.source}</source>-->
-                <!--                        <target>${maven.compiler.target}</target>-->
-                <!--                    </configuration>-->
-                <!--                    <groupId>org.apache.maven.plugins</groupId>-->
-                <!--                    <version>${mavenCompilePlugin.version}</version>-->
-                <!--                </plugin>-->
-                <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <version>${maven-war-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>spotbugs-maven-plugin</artifactId>
-                    <configuration>
-                        <effort>Max</effort>
-                        <maxHeap>1024</maxHeap>
-                        <onlyAnalyze>com.-</onlyAnalyze>
-                        <threshold>Medium</threshold>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <artifactId>spotbugs</artifactId>
-                            <groupId>com.github.spotbugs</groupId>
-                            <version>${spotbugs.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                            <phase>compile</phase>
-                        </execution>
-                    </executions>
-                    <groupId>com.github.spotbugs</groupId>
-                    <version>${spotbugs.maven.plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <configuration>
-                        <excludeRoots>
-                            <excludeRoot>target/generated-sources</excludeRoot>
-                        </excludeRoots>
-                        <failOnViolation>false</failOnViolation>
-                        <linkXRef>false</linkXRef>
-                        <printFailingErrors>true</printFailingErrors>
-                        <rulesets>
-                            <ruleset>C:\Java\ViRusC18tms2022\codequality\pmd-ruleset.xml</ruleset>
-                        </rulesets>
-                        <targetDirectory>C:\Java\ViRusC18tms2022\codequality\pmdTest</targetDirectory>
-                        <targetJdk>${maven.compiler.target}</targetJdk>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <artifactId>pmd-core</artifactId>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <version>${pmd.version}</version>
-                        </dependency>
-                        <dependency>
-                            <artifactId>pmd-java</artifactId>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <version>${pmd.version}</version>
-                        </dependency>
-                        <dependency>
-                            <artifactId>pmd-javascript</artifactId>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <version>${pmd.version}</version>
-                        </dependency>
-                        <dependency>
-                            <artifactId>pmd-jsp</artifactId>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <version>${pmd.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <version>${pmd.maven.plugin.version}</version>
-                </plugin>
+        <!--        <pluginManagement>-->
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <artifactId>lombok</artifactId>
+                            <groupId>org.projectlombok</groupId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>${mavenCompilePlugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>${maven-war-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <configuration>
+                    <effort>Max</effort>
+                    <!--                    <excludeFilterFile>${basedir}/codequality/spotbug-exclude.xml</excludeFilterFile>-->
+                    <maxHeap>1024</maxHeap>
+                    <onlyAnalyze>com.-</onlyAnalyze>
+                    <threshold>Medium</threshold>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <artifactId>spotbugs</artifactId>
+                        <groupId>com.github.spotbugs</groupId>
+                        <version>${spotbugs.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+                <groupId>com.github.spotbugs</groupId>
+                <version>${spotbugs.maven.plugin.version}</version>
+            </plugin>
+            <!--                <plugin>-->
+            <!--                    <artifactId>maven-pmd-plugin</artifactId>-->
+            <!--                    <configuration>-->
+            <!--                        <excludeRoots>-->
+            <!--                            <excludeRoot>target/generated-sources</excludeRoot>-->
+            <!--                        </excludeRoots>-->
+            <!--                        <failOnViolation>false</failOnViolation>-->
+            <!--                        <linkXRef>false</linkXRef>-->
+            <!--                        <printFailingErrors>true</printFailingErrors>-->
+            <!--                        <rulesets>-->
+            <!--                            &lt;!&ndash;                            <ruleset>C:\Java\ViRusC18tms2022\codequality\pmd-ruleset.xml</ruleset>&ndash;&gt;-->
+            <!--                            <ruleset>../codequality/pmd-ruleset.xml</ruleset>-->
+            <!--                        </rulesets>-->
+            <!--                        <targetDirectory>C:\Java\ViRusC18tms2022\codequality\pmdTest</targetDirectory>-->
+            <!--                        <targetJdk>${maven.compiler.target}</targetJdk>-->
+            <!--                    </configuration>-->
+            <!--                    <dependencies>-->
+            <!--                        <dependency>-->
+            <!--                            <artifactId>pmd-core</artifactId>-->
+            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
+            <!--                            <version>${pmd.version}</version>-->
+            <!--                        </dependency>-->
+            <!--                        <dependency>-->
+            <!--                            <artifactId>pmd-java</artifactId>-->
+            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
+            <!--                            <version>${pmd.version}</version>-->
+            <!--                        </dependency>-->
+            <!--                        <dependency>-->
+            <!--                            <artifactId>pmd-javascript</artifactId>-->
+            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
+            <!--                            <version>${pmd.version}</version>-->
+            <!--                        </dependency>-->
+            <!--                        <dependency>-->
+            <!--                            <artifactId>pmd-jsp</artifactId>-->
+            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
+            <!--                            <version>${pmd.version}</version>-->
+            <!--                        </dependency>-->
+            <!--                    </dependencies>-->
+            <!--                    <executions>-->
+            <!--                        <execution>-->
+            <!--                            <goals>-->
+            <!--                                <goal>check</goal>-->
+            <!--                            </goals>-->
+            <!--                        </execution>-->
+            <!--                    </executions>-->
+            <!--                    <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                    <version>${pmd.maven.plugin.version}</version>-->
+            <!--                </plugin>-->
 
-                <plugin>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <dependencies>
-                        <dependency>
-                            <artifactId>checkstyle</artifactId>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <version>${checkstyle.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <configuration>
-                                <configLocation>codequality/checkstyle.xml</configLocation>
-                                <consoleOutput>true</consoleOutput>
-                                <!--                                <encoding>UTF-8</encoding>-->
-                                <failsOnError>true</failsOnError>
-                            </configuration>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                            <id>validate</id>
-                            <phase>validate</phase>
-                        </execution>
-                    </executions>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <version>${checkstyle.maven.plugin.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <excludeRoots>
+                        <excludeRoot>target/generated-sources</excludeRoot>
+                    </excludeRoots>
+                    <failOnViolation>false</failOnViolation>
+                    <linkXRef>false</linkXRef>
+                    <printFailingErrors>true</printFailingErrors>
+                    <rulesets>
+                        <ruleset>../codequality/pmd-ruleset.xml</ruleset>
+                    </rulesets>
+                    <targetJdk>${maven.compiler.target}</targetJdk>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <artifactId>pmd-core</artifactId>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <version>${pmd.version}</version>
+                    </dependency>
+                    <dependency>
+                        <artifactId>pmd-java</artifactId>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <version>${pmd.version}</version>
+                    </dependency>
+                    <dependency>
+                        <artifactId>pmd-javascript</artifactId>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <version>${pmd.version}</version>
+                    </dependency>
+                    <dependency>
+                        <artifactId>pmd-jsp</artifactId>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <version>${pmd.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>${pmd.maven.plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <artifactId>checkstyle</artifactId>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <configLocation>../codequality/checkstyle.xml</configLocation>
+                            <consoleOutput>true</consoleOutput>
+                            <failsOnError>true</failsOnError>
+                        </configuration>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>${checkstyle.maven.plugin.version}</version>
+            </plugin>
+        </plugins>
+        <!--        </pluginManagement>-->
     </build>
 
     <dependencies>
@@ -172,16 +221,23 @@
             <version>${javax.servlet.version}</version>
         </dependency>
 
-        <dependency>
-            <artifactId>maven-default-skin</artifactId>
-            <groupId>org.apache.maven.skins</groupId>
-            <version>1.3</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <artifactId>maven-default-skin</artifactId>-->
+        <!--            <groupId>org.apache.maven.skins</groupId>-->
+        <!--            <version>1.3</version>-->
+        <!--        </dependency>-->
         <dependency>
             <artifactId>jstl</artifactId>
             <groupId>jstl</groupId>
             <version>${jstl.version}</version>
         </dependency>
+        <dependency>
+            <artifactId>jsp-api</artifactId>
+            <groupId>javax.servlet.jsp</groupId>
+            <scope>provided</scope>
+            <version>${jsp-api.version}</version>
+        </dependency>
+
     </dependencies>
 
     <groupId>groupId</groupId>
@@ -218,6 +274,9 @@
         <module>Lesson26StudentConnectLogin</module>
         <module>Lesson28addWeb</module>
         <module>Lesson31Patterns</module>
+        <module>Lesson29</module>
+        <module>Lesson28OnlineStoreServlet</module>
+        <module>Lesson29MyOnlineStore</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -230,7 +289,7 @@
         <!--        <guava.version>31.1-jre</guava.version>-->
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <javax.servlet.version>4.0.1</javax.servlet.version>
-        <!--        <jsp-api.version>2.2</jsp-api.version>-->
+        <jsp-api.version>2.2</jsp-api.version>
         <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
         <jstl.version>1.2</jstl.version>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -239,7 +298,7 @@
         <maven-war-plugin.version>3.3.0</maven-war-plugin.version>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
-        <!--        <mavenCompilePlugin.version>3.11</mavenCompilePlugin.version>-->
+        <mavenCompilePlugin.version>3.11.0</mavenCompilePlugin.version>
         <!--        <mybatis.version>3.5.11</mybatis.version>-->
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <pmd.maven.plugin.version>3.20.0</pmd.maven.plugin.version>

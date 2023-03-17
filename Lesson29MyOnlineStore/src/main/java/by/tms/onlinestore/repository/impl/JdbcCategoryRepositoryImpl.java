@@ -2,9 +2,8 @@ package by.tms.onlinestore.repository.impl;
 
 import by.tms.onlinestore.model.Category;
 import by.tms.onlinestore.repository.CategoryRepository;
-import java.sql.Connection;
+import by.tms.onlinestore.repository.utils.ConnectionWrapper;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,25 +12,26 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
 
-    private final Connection connection;
+    private static final String PATH_TO_STORE = "SELECT * FROM \"online-store\".categories";
 
     @Override
     public List<Category> getCategories() {
         List<Category> categories = new ArrayList<>();
-        try {
-            Statement statement = connection.createStatement();
-            String PATHTOSTORE = "SELECT * FROM \"online-store\".categories";
-            ResultSet rs = statement.executeQuery(PATHTOSTORE);
-            while (rs.next()) {
-                Category category = Category.builder()
-                                            .id(rs.getInt("id"))
-                                            .name(rs.getString("name"))
-                                            .imageName(rs.getString("imageName"))
-                                            .build();
-                categories.add(category);
+        try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
+                Statement statement = connectionWrapper.getConnection().createStatement()) {
+            try (ResultSet rs = statement.executeQuery(PATH_TO_STORE)) {
+                while (rs.next()) {
+                    Category category = Category.builder()
+                                                .id(rs.getInt("id"))
+                                                .name(rs.getString("name"))
+                                                .imageName(rs.getString("imageName"))
+                                                .build();
+                    categories.add(category);
+                }
+
             }
-        } catch (SQLException e) {
-            System.out.println("Unexpected error " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
         return categories;
     }

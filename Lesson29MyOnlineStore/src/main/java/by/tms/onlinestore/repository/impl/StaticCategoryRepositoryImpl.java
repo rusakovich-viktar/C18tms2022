@@ -13,7 +13,7 @@ public class StaticCategoryRepositoryImpl implements CategoryRepository {
     }
 
     @Override
-    public Category getCategory(int id) {//3
+    public Category getCategory(int id) { //3
         List<Category> categories = getCategories();
         // 1 холодильник &&&&
         // 2 мобильники 3333

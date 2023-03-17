@@ -1,12 +1,13 @@
 package by.tms.onlinestore.repository;
 
-
 import by.tms.onlinestore.model.User;
 import java.util.List;
 
-public interface UserRepository {
+public interface UserRepository extends Repository {
 
-    List<User> findUserLoginPassword();
+    List<User> findUsersLoginPasswordAndPutAllInList();
 
     void addNewUser(User user);
+
+    User findUserByLoginAndPassword(String login, String password);
 }
