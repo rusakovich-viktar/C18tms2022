@@ -17,11 +17,13 @@
             <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <form id="registrationForm" method="post" action="${contextPath}/signup" onsubmit="return validateForm()">
                 <div class="form-item box-item">
-                    <input id="name" type="text" placeholder="Имя" name="newUsrName" oninput="validateName()" required><br/>
+                    <input id="name" type="text" placeholder="Имя" name="newUsrName" oninput="validateName()"
+                           required><br/>
                     <span id="nameError" style="display: none;">*Поле 'Имя' не заполнено!</span>
                 </div>
                 <div class="form-item box-item">
-                    <input id="surname" type="text" placeholder="Фамилия" name="newUsrSurname" oninput="validateSurname()" required><br/>
+                    <input id="surname" type="text" placeholder="Фамилия" name="newUsrSurname"
+                           oninput="validateSurname()" required><br/>
                     <span id="surnameError" style="display: none;">*Поле 'Фамилия' не заполнено!</span>
                 </div>
                 <div id="brthDateLbl">
@@ -32,7 +34,8 @@
                 </div>
 
                 <div class="form-item box-item">
-                    <input id="email" type="email" placeholder="Email" name="newUsrEmail" oninput="validateEmail()" required><br/>
+                    <input id="email" type="email" placeholder="Email" name="newUsrEmail" oninput="validateEmail()"
+                           required><br/>
                     <span id="emailError" style="display: none;">*Поле 'Email' не заполнено!</span>
                     <span id="validationErr" style="display: none;">*Неверный формат email адреса!</span>
                 </div>
@@ -54,20 +57,25 @@
                             <label for="Non-binary">non-binary</label>
                         </div>
                     </div>
-                    <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
+                    <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least
+                        one</small>
                 </div>
                 <div class="form-item box-item">
                     <label>Username</label>
-                    <input id="username" type="text" placeholder="enter username" autocomplete="off" name="username" oninput="validatePass()" required><br/>
+                    <input id="username" type="text" placeholder="enter username" autocomplete="off" name="username"
+                           oninput="validatePass()" required><br/>
                 </div>
                 <div class="form-item box-item">
                     <span>..Введите пароль  </span>
-                    <input id="password" type="password" name="newUsrPass" autocomplete="off" oninput="validatePass()" required><br/>
-                    <span id="passwordError" style="display: none;">*Поле 'Пароль' должно содержать не менее 8 символов</span>
+                    <input id="password" type="password" name="password" autocomplete="off" oninput="validatePass()"
+                           required><br/>
+                    <span id="passwordError"
+                          style="display: none;">*Поле 'Пароль' должно содержать не менее 8 символов</span>
                 </div>
                 <div class="form-item box-item">
                     <span>Повторите пароль</span>
-                    <input id="repeatPswd" type="password" required name="repeatPass" autocomplete="off" oninput="validateRepeatPass()"><br/>
+                    <input id="repeatPswd" type="password" required name="repeatPass" autocomplete="off"
+                           oninput="validateRepeatPass()"><br/>
                     <span id="repeatPassError" style="display: none;">*Поле 'Повторите пароль' не заполнено!</span>
                     <span id="matchingError" style="display: none;">*Пароли не совпадают!</span>
                 </div>

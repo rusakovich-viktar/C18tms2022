@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(value = "/signup")
 public class SignUpServlet extends HttpServlet {
 
@@ -32,7 +33,7 @@ public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String username = request.getParameter("username");
-            String password = request.getParameter("newUsrPass");
+            String password = request.getParameter("password");
             String repeatPass = request.getParameter("repeatPass");
             String name = request.getParameter("newUsrName");
             String surname = request.getParameter("newUsrSurname");
@@ -48,12 +49,12 @@ public class SignUpServlet extends HttpServlet {
                 response.getWriter().println("<h2 style='color:red'>Некорректный формат email</h2>");
             } else {
                 userService.addNewUser(new User(username, password, name, surname, gender, birthday, email));
+                System.out.println("Регистрация прошла успешно, forward to home");
                 request.getRequestDispatcher("home").forward(request, response);
             }
 
-        } catch (
-                Exception e) {
-            System.out.println("Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception registration: " + e.getMessage());
             request.getRequestDispatcher("signup").forward(request, response);
         }
     }

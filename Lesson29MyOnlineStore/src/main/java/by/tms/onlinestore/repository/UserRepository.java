@@ -1,6 +1,7 @@
 package by.tms.onlinestore.repository;
 
 import by.tms.onlinestore.model.User;
+
 import java.util.List;
 
 public interface UserRepository extends Repository {
@@ -9,5 +10,5 @@ public interface UserRepository extends Repository {
 
     void addNewUser(User user);
 
-    User findAndGetUserByLoginAndPassword(String login, String password);
+    User getUserByLoginAndPassword(String login, String password);
 }

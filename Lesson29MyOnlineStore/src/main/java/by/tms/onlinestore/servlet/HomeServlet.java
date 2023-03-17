@@ -1,19 +1,20 @@
 package by.tms.onlinestore.servlet;
 
-import static by.tms.onlinestore.utils.Utils.isUserLogIn;
-
 import by.tms.onlinestore.dto.UserDto;
 import by.tms.onlinestore.model.Category;
 import by.tms.onlinestore.service.CategoryService;
 import by.tms.onlinestore.service.CategoryServiceAware;
-import java.io.IOException;
-import java.util.List;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+import static by.tms.onlinestore.utils.Utils.isUserLogIn;
 
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
@@ -42,8 +43,11 @@ public class HomeServlet extends HttpServlet {
         if (isUserLogIn(userDto)) {
             List<Category> categories = categoryService.getCategories();
             request.setAttribute("categories", categories);
+            System.out.println("checkReceivedUser good, forward to home");
             request.getRequestDispatcher("home.jsp").forward(request, response);
+
         } else {
+            System.out.println("checkReceivedUser bad, forward to signin");
             request.getRequestDispatcher("signin").forward(request, response);
         }
     }

@@ -4,19 +4,21 @@ import by.tms.onlinestore.model.User;
 import by.tms.onlinestore.repository.UserRepository;
 import by.tms.onlinestore.repository.utils.ConnectionPool;
 import by.tms.onlinestore.repository.utils.ConnectionWrapper;
+import lombok.Builder;
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
 public class JdbcUserRepositoryImpl implements UserRepository {
 
     private static final String GET_USERS_INFO = "select login_key, pass_value from \"online-store\".users";
     private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email) values (?, ?, ?, ?, ?, ?, ?)";
-
+    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login_key, pass_value, first_name, second_name, day_of_birthday, gender, email FROM \"online-store\".users WHERE login_key = ? AND pass_value = ?";
     private final ConnectionPool connectionPool;
 
     public JdbcUserRepositoryImpl(ConnectionPool connectionPool) {
@@ -27,7 +29,7 @@ public class JdbcUserRepositoryImpl implements UserRepository {
     public List<User> findUsersLoginPasswordAndPutAllInList() {
         List<User> users = new ArrayList<>();
         try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
-                Statement statement = connectionWrapper.getConnection().createStatement()) {
+             Statement statement = connectionWrapper.getConnection().createStatement()) {
             try (ResultSet rs = statement.executeQuery(GET_USERS_INFO)) {
                 while (rs.next()) {
                     String login = rs.getString(1);
@@ -35,12 +37,10 @@ public class JdbcUserRepositoryImpl implements UserRepository {
                     users.add(new User(login, password));
                 }
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                System.out.println("Exeption statement.executeQuery(GET_USERS_INFO)" + e.getMessage());
             }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("connectionWrapper.getConnection().createStatement()" + e.getMessage());
         }
         return users;
     }
@@ -48,7 +48,7 @@ public class JdbcUserRepositoryImpl implements UserRepository {
     @Override
     public void addNewUser(User user) {
         try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
-                PreparedStatement statement = connectionWrapper.getConnection().prepareStatement(INSERT_USER_QUERY)) {
+             PreparedStatement statement = connectionWrapper.getConnection().prepareStatement(INSERT_USER_QUERY)) {
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getName());
@@ -63,23 +63,27 @@ public class JdbcUserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public User findAndGetUserByLoginAndPassword(String login, String password) {
-//
-//
-//
-//        stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
-//        stmt.setString(1, username);
-//        stmt.setString(2, password);
-//
-//        rs = stmt.executeQuery();
-//
-//        if (rs.next()) {
-//            response.sendRedirect("home.jsp");
-//        } else {
-//            PrintWriter out = response.getWriter();
-//            out.println("<html><body><p>Invalid username or password.</p></body></html>");
-//        return new User();
-        return new User();
+    public User getUserByLoginAndPassword(String login, String password) {
+        User user = null;
+        try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
+             PreparedStatement statement = connectionWrapper.getConnection().prepareStatement(GET_USER_BY_LOGIN_AND_PASSWORD)) {
+            statement.setString(1, login);
+            statement.setString(2, password);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                user = User.builder()
+                        .username(rs.getString("login_key"))
+                        .password(rs.getString("pass_value"))
+                        .name(rs.getString("first_name"))
+                        .surname(rs.getString("second_name"))
+                        .birthday(rs.getString("day_of_birthday"))
+                        .gender(rs.getString("gender"))
+                        .email(rs.getString("email"))
+                        .build();
+            }
+        } catch (Exception e) {
+            System.out.println("Exception connectionWrapper.getConnection().prepareStatement(GET_USER_BY_LOGIN_AND_PASSWORD): " + e.getMessage());
+        }
+        return user;
     }
-
 }

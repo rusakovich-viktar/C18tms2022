@@ -3,6 +3,7 @@ package by.tms.onlinestore.repository.impl;
 import by.tms.onlinestore.model.Category;
 import by.tms.onlinestore.repository.CategoryRepository;
 import by.tms.onlinestore.utils.CategoryHelper;
+
 import java.util.List;
 
 public class StaticCategoryRepositoryImpl implements CategoryRepository {
@@ -26,10 +27,23 @@ public class StaticCategoryRepositoryImpl implements CategoryRepository {
 //        }
 
         return categories.stream()
-                         .filter(category -> category.getId() == id)
-                         .findFirst()
-                         .orElse(null);
+                .filter(category -> category.getId() == id)
+                .findFirst()
+                .orElse(null);
     }
 }
 
 //page -> servlet -> service -> repository
+
+
+//            List<User> users = userService.findUsersLoginPasswordAndPutAllInList();
+//            for (User user : users) {
+//                if (user.getUsername().equals(login) && user.getPassword().equals(pass)) {
+//                    UserDto userDto = new UserDto(user.getUsername());
+//                    Cart cart = new Cart();
+//                    session.setAttribute("cart", cart);
+//                    session.setAttribute("username", login);
+//                    request.getRequestDispatcher("home").forward(request, response);
+//                    break;
+//                }
+//            }
