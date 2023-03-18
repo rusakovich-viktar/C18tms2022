@@ -5,18 +5,18 @@ import by.tms.onlinestore.repository.UserRepository;
 
 public class UserService {
 
-    private final UserRepository userRepositoryImpl;
+    private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepositoryImpl) {
-        this.userRepositoryImpl = userRepositoryImpl;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public User getUserByLoginAndPassword(String login, String password) {
-        return userRepositoryImpl.getUserByLoginAndPassword(login, password);
+        return userRepository.getUserByLoginAndPassword(login, password);
     }
-    
+
     public void addNewUser(User user) {
-        userRepositoryImpl.addNewUser(user);
+        userRepository.addNewUser(user);
     }
 
 }

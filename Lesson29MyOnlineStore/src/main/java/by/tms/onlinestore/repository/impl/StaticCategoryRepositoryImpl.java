@@ -35,15 +35,3 @@ public class StaticCategoryRepositoryImpl implements CategoryRepository {
 
 //page -> servlet -> service -> repository
 
-
-//            List<User> users = userService.findUsersLoginPasswordAndPutAllInList();
-//            for (User user : users) {
-//                if (user.getUsername().equals(login) && user.getPassword().equals(pass)) {
-//                    UserDto userDto = new UserDto(user.getUsername());
-//                    Cart cart = new Cart();
-//                    session.setAttribute("cart", cart);
-//                    session.setAttribute("username", login);
-//                    request.getRequestDispatcher("home").forward(request, response);
-//                    break;
-//                }
-//            }
