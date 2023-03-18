@@ -1,4 +1,4 @@
--- Создаем базу категорий?
+-- Создаем базу категорий
 create schema "online-store";
 
 create table "online-store".categories
@@ -45,23 +45,11 @@ alter table "online-store".users
 
 
 -- Вставляем пользователей в таблицу
-INSERT INTO "online-store".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email)
-VALUES ('admin', 'admin', 'username', 'adminovich', '20.03.1900', 'male', 'admin@tms.by'),
-       ('test', 'test', 'testname', 'testovich', '20.03.1800', 'female', 'miner@grind.com');
+INSERT INTO "online-store".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email,
+                                  registration_date)
+VALUES ('admin', 'admin', 'username', 'adminovich', '20.03.1900', 'male', 'admin@tms.by', '20.03.1900'),
+       ('test', 'test', 'testname', 'testovich', '20.03.1800', 'female', 'miner@grind.com', '20.03.1900');
 
 -- _____________________
-
-
--- Джоиним таблицы
-select *
-from students
-         left join city on city.id = students.id_city;
-
-select login_key, pass_value
-from users;
-
--- insert into users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email)
--- values ('test1', 'test', 'testname', 'testovich', '20.03.1800', 'female', 'miner@grind.com')
--- -- values (?, ?, ?, ?, ?, ?, ?)
 
 
