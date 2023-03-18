@@ -15,6 +15,7 @@
     <style>
         <%@include file='resources/style.css' %>
     </style>
+
 </head>
 <body>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>

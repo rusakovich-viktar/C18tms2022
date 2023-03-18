@@ -42,7 +42,7 @@
                         <input type="hidden" value="${myProduct.getPrice()}" name="price"/>
                         <input type="hidden" value="${myProduct.getCategoryId()}" name="categoryId"/>
                         <button type="submit" value="Delete" name="action" class="buttonDelete"><i
-                                class="fa fa-minus-square fa-lg"></i> Delete
+                                class="fa fa-lg fa-fw fa-trash"></i> Delete
                         </button>
                     </form>
                 </div>

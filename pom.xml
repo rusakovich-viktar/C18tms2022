@@ -6,7 +6,6 @@
 
     <build>
         <defaultGoal>clean package</defaultGoal>
-        <!--        <pluginManagement>-->
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -56,54 +55,7 @@
                 <groupId>com.github.spotbugs</groupId>
                 <version>${spotbugs.maven.plugin.version}</version>
             </plugin>
-            <!--                <plugin>-->
-            <!--                    <artifactId>maven-pmd-plugin</artifactId>-->
-            <!--                    <configuration>-->
-            <!--                        <excludeRoots>-->
-            <!--                            <excludeRoot>target/generated-sources</excludeRoot>-->
-            <!--                        </excludeRoots>-->
-            <!--                        <failOnViolation>false</failOnViolation>-->
-            <!--                        <linkXRef>false</linkXRef>-->
-            <!--                        <printFailingErrors>true</printFailingErrors>-->
-            <!--                        <rulesets>-->
-            <!--                            &lt;!&ndash;                            <ruleset>C:\Java\ViRusC18tms2022\codequality\pmd-ruleset.xml</ruleset>&ndash;&gt;-->
-            <!--                            <ruleset>../codequality/pmd-ruleset.xml</ruleset>-->
-            <!--                        </rulesets>-->
-            <!--                        <targetDirectory>C:\Java\ViRusC18tms2022\codequality\pmdTest</targetDirectory>-->
-            <!--                        <targetJdk>${maven.compiler.target}</targetJdk>-->
-            <!--                    </configuration>-->
-            <!--                    <dependencies>-->
-            <!--                        <dependency>-->
-            <!--                            <artifactId>pmd-core</artifactId>-->
-            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
-            <!--                            <version>${pmd.version}</version>-->
-            <!--                        </dependency>-->
-            <!--                        <dependency>-->
-            <!--                            <artifactId>pmd-java</artifactId>-->
-            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
-            <!--                            <version>${pmd.version}</version>-->
-            <!--                        </dependency>-->
-            <!--                        <dependency>-->
-            <!--                            <artifactId>pmd-javascript</artifactId>-->
-            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
-            <!--                            <version>${pmd.version}</version>-->
-            <!--                        </dependency>-->
-            <!--                        <dependency>-->
-            <!--                            <artifactId>pmd-jsp</artifactId>-->
-            <!--                            <groupId>net.sourceforge.pmd</groupId>-->
-            <!--                            <version>${pmd.version}</version>-->
-            <!--                        </dependency>-->
-            <!--                    </dependencies>-->
-            <!--                    <executions>-->
-            <!--                        <execution>-->
-            <!--                            <goals>-->
-            <!--                                <goal>check</goal>-->
-            <!--                            </goals>-->
-            <!--                        </execution>-->
-            <!--                    </executions>-->
-            <!--                    <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                    <version>${pmd.maven.plugin.version}</version>-->
-            <!--                </plugin>-->
+
 
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -180,7 +132,6 @@
                 <version>${checkstyle.maven.plugin.version}</version>
             </plugin>
         </plugins>
-        <!--        </pluginManagement>-->
     </build>
 
     <dependencies>
@@ -274,7 +225,6 @@
         <module>Lesson26StudentConnectLogin</module>
         <module>Lesson28addWeb</module>
         <module>Lesson31Patterns</module>
-        <module>Lesson29</module>
         <module>Lesson28OnlineStoreServlet</module>
         <module>Lesson29MyOnlineStore</module>
     </modules>
