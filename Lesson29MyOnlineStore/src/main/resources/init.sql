@@ -23,7 +23,8 @@ VALUES (4, 'Fridges', 'fridge.jpg');
 INSERT INTO "online-store".categories (id, name, "imageName")
 VALUES (5, 'Cars', 'car.jpg');
 INSERT INTO "online-store".categories (id, name, "imageName")
-VALUES (6, 'Cameras', 'camera.jpg')
+VALUES (6, 'Cameras', 'camera.jpg');
+
 
 --Таблица пользователей создаем
 CREATE TABLE "online-store".users
@@ -38,13 +39,17 @@ CREATE TABLE "online-store".users
     email           text not null
 );
 
+
+alter table "online-store".users
+    add registration_date date;
+
+
 -- Вставляем пользователей в таблицу
 INSERT INTO "online-store".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email)
 VALUES ('admin', 'admin', 'username', 'adminovich', '20.03.1900', 'male', 'admin@tms.by'),
        ('test', 'test', 'testname', 'testovich', '20.03.1800', 'female', 'miner@grind.com');
 
 -- _____________________
-
 
 
 -- Джоиним таблицы

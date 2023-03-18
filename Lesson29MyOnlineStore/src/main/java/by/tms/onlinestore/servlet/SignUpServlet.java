@@ -40,6 +40,7 @@ public class SignUpServlet extends HttpServlet {
             String birthday = request.getParameter("date");
             String gender = request.getParameter("gender");
             String email = request.getParameter("newUsrEmail");
+            String registrationDate = request.getParameter("registrationDate");
 
             if (username == null || password == null || repeatPass == null || name == null || surname == null || birthday == null || gender == null || username.isEmpty() || password.isEmpty() || repeatPass.isEmpty() || name.isEmpty() || surname.isEmpty() || birthday.isEmpty() || gender.isEmpty()) {
                 response.getWriter().println("<h2 style='color:red'>Необходимо заполнить все поля формы.</h2>");
@@ -48,7 +49,7 @@ public class SignUpServlet extends HttpServlet {
             } else if (!email.matches(pattern)) {
                 response.getWriter().println("<h2 style='color:red'>Некорректный формат email</h2>");
             } else {
-                userService.addNewUser(new User(username, password, name, surname, gender, birthday, email));
+                userService.addNewUser(new User(username, password, name, surname, gender, birthday, email, registrationDate));
                 System.out.println("Регистрация прошла успешно, forward to home");
                 request.getRequestDispatcher("home").forward(request, response);
             }

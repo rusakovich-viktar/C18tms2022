@@ -9,40 +9,17 @@ import lombok.Builder;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 @Builder
 public class JdbcUserRepositoryImpl implements UserRepository {
 
     private static final String GET_USERS_INFO = "select login_key, pass_value from \"online-store\".users";
-    private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email) values (?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login_key, pass_value, first_name, second_name, day_of_birthday, gender, email FROM \"online-store\".users WHERE login_key = ? AND pass_value = ?";
+    private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email, registration_date) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login_key, pass_value, first_name, second_name, day_of_birthday, gender, email, registration_date FROM \"online-store\".users WHERE login_key = ? AND pass_value = ?";
     private final ConnectionPool connectionPool;
 
     public JdbcUserRepositoryImpl(ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
-    }
-
-    @Override
-    public List<User> findUsersLoginPasswordAndPutAllInList() {
-        List<User> users = new ArrayList<>();
-        try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
-             Statement statement = connectionWrapper.getConnection().createStatement()) {
-            try (ResultSet rs = statement.executeQuery(GET_USERS_INFO)) {
-                while (rs.next()) {
-                    String login = rs.getString(1);
-                    String password = rs.getString(2);
-                    users.add(new User(login, password));
-                }
-            } catch (Exception e) {
-                System.out.println("Exeption statement.executeQuery(GET_USERS_INFO)" + e.getMessage());
-            }
-        } catch (Exception e) {
-            System.out.println("connectionWrapper.getConnection().createStatement()" + e.getMessage());
-        }
-        return users;
     }
 
     @Override
@@ -56,6 +33,7 @@ public class JdbcUserRepositoryImpl implements UserRepository {
             statement.setDate(5, Date.valueOf(user.getBirthday()));
             statement.setString(6, user.getGender());
             statement.setString(7, user.getEmail());
+            statement.setDate(8, Date.valueOf(user.getRegistrationDate()));
             statement.executeUpdate();
         } catch (Exception e) {
             System.out.println("Exception in addNewUser: " + e.getMessage());
@@ -79,6 +57,7 @@ public class JdbcUserRepositoryImpl implements UserRepository {
                         .birthday(rs.getString("day_of_birthday"))
                         .gender(rs.getString("gender"))
                         .email(rs.getString("email"))
+                        .registrationDate(rs.getString("registration_date"))
                         .build();
             }
         } catch (Exception e) {

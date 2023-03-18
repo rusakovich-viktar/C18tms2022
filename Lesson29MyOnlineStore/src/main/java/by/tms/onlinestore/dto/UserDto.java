@@ -1,18 +1,14 @@
 package by.tms.onlinestore.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @EqualsAndHashCode
-@NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@SuperBuilder
 public class UserDto {
 
     private String username;
@@ -21,9 +17,6 @@ public class UserDto {
     private String gender;
     private String birthday;
     private String email;
-
-    public UserDto(String username) {
-        this.username = username;
-    }
+    private String registrationDate;
 
 }

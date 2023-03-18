@@ -21,19 +21,20 @@
     <jsp:include page="header.jsp"/>
 </ul>
 <br>
-<h3 class="text-center">Welcome <b class="font-italic">${userDto.getUsername()}</b></h3>
+<h3 class="text-center">Личный кабинет пользователя <b class="font-italic">${userDto.getUsername()}</b></h3>
 <div>
-    <p class="text-left">Name: <b class="font-italic">${user.getEmail()}</b>
-    <p class="text-left">Name: <b class="font-italic">${user.getName()}</b>
-    <p class="text-left">Name: <b class="font-italic">${userDto.getName()}</b>
-    <p class="text-left">Name: <b class="font-italic">${userDto.getUsername()}</b>
-
+    <p class="text-left">имя : <b class="font-italic">${userDto.getName()}</b>
+    <p class="text-left">фамилия: <b class="font-italic">${userDto.getSurname()}</b>
+    <p class="text-left">гендер: <b class="font-italic">${userDto.getGender()}</b>
+    <p class="text-left">дата рождения: <b class="font-italic">${userDto.getBirthday()}</b>
+    <p class="text-left">электронная почта: <b class="font-italic">${userDto.getEmail()}</b>
+    <p class="text-left">дата регистрации: <b class="font-italic">${userDto.getRegistrationDate()}</b>
 
 </div>
 
 
 <button onclick="window.location.href = 'logout';" class="buttonQuit">
-    <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> Exit
+    <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> Завершить сеанс и выйти
 </button>
 
 </body>

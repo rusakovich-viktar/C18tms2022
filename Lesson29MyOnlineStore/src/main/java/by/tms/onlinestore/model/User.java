@@ -1,27 +1,21 @@
 package by.tms.onlinestore.model;
 
-import lombok.*;
+import by.tms.onlinestore.dto.UserDto;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @SuperBuilder
-@NoArgsConstructor
-@AllArgsConstructor
-public class User {
+public class User extends UserDto {
 
-    private String username;
     private String password;
-    private String name;
-    private String surname;
-    private String gender;
-    private String birthday;
-    private String email;
 
-    public User(String username, String password) {
-        this.username = username;
+    public User(String username, String name, String surname, String gender, String birthday, String email, String registrationDate, String password) {
+        super(username, name, surname, gender, birthday, email, registrationDate);
         this.password = password;
     }
-
 }

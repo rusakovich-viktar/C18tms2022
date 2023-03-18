@@ -46,7 +46,7 @@ public class SignInServlet extends HttpServlet {
         User user = userService.getUserByLoginAndPassword(login, pass);
         if (user != null) {
             HttpSession session = request.getSession();
-            UserDto userDto = new UserDto(user.getUsername(), user.getName(), user.getSurname(), user.getGender(), user.getBirthday(), user.getEmail());
+            UserDto userDto = new UserDto(user.getUsername(), user.getName(), user.getSurname(), user.getGender(), user.getBirthday(), user.getEmail(), user.getRegistrationDate());
             Cart cart = new Cart();
             session.setAttribute("cart", cart);
             session.setAttribute("username", login);

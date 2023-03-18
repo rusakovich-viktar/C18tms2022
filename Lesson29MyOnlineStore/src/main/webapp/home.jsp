@@ -20,7 +20,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <jsp:include page="header.jsp"/>
 <br>
-<h2>Popular categories</h2>
+<h2>All categories</h2>
 <div class="container-fluid">
     <c:if test="${not empty categories}">
         <div class="row">
@@ -39,7 +39,6 @@
             </c:forEach>
         </div>
     </c:if>
-</div>
 </div>
 </body>
 </html>

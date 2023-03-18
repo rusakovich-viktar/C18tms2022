@@ -10,11 +10,12 @@ import by.tms.onlinestore.repository.utils.ConnectionPool;
 import by.tms.onlinestore.service.CategoryService;
 import by.tms.onlinestore.service.ProductService;
 import by.tms.onlinestore.service.UserService;
-import java.sql.Connection;
-import java.sql.SQLException;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @WebListener
 public class InitializationContextListener implements ServletContextListener {

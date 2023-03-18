@@ -79,6 +79,7 @@
                     <span id="repeatPassError" style="display: none;">*Поле 'Повторите пароль' не заполнено!</span>
                     <span id="matchingError" style="display: none;">*Пароли не совпадают!</span>
                 </div>
+                <input type="hidden" name="registrationDate" value="<%= java.time.LocalDate.now() %>">
                 <div id="lower">
                     <button id="regFormSignUpBtn" type="submit">Зарегистрироваться</button>
                     <br/>
