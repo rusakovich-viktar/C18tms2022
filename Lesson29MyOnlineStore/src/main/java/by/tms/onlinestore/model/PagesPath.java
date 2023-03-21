@@ -1,0 +1,22 @@
+package by.tms.onlinestore.model;
+
+public enum PagesPath {
+    HOME_PAGE("home.jsp"),
+    PRODUCT_PAGE("product.jsp"),
+    SIGN_IN_PAGE("signin.jsp"),
+    SIGN_UP_PAGE("signup.jsp"),
+    CART_PAGE("cart.jsp"),
+    PROFILE_PAGE("profile.jsp"),
+    CATEGORY_PAGE("category.jsp"),
+    INDEX_PAGE("index.jsp");
+
+    private final String path;
+
+    PagesPath(String path) {
+        this.path = path;
+    }
+
+    public String getPath() {
+        return path;
+    }
+}

@@ -5,6 +5,7 @@ import by.tms.onlinestore.exceptions.RequestParamNullException;
 import by.tms.onlinestore.model.Cart;
 import by.tms.onlinestore.model.User;
 import by.tms.onlinestore.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ import java.io.IOException;
 
 import static by.tms.onlinestore.utils.HttpRequestParamValidator.validateParamNotNull;
 
+@Slf4j
 @WebServlet(value = "/signin")
 public class SignInServlet extends HttpServlet {
 
@@ -37,6 +39,7 @@ public class SignInServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("username");
         String pass = request.getParameter("password");
+        log.info("ello привет");
         try {
             validateParamNotNull(login);
             validateParamNotNull(pass);

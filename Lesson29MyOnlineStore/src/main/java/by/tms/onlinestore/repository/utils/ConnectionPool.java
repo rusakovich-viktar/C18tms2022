@@ -1,5 +1,7 @@
 package by.tms.onlinestore.repository.utils;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -7,6 +9,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Slf4j
 public class ConnectionPool {
 
     //Singleton instance
@@ -81,7 +84,7 @@ public class ConnectionPool {
             if (pool.isEmpty() && currentConnectionNumber.get() < MAX_CONNECTION_COUNT) {
                 openAdditionalConnection();
             }
-            System.out.println("Pool size before taking connection: " + pool.size());
+            log.info("Pool size before taking connection: " + pool.size());
             connectionWrapper = pool.take();
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();

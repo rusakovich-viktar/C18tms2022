@@ -4,6 +4,7 @@ import by.tms.onlinestore.dto.UserDto;
 import by.tms.onlinestore.model.Category;
 import by.tms.onlinestore.service.CategoryService;
 import by.tms.onlinestore.service.CategoryServiceAware;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import static by.tms.onlinestore.utils.Utils.isUserLogIn;
 
+@Slf4j
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 
@@ -31,6 +33,8 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDto userDto = (UserDto) request.getSession().getAttribute("userDto");
         checkReceivedUser(userDto, request, response);
+        log.error("HomeServlet Error", new Exception("textExceptionTest"));
+        log.info("HomeServlet INFO", new Exception("textINFOTest"));
     }
 
     @Override

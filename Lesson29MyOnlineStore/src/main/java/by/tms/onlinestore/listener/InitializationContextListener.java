@@ -14,8 +14,6 @@ import by.tms.onlinestore.service.UserService;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 @WebListener
 public class InitializationContextListener implements ServletContextListener {
@@ -41,11 +39,11 @@ public class InitializationContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        Connection connection = (Connection) servletContextEvent.getServletContext().getAttribute("connection");
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            System.out.println("Exception: " + e.getMessage());
-        }
+//        Connection connection = (Connection) servletContextEvent.getServletContext().getAttribute("connection");
+//        try {
+//            connection.close();
+//        } catch (SQLException e) {
+//            System.out.println("Exception: " + e.getMessage());
+//        }
     }
 }

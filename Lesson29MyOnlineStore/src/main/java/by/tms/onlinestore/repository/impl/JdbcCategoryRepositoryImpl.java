@@ -3,11 +3,12 @@ package by.tms.onlinestore.repository.impl;
 import by.tms.onlinestore.model.Category;
 import by.tms.onlinestore.repository.CategoryRepository;
 import by.tms.onlinestore.repository.utils.ConnectionWrapper;
+import lombok.AllArgsConstructor;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
@@ -18,18 +19,18 @@ public class JdbcCategoryRepositoryImpl implements CategoryRepository {
     public List<Category> getCategories() {
         List<Category> categories = new ArrayList<>();
         try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
-                Statement statement = connectionWrapper.getConnection().createStatement()) {
-            try (ResultSet rs = statement.executeQuery(PATH_TO_STORE)) {
-                while (rs.next()) {
-                    Category category = Category.builder()
-                                                .id(rs.getInt("id"))
-                                                .name(rs.getString("name"))
-                                                .imageName(rs.getString("imageName"))
-                                                .build();
-                    categories.add(category);
-                }
-
+             Statement statement = connectionWrapper.getConnection().createStatement()) {
+            ResultSet rs = statement.executeQuery(PATH_TO_STORE);
+            while (rs.next()) {
+                Category category = Category.builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .imageName(rs.getString("imageName"))
+                        .build();
+                categories.add(category);
             }
+
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
