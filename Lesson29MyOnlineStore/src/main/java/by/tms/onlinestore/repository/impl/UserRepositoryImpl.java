@@ -2,25 +2,25 @@ package by.tms.onlinestore.repository.impl;
 
 import by.tms.onlinestore.model.User;
 import by.tms.onlinestore.repository.UserRepository;
-import by.tms.onlinestore.repository.utils.ConnectionPool;
 import by.tms.onlinestore.repository.utils.ConnectionWrapper;
-import lombok.Builder;
+import lombok.Setter;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@Builder
-public class JdbcUserRepositoryImpl implements UserRepository {
+@Setter
+public class UserRepositoryImpl implements UserRepository {
 
     private static final String GET_USERS_INFO = "select login_key, pass_value from \"online-store\".users";
     private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email, registration_date) values (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login_key, pass_value, first_name, second_name, day_of_birthday, gender, email, registration_date FROM \"online-store\".users WHERE login_key = ? AND pass_value = ?";
-    private final ConnectionPool connectionPool;
+//    private final ConnectionPool connectionPool;
 
-    public JdbcUserRepositoryImpl(ConnectionPool connectionPool) {
-        this.connectionPool = connectionPool;
-    }
+
+//    public JdbcUserRepositoryImpl(ConnectionPool connectionPool) {
+//        this.connectionPool = connectionPool;
+//    }
 
     @Override
     public void addNewUser(User user) {

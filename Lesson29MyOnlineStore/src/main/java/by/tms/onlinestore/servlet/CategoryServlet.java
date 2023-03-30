@@ -1,12 +1,9 @@
 package by.tms.onlinestore.servlet;
 
-import static by.tms.onlinestore.utils.Utils.isUserLogIn;
-
 import by.tms.onlinestore.dto.UserDto;
 import by.tms.onlinestore.model.Product;
-import by.tms.onlinestore.service.ProductService;
-import java.io.IOException;
-import java.util.List;
+import by.tms.onlinestore.service.impl.ProductService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -14,6 +11,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+import static by.tms.onlinestore.model.RequestParam.CATEGORY_ID;
+import static by.tms.onlinestore.model.RequestParam.NAME_CATEGORY;
+import static by.tms.onlinestore.utils.Utils.isUserLogIn;
 
 @WebServlet("/category")
 public class CategoryServlet extends HttpServlet {
@@ -30,8 +33,8 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDto userDto = (UserDto) request.getSession().getAttribute("userDto");
         if (isUserLogIn(userDto)) {
-            int categoryId = Integer.parseInt(request.getParameter("categoryId"));
-            String nameCategory = request.getParameter("nameCategory");
+            int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID.getValue()));
+            String nameCategory = request.getParameter(NAME_CATEGORY.getValue());
             List<Product> categoryProducts = productService.getProductsByCategoryId(categoryId);
             request.setAttribute("products", categoryProducts);
             request.setAttribute("nameCategory", nameCategory);

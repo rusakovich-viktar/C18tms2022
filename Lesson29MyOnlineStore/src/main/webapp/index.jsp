@@ -5,6 +5,6 @@
     <meta charset="utf-8">
 </head>
 <body>
-<jsp:forward page="signin"/>
+<jsp:forward page="signin.jsp"/>
 </body>
 </html>

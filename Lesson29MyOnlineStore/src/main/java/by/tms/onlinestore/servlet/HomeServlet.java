@@ -3,7 +3,7 @@ package by.tms.onlinestore.servlet;
 import by.tms.onlinestore.dto.UserDto;
 import by.tms.onlinestore.model.Category;
 import by.tms.onlinestore.service.CategoryService;
-import by.tms.onlinestore.service.CategoryServiceAware;
+import by.tms.onlinestore.service.impl.CategoryServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletConfig;
@@ -21,20 +21,19 @@ import static by.tms.onlinestore.utils.Utils.isUserLogIn;
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 
-    private CategoryServiceAware categoryService;
+    private CategoryService categoryService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        categoryService = (CategoryService) config.getServletContext().getAttribute("categoryService");
+        categoryService = (CategoryServiceImpl) config.getServletContext().getAttribute("categoryService");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDto userDto = (UserDto) request.getSession().getAttribute("userDto");
         checkReceivedUser(userDto, request, response);
-        log.error("HomeServlet Error", new Exception("textExceptionTest"));
-        log.info("HomeServlet INFO", new Exception("textINFOTest"));
+
     }
 
     @Override

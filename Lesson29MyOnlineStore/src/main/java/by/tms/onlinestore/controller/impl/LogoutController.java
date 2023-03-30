@@ -1,5 +1,6 @@
-package by.tms.onlinestore.controller;
+package by.tms.onlinestore.controller.impl;
 
+import by.tms.onlinestore.controller.BaseCommandController;
 import by.tms.onlinestore.model.PagesPath;
 
 import javax.servlet.http.HttpServletRequest;

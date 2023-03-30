@@ -17,7 +17,7 @@
             <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <form id="registrationForm" method="post" action="${contextPath}/signup" onsubmit="return validateForm()">
                 <div class="form-item box-item">
-                    <input id="name" type="text" placeholder="Имя" name="newUsrName" oninput="validateName()"
+                    <input id="name" type="text" placeholder="Имя" name="name" oninput="validateName()"
                            required><br/>
                     <span id="nameError" style="display: none;">*Поле 'Имя' не заполнено!</span>
                 </div>

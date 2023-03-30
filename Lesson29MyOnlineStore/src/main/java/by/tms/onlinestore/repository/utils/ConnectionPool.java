@@ -104,9 +104,20 @@ public class ConnectionPool {
                 System.out.println("After add to pool - Pool size: " + pool.size());
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                throw new Exception("Connection wasn't returned into pool properly");
+                log.error("Connection wasn't returned into pool properly");
             }
         }
     }
 
+    public void closeAllConnection() {
+        for (ConnectionWrapper connectionWrapper : pool) {
+            try {
+                if (connectionWrapper != null && connectionWrapper.getConnection() != null) {
+                    connectionWrapper.getConnection().close();
+                }
+            } catch (Exception e) {
+                log.error("Some connection cannot be closed: ", e);
+            }
+        }
+    }
 }

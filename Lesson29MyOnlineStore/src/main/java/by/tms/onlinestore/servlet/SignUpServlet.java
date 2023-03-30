@@ -1,7 +1,7 @@
 package by.tms.onlinestore.servlet;
 
 import by.tms.onlinestore.model.User;
-import by.tms.onlinestore.service.UserService;
+import by.tms.onlinestore.service.impl.UserService;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -10,6 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+import static by.tms.onlinestore.model.RequestParam.BIRTHDAY;
+import static by.tms.onlinestore.model.RequestParam.EMAIL;
+import static by.tms.onlinestore.model.RequestParam.GENDER;
+import static by.tms.onlinestore.model.RequestParam.NAME;
+import static by.tms.onlinestore.model.RequestParam.PASSWORD;
+import static by.tms.onlinestore.model.RequestParam.REGISTRATION_DATE;
+import static by.tms.onlinestore.model.RequestParam.REPEAT_PASS;
+import static by.tms.onlinestore.model.RequestParam.SURNAME;
+import static by.tms.onlinestore.model.RequestParam.USERNAME;
 
 @WebServlet(value = "/signup")
 public class SignUpServlet extends HttpServlet {
@@ -31,15 +41,15 @@ public class SignUpServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String repeatPass = request.getParameter("repeatPass");
-            String name = request.getParameter("newUsrName");
-            String surname = request.getParameter("newUsrSurname");
-            String birthday = request.getParameter("date");
-            String gender = request.getParameter("gender");
-            String email = request.getParameter("newUsrEmail");
-            String registrationDate = request.getParameter("registrationDate");
+            String username = request.getParameter(USERNAME.getValue());
+            String password = request.getParameter(PASSWORD.getValue());
+            String repeatPass = request.getParameter(REPEAT_PASS.getValue());
+            String name = request.getParameter(NAME.getValue());
+            String surname = request.getParameter(SURNAME.getValue());
+            String birthday = request.getParameter(BIRTHDAY.getValue());
+            String gender = request.getParameter(GENDER.getValue());
+            String email = request.getParameter(EMAIL.getValue());
+            String registrationDate = request.getParameter(REGISTRATION_DATE.getValue());
 
             if (username == null || password == null || repeatPass == null || name == null || surname == null || birthday == null || gender == null || username.isEmpty() || password.isEmpty() || repeatPass.isEmpty() || name.isEmpty() || surname.isEmpty() || birthday.isEmpty() || gender.isEmpty()) {
                 response.getWriter().println("<h2 style='color:red'>Необходимо заполнить все поля формы.</h2>");

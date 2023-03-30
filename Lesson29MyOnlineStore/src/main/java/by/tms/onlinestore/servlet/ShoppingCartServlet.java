@@ -1,18 +1,26 @@
 package by.tms.onlinestore.servlet;
 
-import static by.tms.onlinestore.utils.Utils.isUserLogIn;
-
 import by.tms.onlinestore.dto.UserDto;
 import by.tms.onlinestore.model.Cart;
 import by.tms.onlinestore.model.Product;
-import java.io.IOException;
-import java.math.BigDecimal;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.math.BigDecimal;
+
+import static by.tms.onlinestore.model.RequestParam.ACTION;
+import static by.tms.onlinestore.model.RequestParam.CATEGORY_ID;
+import static by.tms.onlinestore.model.RequestParam.DESCRIPTION;
+import static by.tms.onlinestore.model.RequestParam.ID;
+import static by.tms.onlinestore.model.RequestParam.IMAGE_NAME;
+import static by.tms.onlinestore.model.RequestParam.NAME;
+import static by.tms.onlinestore.model.RequestParam.PRICE_PARAMETER;
+import static by.tms.onlinestore.utils.Utils.isUserLogIn;
 
 @WebServlet("/cart")
 public class ShoppingCartServlet extends HttpServlet {
@@ -32,15 +40,15 @@ public class ShoppingCartServlet extends HttpServlet {
         response.setContentType("text/html");
         HttpSession session = request.getSession(false);
         Cart cart = (Cart) session.getAttribute("cart");
-        int id = Integer.parseInt(request.getParameter("id"));
-        String imageName = request.getParameter("imageName");
-        String name = request.getParameter("name");
-        String description = request.getParameter("description");
-        String priceParameter = request.getParameter("price");
-        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+        int id = Integer.parseInt(request.getParameter(ID.getValue()));
+        String imageName = request.getParameter(IMAGE_NAME.getValue());
+        String name = request.getParameter(NAME.getValue());
+        String description = request.getParameter(DESCRIPTION.getValue());
+        String priceParameter = request.getParameter(PRICE_PARAMETER.getValue());
+        int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID.getValue()));
         BigDecimal price = new BigDecimal(priceParameter);
         Product product = new Product(id, imageName, name, description, price, categoryId);
-        String action = request.getParameter("action");
+        String action = request.getParameter(ACTION.getValue());
         switch (action) {
             case "Buy" -> {
                 cart.addProduct(product);

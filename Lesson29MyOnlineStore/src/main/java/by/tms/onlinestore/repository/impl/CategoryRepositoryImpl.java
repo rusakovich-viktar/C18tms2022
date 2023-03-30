@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
-public class JdbcCategoryRepositoryImpl implements CategoryRepository {
+public class CategoryRepositoryImpl implements CategoryRepository {
 
     private static final String PATH_TO_STORE = "SELECT * FROM \"online-store\".categories";
 

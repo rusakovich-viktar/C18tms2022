@@ -1,19 +1,13 @@
 package by.tms.onlinestore.listener;
 
-import by.tms.onlinestore.repository.CategoryRepository;
-import by.tms.onlinestore.repository.ProductRepository;
-import by.tms.onlinestore.repository.UserRepository;
-import by.tms.onlinestore.repository.impl.JdbcCategoryRepositoryImpl;
-import by.tms.onlinestore.repository.impl.JdbcUserRepositoryImpl;
-import by.tms.onlinestore.repository.impl.ProductRepositoryImpl;
 import by.tms.onlinestore.repository.utils.ConnectionPool;
-import by.tms.onlinestore.service.CategoryService;
-import by.tms.onlinestore.service.ProductService;
-import by.tms.onlinestore.service.UserService;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+
+import static by.tms.onlinestore.model.Attribute.CONNECTION_POOL;
+import static by.tms.onlinestore.model.Attribute.USER_UUID;
 
 @WebListener
 public class InitializationContextListener implements ServletContextListener {
@@ -21,29 +15,35 @@ public class InitializationContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(final ServletContextEvent servletContextEvent) {
 
-        ConnectionPool connectionPool = ConnectionPool.getInstance();
-        servletContextEvent.getServletContext().setAttribute("connection", connectionPool);
+        ConnectionPool connectionPool = ConnectionPool.getInstance(); //++
+        servletContextEvent.getServletContext().setAttribute(CONNECTION_POOL.getAttribute(), connectionPool);
 
-        UserRepository jdbcUserRepository = new JdbcUserRepositoryImpl(connectionPool);
-        UserService userService = new UserService(jdbcUserRepository);
-        servletContextEvent.getServletContext().setAttribute("userService", userService);
 
-        CategoryRepository jdbcCategoryRepository = new JdbcCategoryRepositoryImpl();
-        CategoryService categoryService = new CategoryService(jdbcCategoryRepository);
-        servletContextEvent.getServletContext().setAttribute("categoryService", categoryService);
-
-        ProductRepository productRepository = new ProductRepositoryImpl();
-        ProductService productService = new ProductService(productRepository);
-        servletContextEvent.getServletContext().setAttribute("productService", productService);
+//
+//        servletContextEvent.getServletContext().setAttribute("connection", connectionPool);
+//
+//        UserRepository jdbcUserRepository = new JdbcUserRepositoryImpl(connectionPool);
+//        UserService userService = new UserService(jdbcUserRepository);
+//        servletContextEvent.getServletContext().setAttribute("userService", userService);
+//
+//        CategoryRepository jdbcCategoryRepository = new JdbcCategoryRepositoryImpl();
+//        CategoryService categoryService = new CategoryService(jdbcCategoryRepository);
+//        servletContextEvent.getServletContext().setAttribute("categoryService", categoryService);
+//
+//        ProductRepository productRepository = new ProductRepositoryImpl();
+//        ProductService productService = new ProductService(productRepository);
+//        servletContextEvent.getServletContext().setAttribute("productService", productService);
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-//        Connection connection = (Connection) servletContextEvent.getServletContext().getAttribute("connection");
-//        try {
-//            connection.close();
-//        } catch (SQLException e) {
-//            System.out.println("Exception: " + e.getMessage());
-//        }
+        ConnectionPool.getInstance().closeAllConnection();
+
+
+//        ConnectionPool connectionPool = (ConnectionPool) servletContextEvent.getServletContext().getAttribute(CONNECTION_POOL.getAttribute());
+//        connectionPool.closeAllConnection();
+//        servletContextEvent.getServletContext().removeAttribute(CONNECTION_POOL.getAttribute());
+        servletContextEvent.getServletContext().removeAttribute(USER_UUID.getAttribute());
     }
 }
+

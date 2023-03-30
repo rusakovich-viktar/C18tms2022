@@ -1,27 +1,14 @@
 package by.tms.onlinestore.service;
 
 import by.tms.onlinestore.model.Category;
-import by.tms.onlinestore.repository.CategoryRepository;
+
 import java.util.List;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
-public class CategoryService implements CategoryServiceAware {
+public interface CategoryService {
 
-    private final CategoryRepository categoryRepository;
+    List<Category> getCategories();
 
-    @Override
-    public List<Category> getCategories() {
-        return categoryRepository.getCategories();
-    }
+    Category getCategoryById(int id);
 
-    @Override
-    public Category getCategoryById(int id) {
-        return categoryRepository.getCategory(id);
-    }
-
-    @Override
-    public Category getCategoryByName(String name) {
-        return null;
-    }
+    Category getCategoryByName(String name);
 }
