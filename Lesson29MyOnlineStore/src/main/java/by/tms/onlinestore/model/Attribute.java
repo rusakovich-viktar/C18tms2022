@@ -13,7 +13,7 @@ public enum Attribute {
     CART("cart"),
 
     USERNAME("username"),
-
+    CATEGORIES("categories"),
     USER_DTO("userDto");
 
     private final String attribute;

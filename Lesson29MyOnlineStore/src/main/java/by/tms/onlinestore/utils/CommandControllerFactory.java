@@ -1,8 +1,11 @@
 package by.tms.onlinestore.utils;
 
 import by.tms.onlinestore.controller.BaseCommandController;
+import by.tms.onlinestore.controller.impl.CartPageControllerImpl;
 import by.tms.onlinestore.controller.impl.HomePageBaseCommandController;
-import by.tms.onlinestore.controller.impl.SignInPageGetControllerImpl;
+import by.tms.onlinestore.controller.impl.LogoutPageControllerImpl;
+import by.tms.onlinestore.controller.impl.ProfilePageControllerImpl;
+import by.tms.onlinestore.controller.impl.SignInPageControllerImpl;
 import by.tms.onlinestore.controller.impl.SignInPagePostControllerImpl;
 import by.tms.onlinestore.model.Commands;
 import lombok.experimental.UtilityClass;
@@ -31,11 +34,11 @@ public class CommandControllerFactory {
 //            case ADD_FAVORITE_PAGE_COMMAND -> AddFavoritePageCommandControllerImpl::new;
             case CATEGORY_COMMAND -> null;
             case HOME_COMMAND -> HomePageBaseCommandController::new;
-            case LOGOUT_COMMAND -> null;
+            case LOGOUT_COMMAND -> LogoutPageControllerImpl::new;
             case PRODUCT_COMMAND -> null;
-            case PROFILE_COMMAND -> null;
-            case SHOPPING_CART_COMMAND -> null;
-            case SIGN_IN_COMMAND -> SignInPageGetControllerImpl::new;
+            case PROFILE_COMMAND -> ProfilePageControllerImpl::new;
+            case SHOPPING_CART_COMMAND -> CartPageControllerImpl::new;
+            case SIGN_IN_COMMAND -> SignInPageControllerImpl::new;
             case SIGN_IN_POST_COMMAND -> SignInPagePostControllerImpl::new;
 //            case CREATE_USER_PAGE_COMMAND -> CreateUserPageCommandControllerImpl::new;
 //            case CREATE_USER_PAGE_POST_COMMAND -> CreateUserPagePostCommandControllerImpl::new;

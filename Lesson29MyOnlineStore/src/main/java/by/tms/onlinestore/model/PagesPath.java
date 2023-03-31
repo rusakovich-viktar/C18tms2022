@@ -7,6 +7,7 @@ public enum PagesPath {
     SIGN_IN_PAGE("signin.jsp"),
     SIGN_UP_PAGE("signup.jsp"),
     CART_PAGE("cart.jsp"),
+    CART_PAGE_GET("eshop?command=cart"),
     PROFILE_PAGE("profile.jsp"),
     CATEGORY_PAGE("category.jsp"),
     INDEX_PAGE("index.jsp");

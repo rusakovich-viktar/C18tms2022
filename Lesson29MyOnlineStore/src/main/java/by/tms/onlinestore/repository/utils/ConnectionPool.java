@@ -84,7 +84,7 @@ public class ConnectionPool {
             if (pool.isEmpty() && currentConnectionNumber.get() < MAX_CONNECTION_COUNT) {
                 openAdditionalConnection();
             }
-            log.info("Pool size before taking connection: " + pool.size());
+//            log.info("Pool size before taking connection: " + pool.size());
             connectionWrapper = pool.take();
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
@@ -99,9 +99,9 @@ public class ConnectionPool {
                 currentConnectionNumber.decrementAndGet();
             }
             try {
-                System.out.println("Before add to pool - Pool size: " + pool.size());
+//                System.out.println("Before add to pool - Pool size: " + pool.size());
                 pool.put(connectionWrapper);
-                System.out.println("After add to pool - Pool size: " + pool.size());
+//                System.out.println("After add to pool - Pool size: " + pool.size());
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 log.error("Connection wasn't returned into pool properly");

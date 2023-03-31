@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import static by.tms.onlinestore.model.PagesPath.SIGN_IN_PAGE;
 
-public class LogoutController implements BaseCommandController {
+public class LogoutPageControllerImpl implements BaseCommandController {
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
@@ -19,4 +19,3 @@ public class LogoutController implements BaseCommandController {
         return SIGN_IN_PAGE;
     }
 }
-

@@ -42,7 +42,6 @@ public class SignInPagePostControllerImpl implements BaseCommandController {
             session.setAttribute(Attribute.USERNAME.getAttribute(), username);
             session.setAttribute(Attribute.USER_DTO.getAttribute(), userDto);
             path = PagesPath.HOME_PAGE_GET_ANYTHING;
-//            path = PagesPath.HOME_PAGE;
         } else {
             path = PagesPath.SIGN_IN_PAGE;
         }

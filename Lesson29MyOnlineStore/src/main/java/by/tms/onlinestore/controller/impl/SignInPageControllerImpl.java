@@ -5,14 +5,12 @@ import by.tms.onlinestore.model.PagesPath;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class SignInPageGetControllerImpl implements BaseCommandController {
+public class SignInPageControllerImpl implements BaseCommandController {
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
         PagesPath path;
-
         path = PagesPath.SIGN_IN_PAGE;
-
         return path;
     }
 }
