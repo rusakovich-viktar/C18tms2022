@@ -4,6 +4,7 @@ public enum PagesPath {
     HOME_PAGE("home.jsp"),
     HOME_PAGE_GET_ANYTHING("eshop?command=home"),
     PRODUCT_PAGE("product.jsp"),
+    PRODUCT_ID_PAGE("/product?productId="),
     SIGN_IN_PAGE("signin.jsp"),
     SIGN_UP_PAGE("signup.jsp"),
     CART_PAGE("cart.jsp"),

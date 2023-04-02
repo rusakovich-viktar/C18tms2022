@@ -1,6 +1,5 @@
 package by.tms.onlinestore.servlet;
 
-import by.tms.onlinestore.dto.UserDto;
 import by.tms.onlinestore.model.Cart;
 import by.tms.onlinestore.model.Product;
 
@@ -20,19 +19,18 @@ import static by.tms.onlinestore.model.RequestParam.ID;
 import static by.tms.onlinestore.model.RequestParam.IMAGE_NAME;
 import static by.tms.onlinestore.model.RequestParam.NAME;
 import static by.tms.onlinestore.model.RequestParam.PRICE_PARAMETER;
-import static by.tms.onlinestore.utils.Utils.isUserLogIn;
 
 @WebServlet("/cart")
 public class ShoppingCartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDto userDto = (UserDto) request.getSession().getAttribute("userDto");
-        if (isUserLogIn(userDto)) {
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("signin.jsp").forward(request, response);
-        }
+//        UserDto userDto = (UserDto) request.getSession().getAttribute("userDto");
+//        if (isUserLogIn(userDto)) {
+//            request.getRequestDispatcher("cart.jsp").forward(request, response);
+//        } else {
+//            request.getRequestDispatcher("signin.jsp").forward(request, response);
+//        }
     }
 
     @Override

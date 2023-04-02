@@ -1,6 +1,7 @@
 package by.tms.onlinestore.servlet;
 
 import by.tms.onlinestore.dto.UserDto;
+import by.tms.onlinestore.model.Attribute;
 import by.tms.onlinestore.model.Product;
 import by.tms.onlinestore.service.impl.ProductService;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static by.tms.onlinestore.model.Attribute.PRODUCTS;
 import static by.tms.onlinestore.model.RequestParam.CATEGORY_ID;
 import static by.tms.onlinestore.model.RequestParam.NAME_CATEGORY;
 import static by.tms.onlinestore.utils.Utils.isUserLogIn;
@@ -36,8 +38,9 @@ public class CategoryServlet extends HttpServlet {
             int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID.getValue()));
             String nameCategory = request.getParameter(NAME_CATEGORY.getValue());
             List<Product> categoryProducts = productService.getProductsByCategoryId(categoryId);
-            request.setAttribute("products", categoryProducts);
-            request.setAttribute("nameCategory", nameCategory);
+            request.setAttribute(PRODUCTS.getAttribute(), categoryProducts);
+//            request.setAttribute("products", categoryProducts);
+            request.setAttribute(Attribute.NAME_CATEGORY.getAttribute(), nameCategory);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("category.jsp");
             requestDispatcher.forward(request, response);
         } else {

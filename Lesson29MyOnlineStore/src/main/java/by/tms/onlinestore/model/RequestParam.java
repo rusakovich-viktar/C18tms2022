@@ -18,8 +18,6 @@ public enum RequestParam {
     CATEGORY_ID("categoryId"),
     NAME_CATEGORY("nameCategory"),
     ACTION("action"),
-
-
     COMMAND("command");
 
 

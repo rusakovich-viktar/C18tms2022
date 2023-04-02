@@ -12,6 +12,7 @@ public enum Commands {
     PRODUCT_COMMAND("product"),
     PROFILE_COMMAND("profile"),
     SHOPPING_CART_COMMAND("cart"),
+    SHOPPING_CART_POST_COMMAND("cart-post"),
     SIGN_IN_COMMAND("signin"),
     SIGN_IN_POST_COMMAND("signin-post"),
     SIGN_UP_COMMAND("signup");

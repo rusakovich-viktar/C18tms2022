@@ -50,7 +50,7 @@
             </table>
         </div>
         <br>
-        <form method="post" action="${pageContext.request.contextPath}/cart">
+        <form method="post" action='<c:url value="/eshop?command=cart-post"/>'>
             <input type="hidden" value="${oneProduct.getId()}" name="id"/>
             <input type="hidden" value="${oneProduct.getImageName()}" name="imageName"/>
             <input type="hidden" value="${oneProduct.getName()}" name="name"/>

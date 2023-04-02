@@ -2,6 +2,8 @@ package by.tms.onlinestore.utils;
 
 import by.tms.onlinestore.controller.BaseCommandController;
 import by.tms.onlinestore.controller.impl.CartPageControllerImpl;
+import by.tms.onlinestore.controller.impl.CartPagePostControllerImpl;
+import by.tms.onlinestore.controller.impl.CategoryPageControllerImpl;
 import by.tms.onlinestore.controller.impl.HomePageBaseCommandController;
 import by.tms.onlinestore.controller.impl.LogoutPageControllerImpl;
 import by.tms.onlinestore.controller.impl.ProfilePageControllerImpl;
@@ -27,29 +29,15 @@ public class CommandControllerFactory {
 
     private static Supplier<BaseCommandController> createController(Commands command) {
         return switch (command) {
-//            case HOME_PAGE_COMMAND -> HomePageCommandControllerImpl::new;
-//            case PRODUCTS_PAGE_COMMAND -> ProductPageCommandControllerImpl::new;
-//            case ACCOUNT_PAGE_COMMAND -> AccountPageCommandControllerImpl::new;
-//            case ADD_CART_PAGE_COMMAND -> AddCartPageCommandControllerImpl::new;
-//            case ADD_FAVORITE_PAGE_COMMAND -> AddFavoritePageCommandControllerImpl::new;
-            case CATEGORY_COMMAND -> null;
+            case CATEGORY_COMMAND -> CategoryPageControllerImpl::new;
             case HOME_COMMAND -> HomePageBaseCommandController::new;
             case LOGOUT_COMMAND -> LogoutPageControllerImpl::new;
-            case PRODUCT_COMMAND -> null;
+            case PRODUCT_COMMAND -> ProfilePageControllerImpl::new;
             case PROFILE_COMMAND -> ProfilePageControllerImpl::new;
             case SHOPPING_CART_COMMAND -> CartPageControllerImpl::new;
+            case SHOPPING_CART_POST_COMMAND -> CartPagePostControllerImpl::new;
             case SIGN_IN_COMMAND -> SignInPageControllerImpl::new;
             case SIGN_IN_POST_COMMAND -> SignInPagePostControllerImpl::new;
-//            case CREATE_USER_PAGE_COMMAND -> CreateUserPageCommandControllerImpl::new;
-//            case CREATE_USER_PAGE_POST_COMMAND -> CreateUserPagePostCommandControllerImpl::new;
-//            case DELETE_CART_PRODUCT_PAGE_COMMAND -> DeleteCartProductPageCommandControllerImpl::new;
-//            case DELETE_FAVORITE_PRODUCT_PAGE_COMMAND -> DeleteFavoriteCommandControllerImpl::new;
-//            case FAVORITES_PAGE_COMMAND -> FavoritesCommandControllerImpl::new;
-//            case LOGOUT_PAGE_COMMAND -> LogoutPageCommandControllerImpl::new;
-//            case SHOPPING_CART_PAGE_COMMAND -> ShoppingCartPageCommandControllerImpl::new;
-//            case SHOPPING_CART_PAGE_POST_COMMAND -> ShoppingCartPagePostCommandControllerImpl::new;
-//            case SEARCH_PAGE_COMMAND -> SearchPageCommandControllerImpl::new;
-//            case SEARCH_PAGE_POST_COMMAND -> SearchPagePostCommandControllerImpl::new;
             case SIGN_UP_COMMAND -> null;
         };
     }

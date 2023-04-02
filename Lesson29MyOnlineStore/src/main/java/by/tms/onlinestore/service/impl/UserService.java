@@ -10,10 +10,6 @@ public class UserService {
     @Inject
     private UserRepository userRepository;
 
-//    public UserService(UserRepository userRepository) {
-//        this.userRepository = userRepository;
-//    }
-
     public User getUserByLoginAndPassword(String login, String password) {
         return userRepository.getUserByLoginAndPassword(login, password);
     }

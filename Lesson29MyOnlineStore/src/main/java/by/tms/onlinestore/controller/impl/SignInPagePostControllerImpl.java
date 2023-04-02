@@ -25,7 +25,6 @@ public class SignInPagePostControllerImpl implements BaseCommandController {
     public PagesPath execute(HttpServletRequest request) throws Exception {
         String username = request.getParameter(USERNAME.getValue());
         String pass = request.getParameter(PASSWORD.getValue());
-
 //        try {
 //            validateParamNotNull(username);
 //            validateParamNotNull(pass);
@@ -47,6 +46,4 @@ public class SignInPagePostControllerImpl implements BaseCommandController {
         }
         return path;
     }
-
 }
-

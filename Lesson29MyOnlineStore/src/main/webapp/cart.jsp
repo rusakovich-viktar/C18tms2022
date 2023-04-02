@@ -34,7 +34,7 @@
                     <p><b class="font-italic">Модель:</b> ${myProduct.getName()}</p>
                     <p><b class="font-italic">Описание:</b> ${myProduct.getDescription()}</p>
                     <p><b class="font-italic">Цена:</b> ${myProduct.getPrice()} руб.</p>
-                    <form method="post" action="${pageContext.request.contextPath}/cart">
+                    <form method="post" action='<c:url value="/eshop?command=cart-post"/>'>
                         <input type="hidden" value="${myProduct.getId()}" name="id"/>
                         <input type="hidden" value="${myProduct.getImageName()}" name="imageName"/>
                         <input type="hidden" value="${myProduct.getName()}" name="name"/>

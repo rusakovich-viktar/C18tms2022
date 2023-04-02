@@ -14,6 +14,10 @@ public enum Attribute {
 
     USERNAME("username"),
     CATEGORIES("categories"),
+    PRODUCTS("products"),
+    NAME_CATEGORY("nameCategory"),
+    MY_PRODUCTS("myProducts"),
+    ONE_PRODUCT("oneProduct"),
     USER_DTO("userDto");
 
     private final String attribute;

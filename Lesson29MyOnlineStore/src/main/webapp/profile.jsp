@@ -33,7 +33,7 @@
 </div>
 
 
-<button onclick="window.location.href = 'logout';" class="buttonQuit">
+<button onclick="window.location.href = '<c:url value="/eshop?command=logout"/>';" class="buttonQuit">
     <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> Завершить сеанс и выйти
 </button>
 

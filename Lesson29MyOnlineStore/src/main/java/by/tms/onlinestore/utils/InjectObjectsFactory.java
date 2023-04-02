@@ -2,11 +2,14 @@ package by.tms.onlinestore.utils;
 
 import by.tms.onlinestore.model.Inject;
 import by.tms.onlinestore.repository.CategoryRepository;
+import by.tms.onlinestore.repository.ProductRepository;
 import by.tms.onlinestore.repository.UserRepository;
 import by.tms.onlinestore.repository.impl.CategoryRepositoryImpl;
+import by.tms.onlinestore.repository.impl.ProductRepositoryImpl;
 import by.tms.onlinestore.repository.impl.UserRepositoryImpl;
 import by.tms.onlinestore.service.CategoryService;
 import by.tms.onlinestore.service.impl.CategoryServiceImpl;
+import by.tms.onlinestore.service.impl.ProductService;
 import by.tms.onlinestore.service.impl.UserService;
 import lombok.experimental.UtilityClass;
 
@@ -64,24 +67,10 @@ public class InjectObjectsFactory {
             return new CategoryServiceImpl();
         } else if (CategoryRepository.class == serviceClass) {
             return new CategoryRepositoryImpl();
-
-//        if (CartService.class == serviceClass) {
-//            return new CartServiceImpl();
-//        } else if (JdbcCartRepository.class == serviceClass) {
-//            return new JdbcCartRepositoryImpl();
-//        } else if (OrderService.class == serviceClass) {
-//            return new OrderServiceImpl();
-//        } else if (JdbcOrderRepository.class == serviceClass) {
-//            return new JdbcOrderRepositoryImpl();
-//        } else if (ProductService.class == serviceClass) {
-//            return new ProductServiceImpl();
-//        } else if (JdbcProductRepository.class == serviceClass) {
-//            return new JdbcProductRepositoryImpl();
-//        } else if (UserService.class == serviceClass) {
-//            return new UserServiceImpl();
-//        } else if (JdbcUserRepository.class == serviceClass) {
-//            return new JdbcUserRepositoryImpl();
-//        }
+        } else if (ProductService.class == serviceClass) {
+            return new ProductService();
+        } else if (ProductRepository.class == serviceClass) {
+            return new ProductRepositoryImpl();
         }
         throw new IllegalArgumentException("Can not create instance of class " + serviceClass);
     }
