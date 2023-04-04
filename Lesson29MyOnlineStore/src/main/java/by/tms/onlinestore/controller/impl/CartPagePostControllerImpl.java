@@ -36,31 +36,16 @@ public class CartPagePostControllerImpl implements BaseCommandController {
         if ("Buy".equals(action)) {
             cart.addProduct(product);
             session.setAttribute(Attribute.MY_PRODUCTS.getAttribute(), cart.getProducts());
-            path = PagesPath.valueOf(PagesPath.PRODUCT_ID_PAGE.getPath() + product.getId());
+            request.setAttribute(Attribute.ONE_PRODUCT.getAttribute(), product);
+            path = PagesPath.PRODUCT_PAGE;
         } else if ("Delete".equals(action)) {
             cart.deleteProduct(product);
-            session.setAttribute("myProducts", cart.getProducts());
-            path = PagesPath.valueOf(PagesPath.CART_PAGE.getPath());
+            session.setAttribute(Attribute.MY_PRODUCTS.getAttribute(), cart.getProducts());
+            path = PagesPath.CART_PAGE;
         } else {
             System.out.println("Такой кнопки нет");
         }
         return path;
-
-//        switch (action) {
-//            case "Buy" -> {
-//
-////                response.sendRedirect("/product?productId=" + product.getId());
-//            }
-//            case "Delete" -> {
-//                cart.deleteProduct(product);
-//                session.setAttribute("myProducts", cart.getProducts());
-//                path = PagesPath.CART_PAGE.getPath();
-////                response.sendRedirect("/cart");
-//            }
-//            default -> {
-//                System.out.println("Такой кнопки нет");
-//            }
-//        }
 
     }
 }
