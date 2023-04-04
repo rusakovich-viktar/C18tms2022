@@ -6,6 +6,7 @@ import by.tms.onlinestore.controller.impl.CartPagePostControllerImpl;
 import by.tms.onlinestore.controller.impl.CategoryPageControllerImpl;
 import by.tms.onlinestore.controller.impl.HomePageBaseCommandController;
 import by.tms.onlinestore.controller.impl.LogoutPageControllerImpl;
+import by.tms.onlinestore.controller.impl.ProductPageControllerImpl;
 import by.tms.onlinestore.controller.impl.ProfilePageControllerImpl;
 import by.tms.onlinestore.controller.impl.SignInPageControllerImpl;
 import by.tms.onlinestore.controller.impl.SignInPagePostControllerImpl;
@@ -32,7 +33,7 @@ public class CommandControllerFactory {
             case CATEGORY_COMMAND -> CategoryPageControllerImpl::new;
             case HOME_COMMAND -> HomePageBaseCommandController::new;
             case LOGOUT_COMMAND -> LogoutPageControllerImpl::new;
-            case PRODUCT_COMMAND -> ProfilePageControllerImpl::new;
+            case PRODUCT_COMMAND -> ProductPageControllerImpl::new;
             case PROFILE_COMMAND -> ProfilePageControllerImpl::new;
             case SHOPPING_CART_COMMAND -> CartPageControllerImpl::new;
             case SHOPPING_CART_POST_COMMAND -> CartPagePostControllerImpl::new;
