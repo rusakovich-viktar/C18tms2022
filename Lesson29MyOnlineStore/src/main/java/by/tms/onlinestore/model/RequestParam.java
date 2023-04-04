@@ -20,7 +20,6 @@ public enum RequestParam {
     ACTION("action"),
     COMMAND("command");
 
-
     private final String value;
 
     RequestParam(String value) {
@@ -31,4 +30,3 @@ public enum RequestParam {
         return value;
     }
 }
-

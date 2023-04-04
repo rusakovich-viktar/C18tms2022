@@ -33,11 +33,11 @@ public class CartPagePostControllerImpl implements BaseCommandController {
         Product product = new Product(id, imageName, name, description, price, categoryId);
         String action = request.getParameter(ACTION.getValue());
         PagesPath path = null;
-        if (action.equals("Buy")) {
+        if ("Buy".equals(action)) {
             cart.addProduct(product);
             session.setAttribute(Attribute.MY_PRODUCTS.getAttribute(), cart.getProducts());
             path = PagesPath.valueOf(PagesPath.PRODUCT_ID_PAGE.getPath() + product.getId());
-        } else if (action.equals("Delete")) {
+        } else if ("Delete".equals(action)) {
             cart.deleteProduct(product);
             session.setAttribute("myProducts", cart.getProducts());
             path = PagesPath.valueOf(PagesPath.CART_PAGE.getPath());

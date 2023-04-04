@@ -29,9 +29,9 @@
                 <div class="card w-25 m-1" type="category">
                     <div class="card-body">
                             ${category.getName()}
-                        http://localhost:8080/eshop?command=categoryId=1&nameCategory=Mobile%20phones
-                            <%--                        <a href="eshop?command=home&amp;categoryId=${category.getId()}&amp;nameCategory=${category.getName()}">--%>
-                        <a href="${contextPath}/category?categoryId=${category.getId()}&amp;nameCategory=${category.getName()}">
+
+                        <a href="/eshop?command=category&categoryId=${category.getId()}&nameCategory=${category.getName()}">
+                                <%-- <a href="${contextPath}/category?categoryId=${category.getId()}&amp;nameCategory=${category.getName()}">--%>
                             <img class="card-img"
                                  style="width:150px;height:120px"
                                  src="/images/${category.getImageName()}"

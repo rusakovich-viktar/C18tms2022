@@ -10,6 +10,7 @@ import by.tms.onlinestore.service.impl.ProductService;
 import lombok.Setter;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 import static by.tms.onlinestore.model.Attribute.PRODUCTS;
@@ -24,7 +25,8 @@ public class CategoryPageControllerImpl implements BaseCommandController {
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
-        UserDto userDto = (UserDto) request.getSession().getAttribute(Attribute.USER_DTO.getAttribute());
+        HttpSession session = request.getSession();
+        UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
         PagesPath path;
         if (isUserLogIn(userDto)) {
             int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID.getValue()));
