@@ -29,7 +29,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-1" style="background-color:white;">
-                    <a href="${contextPath}/product?productId=${product.getId()}">
+                    <a href="/eshop?command=product&productId=${product.getId()}">
                         <img src="${contextPath}/images/${product.getImageName()}"
                              alt="${product.getImageName()}" class="responsive"></a></div>
                 <div class="col" style="background-color:white;">
