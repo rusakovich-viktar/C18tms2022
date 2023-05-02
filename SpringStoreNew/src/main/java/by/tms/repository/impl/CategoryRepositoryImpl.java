@@ -1,8 +1,8 @@
 package by.tms.repository.impl;
 
 import by.tms.model.Category;
-import by.tms.repository.BaseRep;
 import by.tms.repository.CategoryRepository;
+import by.tms.repository.utils.BaseRep;
 import by.tms.repository.utils.ConnectionWrapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;

@@ -23,25 +23,27 @@
 <br>
 <h2>All categories</h2>
 <div class="container-fluid">
-    <c:if test="${not empty categories}">
-        <div class="row">
-            <c:forEach items="${categories}" var="category">
-                <div class="card w-25 m-1" type="category">
-                    <div class="card-body">
-                            ${category.getName()}
+    <%--        <c:if test="${categories!=null}">--%>
+    <%--    <c:if test="${not empty categories}">--%>
+    <div class="row">
+        <c:forEach items="${sessionScope.categories}" var="category">
+            <div class="card w-25 m-1" type="category">
+                <div class="card-body">
+                        ${category.getName()}
+                    <a href="/category/${category.getId()}/${category.getName()}">
 
-                        <a href="/eshop?command=category&categoryId=${category.getId()}&nameCategory=${category.getName()}">
-                                <%-- <a href="${contextPath}/category?categoryId=${category.getId()}&amp;nameCategory=${category.getName()}">--%>
-                            <img class="card-img"
-                                 style="width:150px;height:120px"
-                                 src="/images/${category.getImageName()}"
-                                 alt="Card image">
-                        </a>
-                    </div>
+                            <%--                        <a href="${contextPath}/category?categoryId=${category.getId()}&nameCategory=${category.getName()}">--%>
+                            <%--                                 <a href="${contextPath}/category?categoryId=${category.getId()}&amp;nameCategory=${category.getName()}">--%>
+                        <img class="card-img"
+                             style="width:150px;height:120px"
+                             src="/images/${category.getImageName()}"
+                             alt="Card image">
+                    </a>
                 </div>
-            </c:forEach>
-        </div>
-    </c:if>
+            </div>
+        </c:forEach>
+    </div>
+    <%--    </c:if>--%>
 </div>
 </body>
 </html>

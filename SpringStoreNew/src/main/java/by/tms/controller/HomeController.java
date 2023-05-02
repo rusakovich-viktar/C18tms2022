@@ -8,8 +8,8 @@ import by.tms.utils.Utils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -33,16 +33,18 @@ public class HomeController {
 //    }
 
     @GetMapping("/eshop")
-    public String getEshop(HttpSession session, HttpServletRequest request) {
+    public ModelAndView getEshop(HttpSession session, ModelAndView modelAndView) {
 //        HttpSession session = request.getSession();
         UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
         if (Utils.isUserLogIn(userDto)) {
             List<Category> categories = categoryService.getCategories();
-            request.setAttribute(Attribute.CATEGORIES.getAttribute(), categories);
-            return "home";
+//            request.setAttribute(Attribute.CATEGORIES.getAttribute(), categories);
+            modelAndView.addObject(Attribute.CATEGORIES.getAttribute(), categories);
+            modelAndView.setViewName("test");
         } else {
-            return "signin";
+            modelAndView.setViewName("signin");
         }
+        return modelAndView;
     }
 
 }

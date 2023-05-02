@@ -4,7 +4,9 @@
 <head>
     <title>Login form</title>
     <meta charset="utf-8">
-    <%@include file='resources/login.css' %>
+    <style>
+        <%@include file='resources/login.css' %>
+    </style>
     <%--    <link rel="stylesheet" type="text/css" value=resources/style.css"/>--%>
 </head>
 <body>
@@ -12,7 +14,7 @@
 <div id="wrapper">
     <h1>Sign In Form</h1>
     <%--    <form method="post" action='${contextPath}/signin' id="signin" autocomplete="on">--%>
-    <form method="post" action='/eshop?command=signin-post' id="signin" autocomplete="on">
+    <form method="post" action='/signin' id="signin" autocomplete="on">
         <input type="text" class="violet" id="user" name="username" placeholder="username" required/>
         <input type="password" id="pass" name="password" placeholder="password" required/>
         <button type="submit">&#xf0da;</button>

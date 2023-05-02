@@ -1,6 +1,5 @@
-package by.tms.repository;
+package by.tms.repository.utils;
 
-import by.tms.repository.utils.ConnectionPool;
 import org.springframework.stereotype.Repository;
 
 @Repository
