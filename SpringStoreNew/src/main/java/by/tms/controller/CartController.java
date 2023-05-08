@@ -4,12 +4,15 @@ import by.tms.dto.UserDto;
 import by.tms.model.Attribute;
 import by.tms.model.Cart;
 import by.tms.model.Product;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 
 import static by.tms.model.Attribute.USER_DTO;
@@ -22,9 +25,24 @@ import static by.tms.model.RequestParam.NAME;
 import static by.tms.model.RequestParam.PRICE_PARAMETER;
 import static by.tms.utils.Utils.isUserLogIn;
 
+@RequestMapping("/cart")
+@Controller
+@RequiredArgsConstructor
 public class CartController {
-    
-    @PostMapping("/cart")
+
+    @GetMapping("/show")
+    public ModelAndView showProductInCart(HttpServletRequest request, ModelAndView modelAndView) {
+        HttpSession session = request.getSession();
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO.getAttribute());
+        if (isUserLogIn(userDto)) {
+            modelAndView.setViewName("cart");
+        } else {
+            modelAndView.setViewName("signin");
+        }
+        return modelAndView;
+    }
+
+    @PostMapping("/add")
     public ModelAndView addProductToCart(HttpServletRequest request, ModelAndView modelAndView) {
         HttpSession session = request.getSession(false);
         Cart cart = (Cart) session.getAttribute(Attribute.CART.getAttribute());
@@ -52,17 +70,4 @@ public class CartController {
         return modelAndView;
     }
 
-    @GetMapping("/cart")
-    public ModelAndView showProductInCart(HttpServletRequest request, ModelAndView modelAndView) {
-        HttpSession session = request.getSession();
-        UserDto userDto = (UserDto) session.getAttribute(USER_DTO.getAttribute());
-        if (isUserLogIn(userDto)) {
-            modelAndView.setViewName("cart");
-        } else {
-            modelAndView.setViewName("signin");
-        }
-        return modelAndView;
-    }
 }
-
-

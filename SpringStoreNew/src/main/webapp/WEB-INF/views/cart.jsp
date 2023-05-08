@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -34,7 +33,7 @@
                     <p><b class="font-italic">Модель:</b> ${myProduct.getName()}</p>
                     <p><b class="font-italic">Описание:</b> ${myProduct.getDescription()}</p>
                     <p><b class="font-italic">Цена:</b> ${myProduct.getPrice()} руб.</p>
-                    <form method="post" action='<c:url value="/cart/"/>'>
+                    <form method="post" action='cart/add'>
                         <input type="hidden" value="${myProduct.getId()}" name="id"/>
                         <input type="hidden" value="${myProduct.getImageName()}" name="imageName"/>
                         <input type="hidden" value="${myProduct.getName()}" name="name"/>

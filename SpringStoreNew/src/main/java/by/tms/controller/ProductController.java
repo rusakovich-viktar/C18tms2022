@@ -5,13 +5,12 @@ import by.tms.model.Attribute;
 import by.tms.model.Product;
 import by.tms.model.RequestParam;
 import by.tms.service.ProductService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import static by.tms.utils.Utils.isUserLogIn;
 

@@ -25,7 +25,7 @@ public class SpringConfig implements WebMvcConfigurer {
     private final Environment environment;
 
     @Bean
-    public ViewResolver urlBasedViewResolver() {
+    public ViewResolver UrlBasedViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
         viewResolver.setPrefix("/WEB-INF/views/");
@@ -35,8 +35,9 @@ public class SpringConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/");
-        registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
+        registry.addResourceHandler("/images/**").addResourceLocations("/images/");
+        registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/views/resources/");
+        registry.addResourceHandler("/favicon.ico").addResourceLocations("/images/favicon.ico");
     }
 
     @Bean
