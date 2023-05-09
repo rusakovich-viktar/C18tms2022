@@ -33,7 +33,7 @@
                     <p><b class="font-italic">Модель:</b> ${myProduct.getName()}</p>
                     <p><b class="font-italic">Описание:</b> ${myProduct.getDescription()}</p>
                     <p><b class="font-italic">Цена:</b> ${myProduct.getPrice()} руб.</p>
-                    <form method="post" action='cart/add'>
+                    <form method="post" action='/cart/add'>
                         <input type="hidden" value="${myProduct.getId()}" name="id"/>
                         <input type="hidden" value="${myProduct.getImageName()}" name="imageName"/>
                         <input type="hidden" value="${myProduct.getName()}" name="name"/>

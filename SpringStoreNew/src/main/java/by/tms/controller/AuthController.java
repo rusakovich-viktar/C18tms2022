@@ -21,13 +21,14 @@ public class AuthController {
 
     private final UserService userService;
 
+
     @GetMapping("/signin")
-    public String loginPage() {
+    public String getLoginPage() {
         return "signin";
     }
 
     @PostMapping("/signin")
-    public String loginPage(HttpSession session, HttpServletRequest request) {
+    public String loginHomePageFromForm(HttpSession session, HttpServletRequest request) {
 
         String username = request.getParameter(USERNAME.getValue());
         String pass = request.getParameter(PASSWORD.getValue());
@@ -46,12 +47,12 @@ public class AuthController {
             session.setAttribute(Attribute.CART.getAttribute(), cart);
             session.setAttribute(Attribute.USERNAME.getAttribute(), username);
             session.setAttribute(Attribute.USER_DTO.getAttribute(), userDto);
-            return "redirect:/eshop";
+            return "redirect:/home";
         } else {
             return "signin";
         }
-//        return path;
     }
+
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpSession session) throws Exception {
