@@ -12,11 +12,6 @@ public class ConnectionWrapper implements AutoCloseable {
     private final Connection connection;
     private final ConnectionPool connectionPool;
 
-//    public ConnectionWrapper(Connection connection, ConnectionPool connectionPool) {
-//        this.connection = connection;
-//        this.connectionPool = connectionPool;
-//    }
-
     public Connection getConnection() {
         return connection;
     }

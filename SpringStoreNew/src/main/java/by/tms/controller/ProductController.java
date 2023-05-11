@@ -1,9 +1,7 @@
 package by.tms.controller;
 
 import by.tms.dto.UserDto;
-import by.tms.model.Attribute;
 import by.tms.model.Product;
-import by.tms.model.RequestParam;
 import by.tms.service.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -12,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import static by.tms.utils.Constants.Attributes.ONE_PRODUCT;
+import static by.tms.utils.Constants.Attributes.USER_DTO;
+import static by.tms.utils.Constants.RequestParams.PRODUCT_ID;
 import static by.tms.utils.Utils.isUserLogIn;
 
 @RequiredArgsConstructor
@@ -23,11 +24,11 @@ public class ProductController {
     @GetMapping("/product")
     public ModelAndView showProduct(HttpServletRequest request, ModelAndView modelAndView) {
         HttpSession session = request.getSession();
-        UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         if (isUserLogIn(userDto)) {
-            int productId = Integer.parseInt(request.getParameter(RequestParam.PRODUCT_ID.getValue()));
+            int productId = Integer.parseInt(request.getParameter(PRODUCT_ID));
             Product product = productService.getProductById(productId);
-            request.setAttribute(Attribute.ONE_PRODUCT.getAttribute(), product);
+            request.setAttribute(ONE_PRODUCT, product);
             modelAndView.setViewName("product");
         } else {
             modelAndView.setViewName("signin");

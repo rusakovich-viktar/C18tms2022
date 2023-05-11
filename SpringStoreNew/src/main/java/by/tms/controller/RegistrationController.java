@@ -15,6 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static by.tms.utils.Constants.RequestParams.BIRTHDAY;
+import static by.tms.utils.Constants.RequestParams.EMAIL;
+import static by.tms.utils.Constants.RequestParams.GENDER;
+import static by.tms.utils.Constants.RequestParams.NAME;
+import static by.tms.utils.Constants.RequestParams.PASSWORD;
+import static by.tms.utils.Constants.RequestParams.REGISTRATION_DATE;
+import static by.tms.utils.Constants.RequestParams.REPEAT_PASS;
+import static by.tms.utils.Constants.RequestParams.SURNAME;
+import static by.tms.utils.Constants.RequestParams.USERNAME;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/signup")
@@ -24,19 +34,18 @@ public class RegistrationController {
 
     @PostMapping()
     public ModelAndView addUser(@ModelAttribute User user,
-                                @RequestParam("username") String username,
-                                @RequestParam("password") String password,
-                                @RequestParam("repeatPass") String repeatPass,
-                                @RequestParam("name") String name,
-                                @RequestParam("surname") String surname,
-                                @RequestParam("date") String birthday,
-                                @RequestParam("gender") String gender,
-                                @RequestParam("email") String email,
-                                @RequestParam("registrationDate") String registrationDate,
+                                @RequestParam(USERNAME) String username,
+                                @RequestParam(PASSWORD) String password,
+                                @RequestParam(REPEAT_PASS) String repeatPass,
+                                @RequestParam(NAME) String name,
+                                @RequestParam(SURNAME) String surname,
+                                @RequestParam(BIRTHDAY) String birthday,
+                                @RequestParam(GENDER) String gender,
+                                @RequestParam(EMAIL) String email,
+                                @RequestParam(REGISTRATION_DATE) String registrationDate,
                                 ModelAndView modelAndView,
                                 Model model
     ) {
-
         try {
             if (username == null || password == null || repeatPass == null || name == null || surname == null || birthday == null || gender == null || username.isEmpty() || password.isEmpty() || repeatPass.isEmpty() || name.isEmpty() || surname.isEmpty() || birthday.isEmpty() || gender.isEmpty()) {
                 model.addAttribute("error", "Необходимо заполнить все поля формы.");

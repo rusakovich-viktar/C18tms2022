@@ -1,7 +1,6 @@
 package by.tms.controller;
 
 import by.tms.dto.UserDto;
-import by.tms.model.Attribute;
 import by.tms.model.Cart;
 import by.tms.model.Product;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,14 +14,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
 
-import static by.tms.model.Attribute.USER_DTO;
-import static by.tms.model.RequestParam.ACTION;
-import static by.tms.model.RequestParam.CATEGORY_ID;
-import static by.tms.model.RequestParam.DESCRIPTION;
-import static by.tms.model.RequestParam.ID;
-import static by.tms.model.RequestParam.IMAGE_NAME;
-import static by.tms.model.RequestParam.NAME;
-import static by.tms.model.RequestParam.PRICE_PARAMETER;
+import static by.tms.utils.Constants.Attributes.CART;
+import static by.tms.utils.Constants.Attributes.MY_PRODUCTS;
+import static by.tms.utils.Constants.Attributes.ONE_PRODUCT;
+import static by.tms.utils.Constants.Attributes.USER_DTO;
+import static by.tms.utils.Constants.RequestParams.ACTION;
+import static by.tms.utils.Constants.RequestParams.CATEGORY_ID;
+import static by.tms.utils.Constants.RequestParams.DESCRIPTION;
+import static by.tms.utils.Constants.RequestParams.ID;
+import static by.tms.utils.Constants.RequestParams.IMAGE_NAME;
+import static by.tms.utils.Constants.RequestParams.NAME;
+import static by.tms.utils.Constants.RequestParams.PRICE_PARAMETER;
 import static by.tms.utils.Utils.isUserLogIn;
 
 @RequestMapping("/cart")
@@ -33,7 +35,7 @@ public class CartController {
     @GetMapping("/show")
     public ModelAndView showProductInCart(HttpServletRequest request, ModelAndView modelAndView) {
         HttpSession session = request.getSession();
-        UserDto userDto = (UserDto) session.getAttribute(USER_DTO.getAttribute());
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         if (isUserLogIn(userDto)) {
             modelAndView.setViewName("cart");
         } else {
@@ -43,26 +45,27 @@ public class CartController {
     }
 
     @PostMapping("/add")
-    public ModelAndView addProductToCart(HttpServletRequest request, ModelAndView modelAndView) {
+    public ModelAndView addProductToCart(
+            HttpServletRequest request, ModelAndView modelAndView) {
         HttpSession session = request.getSession(false);
-        Cart cart = (Cart) session.getAttribute(Attribute.CART.getAttribute());
-        int id = Integer.parseInt(request.getParameter(ID.getValue()));
-        String imageName = request.getParameter(IMAGE_NAME.getValue());
-        String name = request.getParameter(NAME.getValue());
-        String description = request.getParameter(DESCRIPTION.getValue());
-        String priceParameter = request.getParameter(PRICE_PARAMETER.getValue());
-        int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID.getValue()));
+        Cart cart = (Cart) session.getAttribute(CART);
+        int id = Integer.parseInt(request.getParameter(ID));
+        String imageName = request.getParameter(IMAGE_NAME);
+        String name = request.getParameter(NAME);
+        String description = request.getParameter(DESCRIPTION);
+        String priceParameter = request.getParameter(PRICE_PARAMETER);
+        int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID));
         BigDecimal price = new BigDecimal(priceParameter);
         Product product = new Product(id, imageName, name, description, price, categoryId);
-        String action = request.getParameter(ACTION.getValue());
+        String action = request.getParameter(ACTION);
         if ("Buy".equals(action)) {
             cart.addProduct(product);
-            session.setAttribute(Attribute.MY_PRODUCTS.getAttribute(), cart.getProducts());
-            request.setAttribute(Attribute.ONE_PRODUCT.getAttribute(), product);
+            session.setAttribute(MY_PRODUCTS, cart.getProducts());
+            request.setAttribute(ONE_PRODUCT, product);
             modelAndView.setViewName("product");
         } else if ("Delete".equals(action)) {
             cart.deleteProduct(product);
-            session.setAttribute(Attribute.MY_PRODUCTS.getAttribute(), cart.getProducts());
+            session.setAttribute(MY_PRODUCTS, cart.getProducts());
             modelAndView.setViewName("cart");
         } else {
             System.out.println("Такой кнопки нет");

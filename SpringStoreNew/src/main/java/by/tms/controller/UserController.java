@@ -1,7 +1,6 @@
 package by.tms.controller;
 
 import by.tms.dto.UserDto;
-import by.tms.model.Attribute;
 import by.tms.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import static by.tms.utils.Constants.Attributes.USERNAME;
+import static by.tms.utils.Constants.Attributes.USER_DTO;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
@@ -19,23 +21,9 @@ public class UserController {
 
     private final UserService userService;
 
-//    @GetMapping("/profile")
-//    public ModelAndView showProfilePage(HttpServletRequest request, ModelAndView modelAndView) {
-//        HttpSession session = request.getSession();
-//        UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
-//        if (isUserLogIn(userDto)) {
-//            modelAndView.setViewName("profile");
-//        } else {
-//            modelAndView.setViewName("signin");
-//        }
-//        return modelAndView;
-//    }
-
     @GetMapping("/profile")
-    public ModelAndView showUserProfile(HttpSession session, @RequestParam("id") Long id,
+    public ModelAndView showUserProfile(@RequestParam("id") Long id,
                                         ModelAndView modelAndView) {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        Long id = auth.getName();
         UserDto newUserDto = userService.findUserDtoById(id);
         modelAndView.addObject("userDto", newUserDto);
         modelAndView.setViewName("profile");
@@ -44,7 +32,7 @@ public class UserController {
 
     @GetMapping("/edit")
     public ModelAndView editUserProfileInfo(HttpSession session, ModelAndView modelAndView) {
-        UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         modelAndView.setViewName("edit-profile");
         modelAndView.addObject("userDto", userDto);
         return modelAndView;
@@ -56,12 +44,8 @@ public class UserController {
                                       @RequestParam("birthday") String birthday,
                                       @RequestParam("gender") String gender,
                                       @RequestParam("email") String email,
-//                                      @RequestParam("id") Long id,
-//                                      @RequestParam("username") String username,
-//                                      @RequestParam("registrationDate") String registrationDate,
                                       ModelAndView modelAndView, HttpSession session) {
-        UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
-//        UserDto userDto = new UserDto(id, username, name, surname, gender, birthday, email, registrationDate);
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         userDto.setName(name);
         userDto.setSurname(surname);
         userDto.setBirthday(birthday);
@@ -69,8 +53,8 @@ public class UserController {
         userDto.setEmail(email);
         userService.updateUser(userDto);
         modelAndView.setViewName("profile");
-        session.setAttribute(Attribute.USERNAME.getAttribute(), userDto.getUsername());
-        session.setAttribute(Attribute.USER_DTO.getAttribute(), userDto);
+        session.setAttribute(USERNAME, userDto.getUsername());
+        session.setAttribute(USER_DTO, userDto);
         return modelAndView;
     }
 

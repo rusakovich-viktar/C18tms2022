@@ -1,7 +1,6 @@
 package by.tms.controller;
 
 import by.tms.dto.UserDto;
-import by.tms.model.Attribute;
 import by.tms.model.Category;
 import by.tms.service.CategoryService;
 import by.tms.utils.Utils;
@@ -13,6 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+import static by.tms.utils.Constants.Attributes.CATEGORIES;
+import static by.tms.utils.Constants.Attributes.USER_DTO;
+
 @RequiredArgsConstructor
 @Controller
 //@ResponseBody
@@ -22,12 +24,12 @@ public class HomeController {
 
     @GetMapping("/home")
     public ModelAndView getHomePage(HttpSession session, ModelAndView modelAndView) {
-        UserDto userDto = (UserDto) session.getAttribute(Attribute.USER_DTO.getAttribute());
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         if (Utils.isUserLogIn(userDto)) {
             List<Category> categories = categoryService.getCategories();
 //           ModelMap modelMap = new ModelMap();
 //            modelMap.addAttribute(Attribute.CATEGORIES.getAttribute(), categories);
-            modelAndView.addObject(Attribute.CATEGORIES.getAttribute(), categories);
+            modelAndView.addObject(CATEGORIES, categories);
             modelAndView.setViewName("home");
         } else {
             modelAndView.setViewName("signin");
