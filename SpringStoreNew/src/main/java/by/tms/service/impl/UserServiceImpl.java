@@ -1,5 +1,6 @@
 package by.tms.service.impl;
 
+import by.tms.dto.UserDto;
 import by.tms.model.User;
 import by.tms.repository.UserRepository;
 import by.tms.service.UserService;
@@ -20,6 +21,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addNewUser(User user) {
         userRepository.addNewUser(user);
+    }
+
+    @Override
+    public void updateUser(UserDto userDto) {
+        userRepository.updateUserDtoById(userDto);
+    }
+
+    @Override
+    public UserDto findUserDtoById(Long id) {
+        return userRepository.findUserDtoById(id);
     }
 
 }

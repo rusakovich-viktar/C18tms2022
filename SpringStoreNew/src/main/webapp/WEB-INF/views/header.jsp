@@ -8,6 +8,8 @@
     <li style="float:right"><a href="/logout"><i class="fa fa-lg fa-fw fa-sign-in"></i>Завершить
         сеанс, ${userDto.getUsername()}</a></li>
     <li style="float:right"><a href="/cart/show"><i class="fa fa-lg fa-fw fa-shopping-basket"></i> Корзина</a></li>
-    <li style="float:right"><a href="/profile"><i class="fa fa-lg fa-fw fa-user-circle-o"></i> Личный кабинет</a></li>
+    <li style="float:right"><a href="/user/profile?id=${userDto.id}"><i class="fa fa-lg fa-fw fa-user-circle-o"></i>
+        Личный кабинет</a>
+    </li>
 </ul>
 

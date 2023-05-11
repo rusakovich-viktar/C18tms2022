@@ -14,8 +14,14 @@ public class User extends UserDto {
 
     private String password;
 
+    public User(Long id, String username, String name, String surname, String gender, String birthday, String email, String registrationDate, String password) {
+        super(id, username, name, surname, gender, birthday, email, registrationDate);
+        this.password = password;
+    }
+
     public User(String username, String name, String surname, String gender, String birthday, String email, String registrationDate, String password) {
         super(username, name, surname, gender, birthday, email, registrationDate);
         this.password = password;
     }
+
 }

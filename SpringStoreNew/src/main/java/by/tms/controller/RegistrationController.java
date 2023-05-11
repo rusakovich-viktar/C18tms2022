@@ -6,9 +6,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,17 +23,18 @@ public class RegistrationController {
     private final UserService userService;
 
     @PostMapping()
-    public String registerUser(
-            @RequestParam("username") String username,
-            @RequestParam("password") String password,
-            @RequestParam("repeatPass") String repeatPass,
-            @RequestParam("name") String name,
-            @RequestParam("surname") String surname,
-            @RequestParam("date") String birthday,
-            @RequestParam("gender") String gender,
-            @RequestParam("email") String email,
-            @RequestParam("registrationDate") String registrationDate,
-            Model model
+    public ModelAndView addUser(@ModelAttribute User user,
+                                @RequestParam("username") String username,
+                                @RequestParam("password") String password,
+                                @RequestParam("repeatPass") String repeatPass,
+                                @RequestParam("name") String name,
+                                @RequestParam("surname") String surname,
+                                @RequestParam("date") String birthday,
+                                @RequestParam("gender") String gender,
+                                @RequestParam("email") String email,
+                                @RequestParam("registrationDate") String registrationDate,
+                                ModelAndView modelAndView,
+                                Model model
     ) {
 
         try {
@@ -42,7 +45,7 @@ public class RegistrationController {
             } else {
                 if (!password.equals(repeatPass)) {
                     model.addAttribute("error", "Passwords don't match.");
-                    return "signup";
+                    modelAndView.setViewName("signup");
                 }
 
                 Pattern pattern = Pattern.compile(".+@.+\\..+");
@@ -52,15 +55,14 @@ public class RegistrationController {
                     model.addAttribute("error", "Некорректный формат email.");
                 } else {
                     userService.addNewUser(new User(username, name, surname, gender, birthday, email, registrationDate, password));
-                    return "redirect:/signin";
+                    modelAndView.setViewName("redirect:/signin");
                 }
             }
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
             model.addAttribute("error", "Произошла ошибка при регистрации.");
         }
-
-        return "signup";
+        return modelAndView;
     }
 
     @GetMapping()
