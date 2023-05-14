@@ -29,6 +29,7 @@
                          alt="${myProduct.getImageName()}" class="mx-auto d-block"
                          style="max-height: 100px;width: auto">
                 </div>
+
                 <div class="col" style="background-color:white;">
                     <p><b class="font-italic">Модель:</b> ${myProduct.getName()}</p>
                     <p><b class="font-italic">Описание:</b> ${myProduct.getDescription()}</p>
@@ -51,6 +52,7 @@
         <br>
     </c:forEach>
 </c:if>
+<div>Суммарная стоимость товаров в корзине: ${totalPrice}</div>
 <c:if test="${empty myProducts}">
     <h3><p class="text-center">В корзине нет товаров</p></h3>
 </c:if>

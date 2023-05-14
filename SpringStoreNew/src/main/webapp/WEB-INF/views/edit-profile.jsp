@@ -8,31 +8,27 @@
 <body>
 
 <form:form action="profile" modelAttribute="userDto" method="post">
-
-    name <form:input path="name"/>
+    Username <form:input path="username" title="Неизменяемое поле" readonly="true"/>
     <br>
     <br>
-    Surname <form:input path="surname"/>
+    name <form:input path="name" title="Введите ваше имя"/>
     <br>
     <br>
-    birthday <form:input path="birthday"/>
+    Surname <form:input path="surname" title="Введите вашу фамилию"/>
     <br>
     <br>
-    gender <form:input path="gender"/>
+    birthday <form:input path="birthday" title="Введите год рождения"/>
+    <br>
+    <br>
+    gender:
+    <form:radiobutton path="gender" value="male"/> Male
+    <form:radiobutton path="gender" value="female"/> Female
+    <form:radiobutton path="gender" value="non-binary"/> Non-binary
     <br>
     <br>
     email <form:input path="email"/>
     <br>
     <br>
-    <%--    id <form:input path="id" readonly="true" />--%>
-    <%--    <br>--%>
-    <%--    <br>--%>
-    <%--    username <form:input path="username" readonly="true"/>--%>
-    <%--    <br>--%>
-    <%--    <br>--%>
-    <%--    registrationDate <form:input path="registrationDate" readonly="true"/>--%>
-    <%--    <br>--%>
-    <%--    <br>--%>
     <input type="hidden" name="id" value="${userDto.id}"/>
     <input type="submit" value="Изменить">
 

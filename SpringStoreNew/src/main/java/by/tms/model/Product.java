@@ -3,6 +3,7 @@ package by.tms.model;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 @ToString
+@NoArgsConstructor
 public class Product {
 
     private int id;
@@ -21,4 +23,5 @@ public class Product {
     private String description;
     private BigDecimal price;
     private int categoryId;
+
 }

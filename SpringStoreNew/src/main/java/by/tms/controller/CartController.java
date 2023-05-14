@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import static by.tms.utils.Constants.Attributes.CART;
 import static by.tms.utils.Constants.Attributes.MY_PRODUCTS;
 import static by.tms.utils.Constants.Attributes.ONE_PRODUCT;
+import static by.tms.utils.Constants.Attributes.TOTAL_PRICE;
 import static by.tms.utils.Constants.Attributes.USER_DTO;
 import static by.tms.utils.Constants.RequestParams.ACTION;
 import static by.tms.utils.Constants.RequestParams.CATEGORY_ID;
@@ -32,16 +33,36 @@ import static by.tms.utils.Utils.isUserLogIn;
 @RequiredArgsConstructor
 public class CartController {
 
+//    @GetMapping("/show")
+//    public ModelAndView showProductInCart(HttpServletRequest request, ModelAndView modelAndView) {
+//        HttpSession session = request.getSession();
+//        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
+//        if (isUserLogIn(userDto)) {
+//            modelAndView.setViewName("cart");
+//        } else {
+//            modelAndView.setViewName("signin");
+//        }
+//        return modelAndView;
+//    }
+
     @GetMapping("/show")
     public ModelAndView showProductInCart(HttpServletRequest request, ModelAndView modelAndView) {
-        HttpSession session = request.getSession();
-        UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
-        if (isUserLogIn(userDto)) {
-            modelAndView.setViewName("cart");
+        HttpSession session = request.getSession(); //+
+        UserDto userDto = (UserDto) session.getAttribute(USER_DTO); //+
+        if (isUserLogIn(userDto)) { //+
+            Cart cart = (Cart) session.getAttribute(CART);
+            if (cart == null) {
+                cart = new Cart();
+                session.setAttribute(CART, cart);
+            }
+            BigDecimal totalPrice = cart.getTotalPrice();
+            modelAndView.addObject(CART, cart);
+            modelAndView.addObject(TOTAL_PRICE, totalPrice);
+            modelAndView.setViewName("cart"); //+
         } else {
-            modelAndView.setViewName("signin");
+            modelAndView.setViewName("signin"); //+
         }
-        return modelAndView;
+        return modelAndView; //+
     }
 
     @PostMapping("/add")

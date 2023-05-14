@@ -12,6 +12,7 @@ public interface Constants {
         String MY_PRODUCTS = "myProducts";
         String ONE_PRODUCT = "oneProduct";
         String USER_DTO = "userDto";
+        String TOTAL_PRICE = "totalPrice";
     }
 
     interface RequestParams {

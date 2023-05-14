@@ -38,7 +38,7 @@
                 <thead>
                 <tr>
                     <th class="text-center" style="vertical-align: middle">Description</th>
-                    <th class="text-center" style="vertical-align: middle">Price $</th>
+                    <th class="text-center" style="vertical-align: middle">Price руб</th>
                 </tr>
                 </thead>
                 <tbody>

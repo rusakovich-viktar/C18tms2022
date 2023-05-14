@@ -30,10 +30,10 @@
     <p class="text-left">электронная почта: <b class="font-italic">${userDto.getEmail()}</b>
     <p class="text-left">дата регистрации: <b class="font-italic">${userDto.getRegistrationDate()}</b>
         <br>
-    <td>
-        <a class="u-active-palette-1-base u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white"
-           href="/user/edit" style="padding: 10px 20px;"><i>Edit</i></a>
-    </td>
+        <button>
+            <a class="fa fa-sign-out fa-lg "
+               href="/user/edit" style="padding: 10px 20px;"><i>Edit</i></a>
+        </button>
 
 </div>
 

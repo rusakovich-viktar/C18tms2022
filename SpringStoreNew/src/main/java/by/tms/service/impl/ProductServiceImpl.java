@@ -26,4 +26,5 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getProductsByCategoryId(int categoryId) {
         return productRepository.getProductsByCategoryId(categoryId);
     }
+
 }
