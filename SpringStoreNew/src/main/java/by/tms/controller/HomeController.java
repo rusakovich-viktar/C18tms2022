@@ -17,7 +17,6 @@ import static by.tms.utils.Constants.Attributes.USER_DTO;
 
 @RequiredArgsConstructor
 @Controller
-//@ResponseBody
 public class HomeController {
 
     private final CategoryService categoryService;
@@ -27,8 +26,6 @@ public class HomeController {
         UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         if (Utils.isUserLogIn(userDto)) {
             List<Category> categories = categoryService.getCategories();
-//           ModelMap modelMap = new ModelMap();
-//            modelMap.addAttribute(Attribute.CATEGORIES.getAttribute(), categories);
             modelAndView.addObject(CATEGORIES, categories);
             modelAndView.setViewName("home");
         } else {

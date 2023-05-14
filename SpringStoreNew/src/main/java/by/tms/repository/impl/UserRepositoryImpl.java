@@ -5,6 +5,7 @@ import by.tms.model.User;
 import by.tms.repository.UserRepository;
 import by.tms.repository.utils.ConnectionWrapper;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
@@ -12,11 +13,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Slf4j
 @Repository
 @AllArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
-    private static final String GET_USERS_INFO = "select login_key, pass_value from \"online-store\".users";
     private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (login_key, pass_value, first_name, second_name, day_of_birthday, gender, email, registration_date) values (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT id, login_key, pass_value, first_name, second_name, day_of_birthday, gender, email, registration_date FROM \"online-store\".users WHERE login_key = ? AND pass_value = ?";
     private static final String GET_USER_BY_ID = "SELECT id, login_key, first_name, second_name, day_of_birthday, gender, email, registration_date FROM \"online-store\".users WHERE id = ?";
@@ -37,7 +38,8 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setDate(8, Date.valueOf(user.getRegistrationDate()));
             statement.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Exception in addNewUser: " + e.getMessage());
+            log.error("Exception in addNewUser ", e);
+
         }
     }
 
@@ -63,7 +65,7 @@ public class UserRepositoryImpl implements UserRepository {
                         .build();
             }
         } catch (Exception e) {
-            System.out.println("Exception connectionWrapper.getConnection().prepareStatement(GET_USER_BY_LOGIN_AND_PASSWORD): " + e.getMessage());
+            log.error("Exception in onnectionWrapper.getConnection().prepareStatement(GET_USER_BY_LOGIN_AND_PASSWORD): ", e);
         }
         return user;
     }
@@ -80,9 +82,9 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setLong(6, userDto.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("SQLException:" + e.getMessage());
+            log.error("SQLException ", e);
         } catch (Exception e) {
-            System.out.println("getConnectionWrapper exception in userRepository: " + e.getMessage());
+            log.error("getConnectionWrapper exception in userRepository: ", e);
         }
         return userDto;
     }
@@ -107,7 +109,7 @@ public class UserRepositoryImpl implements UserRepository {
                         .build();
             }
         } catch (Exception e) {
-            System.out.println("Exception connectionWrapper.getConnection().prepareStatement(GET_USER_BY_ID): " + e.getMessage());
+            log.error("Exception connectionWrapper.getConnection().prepareStatement(GET_USER_BY_ID): ", e);
         }
         return userDto;
     }

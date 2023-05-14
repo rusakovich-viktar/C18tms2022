@@ -3,6 +3,7 @@ package by.tms.controller;
 import by.tms.model.User;
 import by.tms.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,7 @@ import static by.tms.utils.Constants.RequestParams.REPEAT_PASS;
 import static by.tms.utils.Constants.RequestParams.SURNAME;
 import static by.tms.utils.Constants.RequestParams.USERNAME;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/signup")
@@ -68,7 +70,7 @@ public class RegistrationController {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Exception: " + e.getMessage());
+            log.error("Exception ", e);
             model.addAttribute("error", "Произошла ошибка при регистрации.");
         }
         return modelAndView;

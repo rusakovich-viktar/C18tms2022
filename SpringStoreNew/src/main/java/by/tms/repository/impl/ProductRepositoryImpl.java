@@ -5,6 +5,7 @@ import by.tms.repository.ProductRepository;
 import by.tms.repository.utils.BaseRep;
 import by.tms.repository.utils.ConnectionWrapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Repository
 @RequiredArgsConstructor
 public class ProductRepositoryImpl extends BaseRep implements ProductRepository {
@@ -36,7 +38,7 @@ public class ProductRepositoryImpl extends BaseRep implements ProductRepository 
                 products.add(product);
             }
         } catch (Exception e) {
-            System.out.println("Exception in getProducts: " + e.getMessage());
+            log.error("Exception in getProducts: ", e);
         }
         return products;
     }
@@ -60,7 +62,7 @@ public class ProductRepositoryImpl extends BaseRep implements ProductRepository 
                 return null;
             }
         } catch (Exception e) {
-            System.out.println("Exception in getProductById: " + e.getMessage());
+            log.error("Exception in getProductById: ", e);
         }
         return null;
     }
@@ -83,7 +85,7 @@ public class ProductRepositoryImpl extends BaseRep implements ProductRepository 
                 products.add(product);
             }
         } catch (Exception e) {
-            System.out.println("Exception in getProductsByCategoryId: " + e.getMessage());
+            log.error("Exception in getProductsByCategoryId: ", e);
         }
         return products;
     }

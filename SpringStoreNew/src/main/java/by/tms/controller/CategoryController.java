@@ -32,8 +32,6 @@ public class CategoryController {
         HttpSession session = request.getSession();
         UserDto userDto = (UserDto) session.getAttribute(USER_DTO);
         if (isUserLogIn(userDto)) {
-//            int categoryId = Integer.parseInt(request.getParameter(CATEGORY_ID.getValue()));
-//            String nameCategory = request.getParameter(NAME_CATEGORY.getValue());
             List<Product> categoryProducts = productService.getProductsByCategoryId(categoryId);
             modelAndView.addObject(PRODUCTS, categoryProducts);
             modelAndView.addObject(Constants.Attributes.NAME_CATEGORY, nameCategory);

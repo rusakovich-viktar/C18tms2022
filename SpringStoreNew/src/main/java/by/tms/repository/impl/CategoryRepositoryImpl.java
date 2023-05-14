@@ -5,6 +5,7 @@ import by.tms.repository.CategoryRepository;
 import by.tms.repository.utils.BaseRep;
 import by.tms.repository.utils.ConnectionWrapper;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Repository
 @AllArgsConstructor
+@Slf4j
 public class CategoryRepositoryImpl extends BaseRep implements CategoryRepository {
 
     private static final String PATH_TO_STORE = "SELECT * FROM \"online-store\".categories";
@@ -32,10 +34,8 @@ public class CategoryRepositoryImpl extends BaseRep implements CategoryRepositor
                         .build();
                 categories.add(category);
             }
-
-
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.error("Exception in getConnectionWrapper in getCategories ", e);
         }
         return categories;
     }

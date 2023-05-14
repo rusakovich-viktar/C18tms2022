@@ -54,7 +54,6 @@ public class SpringConfig implements WebMvcConfigurer {
         }
     }
 
-
 //    @Override
 //    public void addInterceptors(InterceptorRegistry registry) {
 //        // LogInterceptor apply to all URLs.
